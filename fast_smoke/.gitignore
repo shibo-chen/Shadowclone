@@ -1,0 +1,6 @@
+*.pdf
+*.bc
+*.ll
+*.o
+*.so
+build/*
