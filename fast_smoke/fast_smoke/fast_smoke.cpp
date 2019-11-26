@@ -1,11 +1,14 @@
 #include "llvm/IR/Function.h"
+#include "llvm/IR/DerivedTypes.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/Analysis/BlockFrequencyInfo.h"
+#include "llvm/Analysis/BranchProbabilityInfo.h"
 #include "llvm/Pass.h"
 #include "llvm/Support/raw_ostream.h"
-#include "llvm/Analysis/BlockFrequencyInfo.h"
 #include "llvm/Support/BlockFrequency.h"
-#include "llvm/Analysis/BranchProbabilityInfo.h"
 #include "llvm/Support/BranchProbability.h"
 #include "llvm/Support/Format.h"
+
 using namespace llvm;
 
 namespace {
@@ -25,7 +28,7 @@ namespace {
         for (auto& I : B) {
           if (I.getOpcode() == Instruction::Call) {
             // Insert *after* `op`.
-            IRBuilder<> builder(op);
+            IRBuilder<> builder(&I);
             builder.SetInsertPoint(&B, ++builder.GetInsertPoint());
 
             // Insert a call to our function.
@@ -46,4 +49,4 @@ namespace {
 }
 
 char fast_smoke::ID = 0;
-static RegisterPass<fast_smoke> X("fast_smoke", "584 Project Fast Smoke Pass");
+static RegisterPass<fast_smoke> X("fast-smoke", "584 Project Fast Smoke Pass");
