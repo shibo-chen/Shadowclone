@@ -22,7 +22,7 @@ namespace {
         // BranchProbabilityInfo& BPI = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
       LLVMContext& Ctx = F.getContext();
       FunctionCallee rand = F.getParent()->getOrInsertFunction(
-        "get_rand", Type::getInt64Ty(Ctx,true));
+        "get_rand", Type::getInt64Ty(Ctx));
 
       for (auto& B : F) {
         for (auto& I : B) {
@@ -32,8 +32,8 @@ namespace {
             builder.SetInsertPoint(&B, ++builder.GetInsertPoint());
 
             // Insert a call to our function.
-            Value* args[] = {};
-            builder.CreateCall(FunctionCallee, args);
+            // Value* args[] = {};
+            builder.CreateCall(rand);
           }
         }
       }
