@@ -1,0 +1,16 @@
+struct server{ int * cur_max, total, typ;} *srv;
+int connect_limit = MAXCONN; int *size, *type;
+char buf[MAXLEN];
+size = &buf[8]; type = &buf[12];
+...
+while(connect_limit--){
+    readData(sockfd, buf);      // stack buffer overflow
+    if(*type == NONE) break;
+    if(*type == STREAM) {       // condition
+        *size = *(srv->cur_max);// dereference
+    } else {
+        srv->typ = *type;       // assignment
+        srv->total += *size;    // addition
+    }
+    ...
+}
