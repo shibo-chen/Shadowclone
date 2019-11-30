@@ -21,4 +21,4 @@ bin/%: src/%.cpp
 
 output/%.out: bin/% input/%.in
 	mkdir -p $(dir $@)
-	$< < $(word 2,$^) > $@
+	$< < $(word 2,$^)
