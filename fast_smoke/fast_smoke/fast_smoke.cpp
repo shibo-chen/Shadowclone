@@ -1,3 +1,10 @@
+#include <stdint.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h> 
+#include <stdio.h>
+#include <string.h>
+#include <vector>
 #include "llvm/IR/Function.h"
 #include "llvm/IR/DerivedTypes.h"
 #include "llvm/IR/IRBuilder.h"
@@ -10,6 +17,38 @@
 #include "llvm/Support/Format.h"
 #include "llvm/Transforms/IPO/PassManagerBuilder.h"
 #include "llvm/IR/LegacyPassManager.h"
+
+
+int get_urand(){
+    int rand_num = 0;
+    int randomData = open("/dev/urandom", O_RDONLY);
+    char myRandomData[8];
+    if (randomData < 0)
+    {
+        printf("Soemthing went wrong with rand");
+        exit(1);
+    }
+    else
+    {
+        size_t randomDataLen = 0;
+        while (randomDataLen < sizeof(myRandomData))
+        {
+            ssize_t result = read(randomData, myRandomData + randomDataLen, (sizeof(myRandomData)) - randomDataLen);
+            if (result < 0)
+            {
+                printf("Soemthing went wrong with rand");
+                exit(1);
+            }
+            randomDataLen += result;
+        }
+        close(randomData);
+    }
+
+    memcpy(&rand_num, myRandomData, sizeof(rand_num));
+    return rand_num;
+}
+
+
 
 
 using namespace llvm;
@@ -28,7 +67,8 @@ namespace {
       Type *retType = Type::getInt32Ty(Ctx);
       FunctionType *randType = FunctionType::get(retType, false);
       FunctionCallee randFunc = F.getParent()->getOrInsertFunction("get_rand", randType);
-
+      bool inserted_rand = false;
+      CallInst *ret;
       for (auto& B : F) {
         for (auto& I : B) {
           if (I.getOpcode() == Instruction::Alloca) {
@@ -38,8 +78,20 @@ namespace {
 
             // Insert a call to our function.
             // Value* args[] = {};
-            CallInst *ret = builder.CreateCall(randFunc);
+            ret = builder.CreateCall(randFunc);
+            inserted_rand = true;
             break;
+          }
+        }
+        if(inserted_rand)
+          break;
+      }
+
+      for (auto& B : F) {
+        for (auto& I : B) {
+          if (I.getOpcode() == Instruction::Alloca) {
+            std::vector<Instruction> allocas;
+            allocas.push_back(I);
           }
         }
       }
@@ -66,4 +118,4 @@ static RegisterStandardPasses
                  registerFastSmokePass);
 
 
-// static RegisterPass<fast_smoke> X("fast_smoke", "583 operation_statistics Pass");
+// static RegisterPass<fast_smoke> X("fast_smoke", "583 fast smoke Pass");
