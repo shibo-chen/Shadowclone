@@ -8,6 +8,9 @@
 #include "llvm/Support/BlockFrequency.h"
 #include "llvm/Support/BranchProbability.h"
 #include "llvm/Support/Format.h"
+#include "llvm/Transforms/IPO/PassManagerBuilder.h"
+#include "llvm/IR/LegacyPassManager.h"
+
 
 using namespace llvm;
 
@@ -21,19 +24,27 @@ namespace {
         // BlockFrequencyInfo& BFI = getAnalysis<BlockFrequencyInfoWrapperPass>().getBFI();
         // BranchProbabilityInfo& BPI = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
       LLVMContext& Ctx = F.getContext();
-      FunctionCallee rand = F.getParent()->getOrInsertFunction(
-        "get_rand", Type::getInt64Ty(Ctx));
+      // std::vector<Type*> paramTypes = {Type::getInt32Ty(Ctx)};
+      Type *retType = Type::getInt32Ty(Ctx);
+      FunctionType *randType = FunctionType::get(retType, false);
+      FunctionCallee randFunc = F.getParent()->getOrInsertFunction("get_rand", randType);
 
+      bool skip_next = false;
       for (auto& B : F) {
         for (auto& I : B) {
           if (I.getOpcode() == Instruction::Call) {
+            if(skip_next){
+              skip_next = false;
+              continue;
+            }
             // Insert *after* `op`.
             IRBuilder<> builder(&I);
             builder.SetInsertPoint(&B, ++builder.GetInsertPoint());
 
             // Insert a call to our function.
             // Value* args[] = {};
-            builder.CreateCall(rand);
+            builder.CreateCall(randFunc);
+            skip_next = true;
           }
         }
       }
@@ -47,6 +58,14 @@ namespace {
     }
   };
 }
-
 char fast_smoke::ID = 0;
-static RegisterPass<fast_smoke> X("fast-smoke", "584 Project Fast Smoke Pass");
+
+// Automatically enable the pass.
+// http://adriansampson.net/blog/clangpass.html
+static void registerFastSmokePass(const PassManagerBuilder &,
+                         legacy::PassManagerBase &PM) {
+  PM.add(new fast_smoke());
+}
+static RegisterStandardPasses
+  RegisterMyPass(PassManagerBuilder::EP_EarlyAsPossible,
+                 registerFastSmokePass);

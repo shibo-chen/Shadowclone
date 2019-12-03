@@ -1,11 +1,9 @@
-#include <cstdint>
-
-using namespace std;
+#include <stdint.h>
 
 #ifndef _RANDGEN_H
 #define _RANDGEN_H
 
-uint64_t get_rand();
-uint64_t get_urand();
+int get_rand();
+int get_urand();
 
 #endif

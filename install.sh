@@ -11,7 +11,7 @@ git clone git@github.com:llvm/llvm-project.git
 pushd llvm-project
 mkdir build
 cd build
-cmake  -DLLVM_ENABLE_PROJECTS="clang;compiler-rt" ../llvm
+cmake  -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld" ../llvm
 make -j4 # n is the number of thread
 popd
 popd

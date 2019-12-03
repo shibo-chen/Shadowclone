@@ -1,4 +1,4 @@
-#include <cstdint>
+#include <stdint.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h> 
@@ -6,10 +6,10 @@
 #include <string.h>
 #include "randGen.h"
 
+int get_rand(){
+    printf("rand being called");
 
-using namespace std;
-uint64_t get_rand(){
-    uint64_t rand_num = 0;
+    int rand_num = 0;
     int randomData = open("/dev/random", O_RDONLY);
     char myRandomData[8];
     if (randomData < 0)
@@ -32,13 +32,13 @@ uint64_t get_rand(){
         }
         close(randomData);
     }
-
+    printf("rand being called");
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
     return rand_num;
 }
 
-uint64_t get_urand(){
-    uint64_t rand_num = 0;
+int get_urand(){
+    int rand_num = 0;
     int randomData = open("/dev/urandom", O_RDONLY);
     char myRandomData[8];
     if (randomData < 0)
@@ -63,6 +63,7 @@ uint64_t get_urand(){
     }
 
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
+    printf("rand being called");
     return rand_num;
 }
 
