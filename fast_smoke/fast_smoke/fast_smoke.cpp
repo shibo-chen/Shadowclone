@@ -29,22 +29,17 @@ namespace {
       FunctionType *randType = FunctionType::get(retType, false);
       FunctionCallee randFunc = F.getParent()->getOrInsertFunction("get_rand", randType);
 
-      bool skip_next = false;
       for (auto& B : F) {
         for (auto& I : B) {
-          if (I.getOpcode() == Instruction::Call) {
-            if(skip_next){
-              skip_next = false;
-              continue;
-            }
+          if (I.getOpcode() == Instruction::Alloca) {
             // Insert *after* `op`.
             IRBuilder<> builder(&I);
-            builder.SetInsertPoint(&B, ++builder.GetInsertPoint());
+            builder.SetInsertPoint(&B, builder.GetInsertPoint());
 
             // Insert a call to our function.
             // Value* args[] = {};
-            builder.CreateCall(randFunc);
-            skip_next = true;
+            CallInst *ret = builder.CreateCall(randFunc);
+            break;
           }
         }
       }
@@ -69,3 +64,6 @@ static void registerFastSmokePass(const PassManagerBuilder &,
 static RegisterStandardPasses
   RegisterMyPass(PassManagerBuilder::EP_EarlyAsPossible,
                  registerFastSmokePass);
+
+
+// static RegisterPass<fast_smoke> X("fast_smoke", "583 operation_statistics Pass");

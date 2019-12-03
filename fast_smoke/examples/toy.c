@@ -4,7 +4,7 @@ int func1(){
     char a = 10;
     char buf[20];
     int b = 2;
-    printf("a-b");
+    printf("a-b\n");
     return a+b;
 }
 
@@ -12,12 +12,13 @@ int func2(){
     char a = 10;
     char buf[20];
     int b = 2;
-    printf("a+b");
+    printf("a+b\n");
     return a+b;
 }
 
 int main(){
     int j = 0;
+    j = func1();
     j = func2();
     printf("The result is:%d\n",j);
 }

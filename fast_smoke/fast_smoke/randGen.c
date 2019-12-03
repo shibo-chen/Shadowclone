@@ -7,8 +7,6 @@
 #include "randGen.h"
 
 int get_rand(){
-    printf("rand being called");
-
     int rand_num = 0;
     int randomData = open("/dev/random", O_RDONLY);
     char myRandomData[8];
@@ -32,7 +30,7 @@ int get_rand(){
         }
         close(randomData);
     }
-    printf("rand being called");
+    printf("rand being called\n");
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
     return rand_num;
 }
@@ -63,7 +61,7 @@ int get_urand(){
     }
 
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
-    printf("rand being called");
+    printf("rand being called\n");
     return rand_num;
 }
 

@@ -1,5 +1,5 @@
 PATH_TO_BENCHMARK=$(pwd)/examples
-NAME_MYPASS=-fast-smoke                                       ### Action Required: Specify the name for your pass ###
+NAME_MYPASS=-fast_smoke                                       ### Action Required: Specify the name for your pass ###
 PATH_MYPASS=$(pwd)/build/fast_smoke/FASTSMOKE.so ### Action Required: Specify the path to your pass ###
 BENCH=$1
 LIB=$(pwd)/build/fast_smoke/librandGen.o
@@ -10,11 +10,11 @@ cmake ..
 make -j8
 popd
 
-# # First Compile to Bytecode
-# clang -emit-llvm -o ${PATH_TO_BENCHMARK}/$BENCH.bc -c ${PATH_TO_BENCHMARK}/$BENCH.c
+# First Compile to Bytecode
+clang -emit-llvm -o ${PATH_TO_BENCHMARK}/$BENCH.bc -c ${PATH_TO_BENCHMARK}/$BENCH.c
 
-# # Apply Optimization
-# opt -o ${PATH_TO_BENCHMARK}/${BENCH}.fs.bc -load ${PATH_MYPASS} ${NAME_MYPASS} < ${PATH_TO_BENCHMARK}/${1}.bc
+# Apply Optimization
+opt -o ${PATH_TO_BENCHMARK}/${BENCH}.fs.bc -load ${PATH_MYPASS} ${NAME_MYPASS} < ${PATH_TO_BENCHMARK}/${1}.bc
 
 # # Generete Binary for the original bytecode
 # clang ${PATH_TO_BENCHMARK}/$BENCH.bc -o ${EXECUTABLES}/${BENCH}.original.o
