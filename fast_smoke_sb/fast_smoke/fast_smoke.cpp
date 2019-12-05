@@ -13,6 +13,7 @@
 #include "llvm/Transforms/Utils/Cloning.h"
 #include "llvm/IR/ValueMap.h"
 #include "llvm/ADT/APInt.h"
+#include "llvm/IR/Instructions.h"
 #include <unordered_set>
 #include <string>
 #include <vector>
@@ -40,11 +41,17 @@ namespace {
 
         LLVMContext& Ctx = F.getContext();
         FunctionCallee cloned_func = F.getParent()->getOrInsertFunction(new_f->getName(),new_f->getFunctionType());
+        
+        ValueToValueMapTy VMap1;
+        Function* new_f2 = CloneFunction(&F,VMap1);
+        func_cloned.emplace(new_f2->getName().str());
+
+        FunctionCallee cloned_func2 = F.getParent()->getOrInsertFunction(new_f2->getName(),new_f2->getFunctionType());
         // Type *retType = Type::getInt32Ty(Ctx);
         // FunctionType *randType = FunctionType::get(retType, false);
         // FunctionCallee randFunc = F.getParent()->getOrInsertFunction("get_rand", randType);
         // bool inserted_rand = false;
-        // CallInst *ret;
+        CallInst *ret;
         for (auto& B : F) {
           for (auto& I : B) {
             if (I.getOpcode() == Instruction::Alloca) {
@@ -59,9 +66,32 @@ namespace {
               }
               llvm::ArrayRef<llvm::Value *> argsRef(putsArgs);
 
-              builder.CreateCall(cloned_func, argsRef);
+              ret = builder.CreateCall(cloned_func, argsRef);
+                            // builder.CreateCall(cloned_func2, argsRef);
+
+            }
+            if (I.getOpcode() == Instruction::Ret){
+              I.eraseFromParent();
+              ReturnInst::Create(Ctx,ret,&B);
             }
             break;
+          }
+        }
+
+
+        bool first_alloca = true;
+        for(auto& B: *new_f){
+          Instruction* first_alloca_inst;
+          for(auto& I: B ){
+            if (I.getOpcode() == Instruction::Alloca) {
+              if(first_alloca){
+                first_alloca = false;
+                first_alloca_inst = &I;
+              }else{
+                I.moveBefore(first_alloca_inst);
+                break;
+              }
+            }
           }
           break;
         }
