@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "randGen.h"
-
+#include "config.h"
 int get_rand(){
     int rand_num = 0;
     int randomData = open("/dev/random", O_RDONLY);
@@ -32,7 +32,7 @@ int get_rand(){
     }
     printf("rand being called\n");
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
-    return rand_num;
+    return rand_num % NUM_OF_VARIANCE;
 }
 
 int get_urand(){
@@ -62,6 +62,6 @@ int get_urand(){
 
     memcpy(&rand_num, myRandomData, sizeof(rand_num));
     printf("rand being called\n");
-    return rand_num;
+    return rand_num % NUM_OF_VARIANCE;
 }
 
