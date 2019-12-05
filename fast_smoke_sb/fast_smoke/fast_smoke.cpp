@@ -18,6 +18,7 @@
 #include "llvm/IR/Instructions.h"
 #include "llvm/ADT/StringRef.h"
 #include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/Constants.h"
 #include "config.h"
 using namespace llvm;
 
@@ -105,6 +106,11 @@ namespace {
               alloca_insts.emplace_back(&I);
             }
           }
+
+          // skip if there is only one alloca inst
+          if(alloca_insts.size()<=1)
+            continue;
+
           /*
           How the algorithm works:
           For each iteration, generates a random number 'n'
@@ -189,7 +195,7 @@ namespace {
         CallInst* rand_num_ret; // Used later as the return value
 
         // Construct randFunc Callee
-        Type *retType = Type::getInt32Ty(Ctx);
+        Type *retType = Type::getInt64Ty(Ctx);
         FunctionType *randType = FunctionType::get(retType, false);
         FunctionCallee randFunc = original_func_ptr->getParent()->getOrInsertFunction("get_rand", randType);
         
@@ -205,16 +211,22 @@ namespace {
 
         // And we will need NUM_OF_VARIANCE-2 more BBs as the host of conditional branch
         std::vector<BasicBlock*> control_block_ptrs;
-        std::vector<ICmpInst> 
+        std::vector<ICmpInst> conds;
         control_block_ptrs.emplace_back(rand_num_BB);
         for(int i = 0; i < NUM_OF_VARIANCE -2 ; ++i){
           control_block_ptrs.emplace_back(BasicBlock::Create(Ctx));
         }
 
         // Put icmp inst into the end of each control block first
-        for(int i =0; i < control_block_ptrs.size()-1; i++){
-
+        for(int i = 0; i < control_block_ptrs.size(); i++){
+          conds.emplace_back(ICmpInst(*control_block_ptrs[i],ICMP_EQ, rand_num_ret, ConstantInt::get(Type::getInt64Ty(Ctx),i)));
         }
+
+        for(int i = 0; i < control_block_ptrs.size()-1; i++){
+          BranchInst::Create(func_BBs[i],control_block_ptrs[i+1], &conds[i],control_block_ptrs[i]);
+        }
+
+        BranchInst::Create(*(func_BBs.begin()+(func_BBs.size()-2)), func_BBs.back(), &(conds[i].back()),control_block_ptrs.back());
       }
       errs() << "------------------ Step4 Complete --------------------\n";
 
