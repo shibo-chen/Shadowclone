@@ -1,8 +1,8 @@
-SRC_FILES := $(wildcard src/*.cpp)
-BIN := $(patsubst src/%.cpp, bin/%, $(SRC_FILES))
+SRC_FILES := $(wildcard src/*.c)
+BIN := $(patsubst src/%.c, bin/%, $(SRC_FILES))
 INPUT := $(wildcard input/*.in)
 OUTPUT := $(patsubst bin/%, output/%.out, $(BIN))
-cpp := g++
+cc := cc
 
 all: $(BIN)
 	@echo $(BIN)
@@ -15,9 +15,9 @@ clear:
 clean:
 	rm -rf output bin
 
-bin/%: src/%.cpp
+bin/%: src/%.c
 	mkdir -p $(dir $@)
-	$(cpp) $< -o $@
+	$(cc) $< -o $@
 
 output/%.out: bin/% input/%.in
 	mkdir -p $(dir $@)
