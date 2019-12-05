@@ -157,7 +157,7 @@ namespace {
         // sub-step1: transform all functions into BBs
         std::vector<llvm::BasicBlock*> func_BBs;
         for(auto& cloned_func_ptr: cloned_functions[func_name_str]){
-          errs()<< "Transforming function \'"<<<<"\'\n";
+          errs()<< "Transforming function \'"<<cloned_func_ptr->getName()<<"\'\n";
           BasicBlock* BB = BasicBlock::Create(Ctx);
 
           // Create Callee
@@ -181,12 +181,13 @@ namespace {
           ReturnInst::Create(Ctx,ret,BB);
 
           func_BBs.emplace_back(BB);
+          BB->insertInto(original_func_ptr);
           errs() << "Tranformed cloned function \'"<<cloned_func_ptr->getName()<<"\' into BB\n";
         }
 
         // sub-step2: Remove all BBs from the original function
-        for(auto& B: *original_func_ptr){
-          B.eraseFromParent();
+        while(!original_func_ptr->empty()){
+          original_func_ptr->front().eraseFromParent();
         }
         errs() << "Deleted all BBs from function \'"<<original_func_ptr->getName()<<"\'\n";
 
@@ -211,22 +212,30 @@ namespace {
 
         // And we will need NUM_OF_VARIANCE-2 more BBs as the host of conditional branch
         std::vector<BasicBlock*> control_block_ptrs;
-        std::vector<ICmpInst> conds;
+        std::vector<Value*> conds;
         control_block_ptrs.emplace_back(rand_num_BB);
         for(int i = 0; i < NUM_OF_VARIANCE -2 ; ++i){
           control_block_ptrs.emplace_back(BasicBlock::Create(Ctx));
+          control_block_ptrs.back()->insertInto(original_func_ptr);
         }
-
+        errs()<<"Insert control blocks into the functoin\n";
         // Put icmp inst into the end of each control block first
         for(int i = 0; i < control_block_ptrs.size(); i++){
-          conds.emplace_back(ICmpInst(*control_block_ptrs[i],ICMP_EQ, rand_num_ret, ConstantInt::get(Type::getInt64Ty(Ctx),i)));
+          IRBuilder<> builder(control_block_ptrs[i]);
+          builder.SetInsertPoint(control_block_ptrs[i]);
+          Value* condition = builder.CreateICmpEQ(rand_num_ret,ConstantInt::get(Type::getInt64Ty(Ctx),i));
+          conds.emplace_back(condition);
         }
+        errs()<<"Insert icmp into the control blocks\n";
 
         for(int i = 0; i < control_block_ptrs.size()-1; i++){
-          BranchInst::Create(func_BBs[i],control_block_ptrs[i+1], &conds[i],control_block_ptrs[i]);
+                  errs()<<"Created branch inst\n";
+          errs()<<"size of func_bb: "<<func_BBs.size()<<" "<<control_block_ptrs.size()<<" "<<conds.size()<<" "<<"\n";
+          BranchInst::Create(func_BBs[i],control_block_ptrs[i+1], conds[i],control_block_ptrs[i]);
         }
+        errs()<<"Created branch inst\n";
 
-        BranchInst::Create(*(func_BBs.begin()+(func_BBs.size()-2)), func_BBs.back(), &(conds[i].back()),control_block_ptrs.back());
+        BranchInst::Create(*(func_BBs.begin()+(func_BBs.size()-2)), func_BBs.back(), conds.back(),control_block_ptrs.back());
       }
       errs() << "------------------ Step4 Complete --------------------\n";
 
