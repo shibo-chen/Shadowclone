@@ -1,5 +1,6 @@
-#include "SafeStackColoring.h"
-#include "SafeStackLayout.h"
+#define DEBUG_TYPE "smokestack"
+//#include "SafeStackColoring.h"
+//#include "SafeStackLayout.h"
 #include "llvm/ADT/APInt.h"
 #include "llvm/ADT/ArrayRef.h"
 #include "llvm/ADT/SmallPtrSet.h"
@@ -53,44 +54,57 @@
 #include <cstdint>
 #include <string>
 #include <utility>
+#include <time.h>
 
 using namespace llvm;
-using namespace llvm::smokestack;
 
 namespace llvm{
 	STATISTIC(NumArgs, "Total number of arguments of function");
 	STATISTIC(NumAllocas, "Total number of allocas(exclude argument allocas)");
-}
+//}
 
-class SmokeStack{
-	Function &F;
+//namespace{
+    struct SmokeStack: public FunctionPass {
 
-	Type *StackPtryTy;
+        static char ID;
 
 	// Each stack frame must ensure that the stack
 	// is alignment to this value
 	enum {StackAlignment = 16};	
 
+        SmokeStack() : FunctionPass(ID) {
+            
+        }
 	// Find all static allocas, dynamic allocas
-	void findInsts(Function &F,  SmallVectorImpl<AllocaInst *> &StaticAllocas,
-                  SmallVectorImpl<AllocaInst *> &DynamicAllocas, Instruction *endofArgAllocaPtr);
+	void findInsts(Function &F,  SmallVector<AllocaInst *, 16>  StaticAllocas,
+                  SmallVector<AllocaInst *, 16>  DynamicAllocas, Instruction *endofArgAllocaPtr);
 
 
 	// Calculate the allocation size of a given alloca. Returns 0 if the
    	// size can not be statically determined.
-   	uint64_t getStaticAllocaAllocationSize(const AllocaInst* AI);
+   	//uint64_t getStaticAllocaAllocationSize(const AllocaInst* AI);
 
-   	void hoistAllocaInst(Instructions *I, Instruct);
+   	//void randomAllocas(Function &F,  SmallVector<AllocaInst *, 16>  StaticAllocas,
+        //          SmallVector<AllocaInst *, 16>  DynamicAllocas, Instruction *endofArg
+        //          );
+   	void randomAllocas(Function &F);
 
-   	void randomAllocas(Function &F,  SmallVectorImpl<AllocaInst *> &StaticAllocas,
-                  SmallVectorImpl<AllocaInst *> &DynamicAllocas, Instruction *endofArg
-                  );
+        void hoistAllocaInst(Function &F,  SmallVector<AllocaInst *, 16>  StaticAllocas,
+                  SmallVector<AllocaInst *, 16>  DynamicAllocas, Instruction *endofArg);
 
-    public:
+        virtual bool runOnFunction(Function &F) override{
+            errs () << "SmokeStack\n";
+            //findInsts(F, StaticAllocas, DynamicAllocas, endofArg);
+	    //hoistAllocaInst(F, StaticAllocas, DynamicAllocas, endofArg);
+	    randomAllocas(F);
+
+            return false;
+        }
 
 
 };
-
+} // namespace llvm
+/*
 uint64_t SmokeStack::getStaticAllocaAllocationSize(const AllocaInst* AI) {
 	uint64_t Size = DL.getTypeAllocSize(AI->getTypeAllocType());
 	if(AI->isArrayAllocation()) {
@@ -102,37 +116,45 @@ uint64_t SmokeStack::getStaticAllocaAllocationSize(const AllocaInst* AI) {
 		Size = Size * C->getZExtValue();
 	}
 
-};
-void SmokeStack::findInsts(Function &F,  SmallVectorImpl<AllocaInst *> &StaticAllocas,
-                  SmallVectorImpl<AllocaInst *> &DynamicAllocas, Instruction *endofArgAllocaPtr){
+};*/
+void llvm::SmokeStack::findInsts(Function &F,  SmallVector<AllocaInst *, 16>  StaticAllocas,
+                  SmallVector<AllocaInst *, 16>  DynamicAllocas, Instruction *endofArgAllocaPtr){
 	// find arguments of function F, don't touch them
 	//Instruction *endofArgAllocaPtr;
 	for(Function::arg_iterator I = (&F)->arg_begin(),
-								E = (&F)->arg_end(); I != E; i++){
+	    E = (&F)->arg_end(); I != E; I++){
 		++NumArgs;
 	}
+        //errs() << "NumArgs: " << NumArgs << "\n";
+        int i=0;
 	for(Instruction &I : instructions(&F)){
-		if(auto AI = dyn_cast<AllocaInst>(&I)){
-			if(AI->inStaticAlloca()){
-				i++;
-				if(i>=NumArgs){
-					StaticAllocas.push_back(AI);
-					++NumAllocas;
-				}
-				else{
-					DynamicAllocas.push_back(AI);
-					++NumAllocas;
-					endofArgAllocaPtr = &I;
-				}
-			}
-		}
-	}
+            //errs() << I << "\n";
+	    if(auto AI = dyn_cast<AllocaInst>(&I)){
+                //errs() << AI << "is AllocaInst\n";
+		if(AI->isStaticAlloca()){
+                    //errs() << "is static Alloca\n" ;
+                    if(i>=NumArgs){
+                        StaticAllocas.push_back(AI);
+                    }
+                    else{
+                        endofArgAllocaPtr = &I;
+                    }
+                }
+                else{
+                    DynamicAllocas.push_back(AI);
+                    //errs() << "is dynamic Alloca\n" ;
+                }
+                i++;
+                ++NumAllocas;
+            }
+        }
+
 }
 
 
 // move all Alloca instruction to the end of Arg allocas
-void SmokeStack::hoistAllocaInst(Function &F,  SmallVectorImpl<AllocaInst *> &StaticAllocas,
-                  SmallVectorImpl<AllocaInst *> &DynamicAllocas, Instruction *endofArg)
+void llvm::SmokeStack::hoistAllocaInst(Function &F,  SmallVector<AllocaInst *, 16>  StaticAllocas,
+                  SmallVector<AllocaInst *, 16>  DynamicAllocas, Instruction *endofArg)
 {
 	for(AllocaInst *AI : StaticAllocas){
 		//moveInstAfter(AI, Dest);
@@ -140,27 +162,76 @@ void SmokeStack::hoistAllocaInst(Function &F,  SmallVectorImpl<AllocaInst *> &St
 	}
 }
 
-void SmokeStack::randomAllocas(Function &F,  SmallVectorImpl<AllocaInst *> &StaticAllocas,
-                  SmallVectorImpl<AllocaInst *> &DynamicAllocas, Instruction *endofArg
+void llvm::SmokeStack::randomAllocas(Function &F
                   ){
+	    SmallVector<AllocaInst *, 16> StaticAllocas;
+            SmallVector<AllocaInst *, 16> DynamicAllocas;
+            Instruction *endofArgAllocaPtr;
+	// find arguments of function F, don't touch them
+	//Instruction *endofArgAllocaPtr;
+	for(Function::arg_iterator I = (&F)->arg_begin(),
+	    E = (&F)->arg_end(); I != E; I++){
+		++NumArgs;
+	}
+        //errs() << "NumArgs: " << NumArgs << "\n";
+        int i=0;
+	for(Instruction &I : instructions(&F)){
+            //errs() << I << "\n";
+	    if(auto AI = dyn_cast<AllocaInst>(&I)){
+                //errs() << AI << "is AllocaInst\n";
+		if(AI->isStaticAlloca()){
+                    //errs() << "is static Alloca\n" ;
+                    if(i>NumArgs){
+                        StaticAllocas.push_back(AI);
+                    }
+                    else if(i==NumArgs){
+                        endofArgAllocaPtr = &I;
+                        StaticAllocas.push_back(AI);
+                    }
+                }
+                else{
+                    DynamicAllocas.push_back(AI);
+                    //errs() << "is dynamic Alloca\n" ;
+                }
+                i++;
+                ++NumAllocas;
+            }
+        }
+
+        errs() << "endofArgAllocaPtr: " << *endofArgAllocaPtr;
+        errs() << "StaticAllocas: \n";
+        for(AllocaInst *I:StaticAllocas){
+            errs() << *I << "\n";
+        }
+
+	for(AllocaInst *AI : StaticAllocas){
+		//moveInstAfter(AI, Dest);
+		AI->moveBefore(endofArgAllocaPtr);
+	}
+
+        errs() << "after move\n";
+        for(Instruction &I: instructions(&F)){
+            errs() << I << "\n";
+        }
+
 	for(int i=0; i < StaticAllocas.size(); i++){
-		srand(time(0));
-		int swap_random_index = rand(i) % StaticAllocas.size();
+		//srand(time(0));
+                srand(i);
+		int swap_random_index = rand() % StaticAllocas.size();
+                errs() << "swap " << i << "with " << swap_random_index << "\n";
 		if(i != swap_random_index){
-			const Instruction *swapFirstBeforePtr = StaticAllocas[i]->getPrevNode();
-			const Instruction *swapSecondBeforePtr = StaticAllocas[swap_random_index]->getPrevNode();
-			StaticAllocas[i]->moveAfter(swapSecondBeforePtr);
-			StaticAllocas[swap_random_index]->moveAfter(swapFirstBeforePtr);
+			Instruction *swapFirstAfterPtr = StaticAllocas[i]->getNextNode();
+			Instruction *swapSecondAfterPtr = StaticAllocas[swap_random_index]->getNextNode();
+			StaticAllocas[i]->moveBefore(swapSecondAfterPtr);
+			StaticAllocas[swap_random_index]->moveBefore(swapFirstAfterPtr);
 		}
 	}
+        errs() << "after randomization\n";
+        for(Instruction &I: instructions(&F)){
+            errs() << I << "\n";
+        }
 }
 
-void SmokeStack::randomAllocasinFunction(Function &F){
 
-	SmallVectorImpl<AllocaInst *> &StaticAllocas;
-    SmallVectorImpl<AllocaInst *> &DynamicAllocas;
-    Instruction *endofArg;
-	findInsts(F, StaticAllocas, DynamicAllocas);
-	hoistAllocaInst(F, StaticAllocas, DynamicAllocas, endofArg);
-	randomAllocas(F, StaticAllocas, DynamicAllocas, endofArg);
-}
+char llvm::SmokeStack::ID = 0;
+static RegisterPass<SmokeStack> X("SmokeStack", "SmokeStack randomize alloca instructions");

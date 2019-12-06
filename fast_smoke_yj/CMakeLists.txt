@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.4.3)
+set (CMAKE_INSTALL_PREFIX /data1/panyj/)
 find_package(LLVM REQUIRED CONFIG)                        # This will find the shared LLVM build.
 list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")        # You don't need to change ${LLVM_CMAKE_DIR} since it is already defined.
 include(AddLLVM)
