@@ -9,10 +9,11 @@ git clone git@github.com:llvm/llvm-project.git
 
 #install
 pushd llvm-project
+git checkout release/9.x
 mkdir build
 cd build
 cmake  -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld" ../llvm
-make -j4 # n is the number of thread
+make -j16 # n is the number of thread
 popd
 popd
 

@@ -153,12 +153,35 @@ namespace {
         StringRef func_name = StringRef(func_name_str);
         Function* original_func_ptr = M.getFunction(func_name);
         LLVMContext& Ctx = original_func_ptr->getContext();
+        
+        
+        // sub-step1: Remove all BBs from the original function
+        while(!original_func_ptr->empty()){
+          original_func_ptr->front().eraseFromParent();
+        }
+        errs() << "Deleted all BBs from function \'"<<original_func_ptr->getName()<<"\'\n";
 
-        // sub-step1: transform all functions into BBs
+         // sub-step2: Generate random number
+        BasicBlock* rand_num_BB = BasicBlock::Create(Ctx, "rand_bb", original_func_ptr); // BB that contains the rand_num
+        CallInst* rand_num_ret; // Used later as the return value
+
+        // Construct randFunc Callee
+        Type *retType = Type::getInt64Ty(Ctx);
+        FunctionType *randType = FunctionType::get(retType, false);
+        FunctionCallee randFunc = original_func_ptr->getParent()->getOrInsertFunction("get_rand", randType);
+        
+        IRBuilder<> builder(rand_num_BB);
+        builder.SetInsertPoint(rand_num_BB);
+        // Create the call and get the return value
+        rand_num_ret = builder.CreateCall(randFunc);
+        errs() << "Created get_rand func in the BB\n";
+
+        // sub-step3: transform all functions into BBs
         std::vector<llvm::BasicBlock*> func_BBs;
         for(auto& cloned_func_ptr: cloned_functions[func_name_str]){
+
           errs()<< "Transforming function \'"<<cloned_func_ptr->getName()<<"\'\n";
-          BasicBlock* BB = BasicBlock::Create(Ctx);
+          BasicBlock* BB = BasicBlock::Create(Ctx, "func_"+cloned_func_ptr->getName().str(), original_func_ptr);
 
           // Create Callee
           FunctionCallee FCL = original_func_ptr->getParent()->getOrInsertFunction(cloned_func_ptr->getName(), cloned_func_ptr->getFunctionType());
@@ -181,42 +204,18 @@ namespace {
           ReturnInst::Create(Ctx,ret,BB);
 
           func_BBs.emplace_back(BB);
-          BB->insertInto(original_func_ptr);
           errs() << "Tranformed cloned function \'"<<cloned_func_ptr->getName()<<"\' into BB\n";
         }
 
-        // sub-step2: Remove all BBs from the original function
-        while(!original_func_ptr->empty()){
-          original_func_ptr->front().eraseFromParent();
-        }
-        errs() << "Deleted all BBs from function \'"<<original_func_ptr->getName()<<"\'\n";
-
-        // sub-step3: Generate random number
-        BasicBlock* rand_num_BB = BasicBlock::Create(Ctx); // BB that contains the rand_num
-        CallInst* rand_num_ret; // Used later as the return value
-
-        // Construct randFunc Callee
-        Type *retType = Type::getInt64Ty(Ctx);
-        FunctionType *randType = FunctionType::get(retType, false);
-        FunctionCallee randFunc = original_func_ptr->getParent()->getOrInsertFunction("get_rand", randType);
-        
-        IRBuilder<> builder(rand_num_BB);
-        builder.SetInsertPoint(rand_num_BB);
-        // Create the call and get the return value
-        rand_num_ret = builder.CreateCall(randFunc);
-        errs() << "Created get_rand func in the BB\n";
-
         // sub-step4: reconstruct the control flow
         errs() << "Insert rand_num_bb to the begining of the function\n";
-        rand_num_BB->insertInto(original_func_ptr);
 
         // And we will need NUM_OF_VARIANCE-2 more BBs as the host of conditional branch
         std::vector<BasicBlock*> control_block_ptrs;
         std::vector<Value*> conds;
         control_block_ptrs.emplace_back(rand_num_BB);
         for(int i = 0; i < NUM_OF_VARIANCE -2 ; ++i){
-          control_block_ptrs.emplace_back(BasicBlock::Create(Ctx));
-          control_block_ptrs.back()->insertInto(original_func_ptr);
+          control_block_ptrs.emplace_back(BasicBlock::Create(Ctx,"ctrl"+std::to_string(i), original_func_ptr));
         }
         errs()<<"Insert control blocks into the functoin\n";
         // Put icmp inst into the end of each control block first
@@ -229,9 +228,12 @@ namespace {
         errs()<<"Insert icmp into the control blocks\n";
 
         for(int i = 0; i < control_block_ptrs.size()-1; i++){
-                  errs()<<"Created branch inst\n";
-          errs()<<"size of func_bb: "<<func_BBs.size()<<" "<<control_block_ptrs.size()<<" "<<conds.size()<<" "<<"\n";
-          BranchInst::Create(func_BBs[i],control_block_ptrs[i+1], conds[i],control_block_ptrs[i]);
+          IRBuilder<> builder(control_block_ptrs[i]);
+          builder.SetInsertPoint(control_block_ptrs[i]);
+          Value* val = conds[i];
+          BasicBlock* iftrue = func_BBs[i];
+          BasicBlock* iffalse = control_block_ptrs[i+1];
+          builder.CreateCondBr(val, iftrue, iffalse);
         }
         errs()<<"Created branch inst\n";
 
