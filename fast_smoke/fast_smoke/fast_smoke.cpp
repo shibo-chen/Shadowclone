@@ -193,6 +193,58 @@ namespace {
             alloca_insts[crnt_config[i]]->moveBefore(alloca_insts[crnt_config[i+1]]);
           }
           configs.pop_back();
+
+          //Insert canary
+          unsigned int insert_loc = rand()%alloca_insts.size();
+          int rand_val = rand();
+          Type* I = IntegerType::getInt64Ty(M.getContext());
+          Constant* constant_val = ConstantInt::get(I, rand_val);
+          IRBuilder<> forAllocaBuilder(alloca_insts[insert_loc]);
+          AllocaInst* canary = forAllocaBuilder.CreateAlloca(I,0,0,"canary");
+          IRBuilder<> forStoreBuilder(alloca_insts[insert_loc]);
+          StoreInst* st = forStoreBuilder.CreateStore(constant_val, canary);
+
+          std::vector<BasicBlock*> ret_blocks;
+          for(auto& BB: *F_ptr){
+            for(auto& I: BB){
+              if (ReturnInst *RI = dyn_cast<ReturnInst>(&I)){
+                ret_blocks.push_back(&BB);
+              }
+            }
+          }
+          // Insert checks
+          errs()<<"BB size: "<<ret_blocks.size()<<"\n";
+          for(auto& BB: ret_blocks){
+            for(auto& I: *BB){
+              if (ReturnInst *RI = dyn_cast<ReturnInst>(&I)){// Before every return address
+                IRBuilder<> forLoadBuilder(alloca_insts[insert_loc]);
+                LoadInst* ld = forLoadBuilder.CreateLoad(IntegerType::getInt64Ty(M.getContext()), canary);
+
+                // Split the block
+                BasicBlock* ret_blk = BB->splitBasicBlock(RI);
+
+                BB->back().eraseFromParent();
+                // Create the new block and create the function call
+                BasicBlock* BB_exit = BasicBlock::Create(M.getContext(), "func_exit", F_ptr);
+                Type *voidType = Type::getVoidTy(M.getContext());
+                FunctionType *exitFuncType = FunctionType::get(voidType, false);
+                FunctionCallee exitFunc = F_ptr->getParent()->getOrInsertFunction("detect_breach",exitFuncType);
+
+                IRBuilder<> builder(BB_exit);
+                builder.SetInsertPoint(BB_exit);
+                builder.CreateCall(exitFunc);
+
+                // Loop back to ret as terminator
+                BranchInst::Create(ret_blk, BB_exit);
+
+                // Add check and the branch
+                IRBuilder<> forcmpBuilder(BB);
+                Value* compare = forcmpBuilder.CreateICmpEQ(ld,constant_val);
+                BranchInst::Create(ret_blk, BB_exit, compare, BB);
+                break;
+              }
+            }
+          }
         }
       }
       errs() << "------------------ Step3 Complete --------------------\n";

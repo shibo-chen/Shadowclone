@@ -5,5 +5,5 @@
 
 int get_rand();
 int get_urand();
-
+void detect_breach();
 #endif

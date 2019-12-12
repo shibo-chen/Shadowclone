@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h> 
+#include <stdlib.h>
 #include "randGen.h"
 #include "config.h"
 int get_rand(){
@@ -29,3 +30,7 @@ int get_urand(){
     return rand_num % NUM_OF_VARIANCE;
 }
 
+void detect_breach(){
+    printf("Breach detected!\n");
+    exit(1);
+}
