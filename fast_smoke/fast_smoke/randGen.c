@@ -4,64 +4,28 @@
 #include <stdlib.h> 
 #include <stdio.h>
 #include <string.h>
+#include <time.h> 
 #include "randGen.h"
-
+#include "config.h"
 int get_rand(){
-    int rand_num = 0;
-    int randomData = open("/dev/random", O_RDONLY);
-    char myRandomData[8];
-    if (randomData < 0)
-    {
-        printf("Soemthing went wrong with rand");
-        exit(1);
-    }
-    else
-    {
-        size_t randomDataLen = 0;
-        while (randomDataLen < sizeof(myRandomData))
-        {
-            ssize_t result = read(randomData, myRandomData + randomDataLen, (sizeof(myRandomData)) - randomDataLen);
-            if (result < 0)
-            {
-                printf("Soemthing went wrong with rand");
-                exit(1);
-            }
-            randomDataLen += result;
-        }
-        close(randomData);
-    }
-    printf("rand being called\n");
-    memcpy(&rand_num, myRandomData, sizeof(rand_num));
-    return rand_num;
+    srand(time(0));
+    int rand_num = rand();
+    return rand_num % NUM_OF_VARIANCE;
 }
+
+int rdrand64_step (uint64_t *rand)
+{
+    unsigned char ok;
+    asm volatile ("rdrand %0; setc %1"
+        : "=r" (*rand), "=qm" (ok));
+    return (int) ok;
+}
+
 
 int get_urand(){
     int rand_num = 0;
-    int randomData = open("/dev/urandom", O_RDONLY);
-    char myRandomData[8];
-    if (randomData < 0)
-    {
-        printf("Soemthing went wrong with rand");
-        exit(1);
-    }
-    else
-    {
-        size_t randomDataLen = 0;
-        while (randomDataLen < sizeof(myRandomData))
-        {
-            ssize_t result = read(randomData, myRandomData + randomDataLen, (sizeof(myRandomData)) - randomDataLen);
-            if (result < 0)
-            {
-                printf("Soemthing went wrong with rand");
-                exit(1);
-            }
-            randomDataLen += result;
-        }
-        close(randomData);
-    }
-
-    memcpy(&rand_num, myRandomData, sizeof(rand_num));
-    printf("rand being called\n");
-    return rand_num;
+    while(!rdrand64_step((uint64_t*)&rand_num) );
+   
+    return rand_num % NUM_OF_VARIANCE;
 }
 

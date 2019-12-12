@@ -1,106 +1,324 @@
-#include <stdint.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h> 
-#include <stdio.h>
-#include <string.h>
+#include <time.h> 
+#include <unordered_set>
+#include <unordered_map>
+#include <string>
 #include <vector>
-#include "llvm/IR/Function.h"
+#include "llvm/IR/Module.h"
 #include "llvm/IR/DerivedTypes.h"
 #include "llvm/IR/IRBuilder.h"
-#include "llvm/Analysis/BlockFrequencyInfo.h"
-#include "llvm/Analysis/BranchProbabilityInfo.h"
 #include "llvm/Pass.h"
 #include "llvm/Support/raw_ostream.h"
-#include "llvm/Support/BlockFrequency.h"
-#include "llvm/Support/BranchProbability.h"
 #include "llvm/Support/Format.h"
 #include "llvm/Transforms/IPO/PassManagerBuilder.h"
 #include "llvm/IR/LegacyPassManager.h"
-
-
-int get_urand(){
-    int rand_num = 0;
-    int randomData = open("/dev/urandom", O_RDONLY);
-    char myRandomData[8];
-    if (randomData < 0)
-    {
-        printf("Soemthing went wrong with rand");
-        exit(1);
-    }
-    else
-    {
-        size_t randomDataLen = 0;
-        while (randomDataLen < sizeof(myRandomData))
-        {
-            ssize_t result = read(randomData, myRandomData + randomDataLen, (sizeof(myRandomData)) - randomDataLen);
-            if (result < 0)
-            {
-                printf("Soemthing went wrong with rand");
-                exit(1);
-            }
-            randomDataLen += result;
-        }
-        close(randomData);
-    }
-
-    memcpy(&rand_num, myRandomData, sizeof(rand_num));
-    return rand_num;
-}
-
-
-
-
+#include "llvm/Transforms/Utils/Cloning.h"
+#include "llvm/IR/ValueMap.h"
+#include "llvm/ADT/APInt.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/ADT/StringRef.h"
+#include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/Constants.h"
+#include "config.h"
 using namespace llvm;
 
+
 namespace {
-  struct fast_smoke : public FunctionPass {
+  struct fast_smoke : public ModulePass {
     static char ID; // Pass identification, replacement for typeid
-    fast_smoke() : FunctionPass(ID) {
+    fast_smoke() : ModulePass(ID) {
     }
 
-    bool runOnFunction(Function &F) override {
-        // BlockFrequencyInfo& BFI = getAnalysis<BlockFrequencyInfoWrapperPass>().getBFI();
-        // BranchProbabilityInfo& BPI = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
-      LLVMContext& Ctx = F.getContext();
-      // std::vector<Type*> paramTypes = {Type::getInt32Ty(Ctx)};
-      Type *retType = Type::getInt32Ty(Ctx);
-      FunctionType *randType = FunctionType::get(retType, false);
-      FunctionCallee randFunc = F.getParent()->getOrInsertFunction("get_rand", randType);
-      bool inserted_rand = false;
-      CallInst *ret;
-      for (auto& B : F) {
-        for (auto& I : B) {
-          if (I.getOpcode() == Instruction::Alloca) {
-            // Insert *after* `op`.
-            IRBuilder<> builder(&I);
-            builder.SetInsertPoint(&B, builder.GetInsertPoint());
+    bool runOnModule(Module &M) override {
 
-            // Insert a call to our function.
-            // Value* args[] = {};
-            ret = builder.CreateCall(randFunc);
-            inserted_rand = true;
-            break;
+      std::unordered_set<std::string> functions_need_smoke_set;
+      std::vector<std::string> functions_need_smoke_vec;
+      std::unordered_set<std::string> func_cloned;
+      std::unordered_map<std::string, unsigned int> num_of_clones;
+      std::unordered_map<std::string, unsigned int> num_of_allocas_vec;
+      std::unordered_map<std::string, std::vector<llvm::Function*>> cloned_functions; // A collection from the name of orginal function to cloned functions
+
+      std::vector<ValueToValueMapTy*> vmap_ptrs;
+
+      /*
+        Step0 Print out some meta data
+      */
+      errs()<<"WE WILL GENERATE AT MOST "<< NUM_OF_VARIANCE <<" VARIANCES FOR EACH FUNCTION IN THIS RUN\n";
+
+      /*
+        Step1 Collect information about the functions
+      */
+      errs() << "\n------------------ Step1 Start --------------------\n";
+      for(auto& F: M){
+
+        // If this is main function or it is not defined in this module, skip it
+        if(F.getInstructionCount()<=0 || F.getName().str()=="main"){
+          errs() << "Function \'"<< F.getName() <<"\' is either main function or not defined in this module. Skip!\n";
+          continue;
+        }
+
+        // Collect the num of allocas
+        unsigned int num_of_allocas = 0;
+        for(auto& I: F.front()){ // Iterate all instructions in the first BB
+          if (I.getOpcode() == Instruction::Alloca) {
+            num_of_allocas ++;
           }
         }
-        if(inserted_rand)
-          break;
-      }
 
-      for (auto& B : F) {
-        for (auto& I : B) {
-          if (I.getOpcode() == Instruction::Alloca) {
-            std::vector<Instruction> allocas;
-            allocas.push_back(I);
+        if(num_of_allocas < 2){ // If there are only one or two allocas, no point of continue
+          continue;
+        }
+
+        num_of_allocas_vec[F.getName().str()]  = num_of_allocas;
+        unsigned int max_num_variances = 1;
+        for(unsigned int i =1; i<= num_of_allocas;++i ){
+          unsigned int tmp = max_num_variances*i; // This is to prevent overflow
+          if(tmp < max_num_variances){
+            break; // Since we already have this many variants, break
+          }
+          else{
+            max_num_variances = tmp;
           }
         }
+        printf("num of max:%d\n",max_num_variances);
+        num_of_clones[F.getName().str()] = NUM_OF_VARIANCE > max_num_variances? max_num_variances : NUM_OF_VARIANCE;
+        functions_need_smoke_set.emplace(F.getName().str()); // Collect the names of all functions need smoke
+        functions_need_smoke_vec.emplace_back(F.getName().str()); // Collect the names of all functions need smoke
+        cloned_functions[F.getName().str()]; // Initialize our map
+        errs() << "Function \'"<< F.getName() <<"\' will be smoked "<<num_of_clones[F.getName().str()]<<" times!\n";
       }
+      errs() << functions_need_smoke_set.size() << " functions need smoke!\n";
+      errs() << "------------------ Step1 Complete --------------------\n";
+
+      /*
+        Step2 Clone functions for num_of_clones times. Since we don't want our function instances to lay together, we randomly select which to clone for each iteration
+      */
+      errs() << "\n------------------ Step2 Start --------------------\n";
+      unsigned int num_func_remaining = functions_need_smoke_set.size();
+
+      srand(time(0)); // Seed the rand with time first
+      while(num_func_remaining!=0){ // While there is still func need to be cloned
+        StringRef func_name = StringRef(functions_need_smoke_vec[rand()% functions_need_smoke_vec.size()]);
+        if(cloned_functions[func_name.str()].size() >= num_of_clones[func_name.str()]) //If we have already generated enough variances for this function
+          continue;
+        
+        Function* original_func_ptr = M.getFunction(func_name); // Get the function we want to clone
+        ValueToValueMapTy* VMap = new ValueToValueMapTy; // Declare a vmap for each cloned function
+        vmap_ptrs.emplace_back(VMap); //Collect these pointers in order to clean them up later
+        cloned_functions[func_name].emplace_back(CloneFunction(original_func_ptr, *VMap)); // place the ptr to the cloned function in the data structure
+
+        errs() << "Generated one cloned instance for function \'"<<func_name<<"\'. There are "<<cloned_functions[func_name.str()].size() <<" copies in total!\n";
+
+        if(cloned_functions[func_name.str()].size() == num_of_clones[func_name.str()] ){ // If this func has enough variances, we are done for it
+          -- num_func_remaining;
+        }
+      }
+
+      errs() << "------------------ Step2 Complete --------------------\n";
+
+
+      
+      /*
+        Step3 Randomize the layout of the stack for each cloned instance
+      */
+      errs() << "\n------------------ Step3 Start --------------------\n";
+      for(auto& func_name_str: functions_need_smoke_vec){ // Iterate based on the original function
+        StringRef func_name = StringRef(func_name_str);
+        std::vector<std::vector<unsigned int>> configs;
+
+        // Generate Different configs
+        while (configs.size() < num_of_clones[func_name_str])
+        {
+          std::vector<unsigned int> crnt_config;
+          std::vector<unsigned int> alloca_pool;
+          for (unsigned int i = 0; i < num_of_allocas_vec[func_name_str]; i++)
+          {
+            alloca_pool.push_back(i);
+          }
+          
+          // Generate one random config
+          while (crnt_config.size() < num_of_allocas_vec[func_name_str])
+          {
+            unsigned int idx_of_sel = rand()% alloca_pool.size();
+            crnt_config.push_back(alloca_pool[idx_of_sel]);
+            alloca_pool.erase(alloca_pool.begin()+idx_of_sel);
+          }
+          
+          // Check for collision
+          bool collision = false;
+          for(auto& config: configs){
+            bool same = true;
+            for(unsigned int i = 0;i< config.size();i++){
+              if(config[i]!= crnt_config[i]){
+                same = false;
+                break;
+              }
+            }
+            if(same){
+              collision = true;
+              break;
+            }
+          }
+
+          if(collision){
+            continue;
+          }
+          else{
+              configs.emplace_back(crnt_config);
+          }
+          
+        }
+        for(auto F_ptr: cloned_functions[func_name_str]){ // Iterate all cloned functions
+          errs()<<"Randomizing function\'"<<F_ptr->getName()<<"\'\n";
+          std::vector<Instruction*> alloca_insts;
+          for(auto& I: F_ptr->front()){ // Iterate all instructions in the first BB
+            if (I.getOpcode() == Instruction::Alloca) { // Collect all alloca instr
+              alloca_insts.emplace_back(&I);
+            }
+          }
+
+          // skip if there is only one alloca inst
+          if(alloca_insts.size()<=1)
+            continue;
+
+          /*
+          How the algorithm works:
+          For each iteration, choose a config and place as it is
+          */
+          std::vector<unsigned int> crnt_config = configs.back();
+
+          if(crnt_config.back() != 0)
+            alloca_insts[crnt_config.back()]->moveBefore(alloca_insts[0]);
+          for(int i = crnt_config.size() -2 ; i >= 0 ; --i){
+            alloca_insts[crnt_config[i]]->moveBefore(alloca_insts[crnt_config[i+1]]);
+          }
+          configs.pop_back();
+        }
+      }
+      errs() << "------------------ Step3 Complete --------------------\n";
+
+
+      /*
+        Step4 Transform the old function:
+        1). Transform all cloned functions into basicBlocks padded with return instruction
+        2). Remove all the obsolete basicBlocks from the original function
+        3). Insert random number generation logic
+        4). Reconstruct the control flow
+
+      */
+      errs() << "\n------------------ Step4 Start --------------------\n";
+      for(auto& func_name_str: functions_need_smoke_vec){ // Iterate based on the original function
+        StringRef func_name = StringRef(func_name_str);
+        Function* original_func_ptr = M.getFunction(func_name);
+        LLVMContext& Ctx = original_func_ptr->getContext();
+        
+        
+        // sub-step1: Remove all BBs from the original function
+        while(!original_func_ptr->empty()){
+          original_func_ptr->front().eraseFromParent();
+        }
+        errs() << "Deleted all BBs from function \'"<<original_func_ptr->getName()<<"\'\n";
+
+         // sub-step2: Generate random number
+        BasicBlock* rand_num_BB = BasicBlock::Create(Ctx, "rand_bb", original_func_ptr); // BB that contains the rand_num
+        CallInst* rand_num_ret; // Used later as the return value
+
+        // Construct randFunc Callee
+        Type *retType = Type::getInt64Ty(Ctx);
+        FunctionType *randType = FunctionType::get(retType, false);
+        FunctionCallee randFunc = original_func_ptr->getParent()->getOrInsertFunction("get_rand", randType);
+        
+        IRBuilder<> builder(rand_num_BB);
+        builder.SetInsertPoint(rand_num_BB);
+        // Create the call and get the return value
+        rand_num_ret = builder.CreateCall(randFunc);
+        errs() << "Created get_rand func in the BB\n";
+
+        // sub-step3: transform all functions into BBs
+        std::vector<llvm::BasicBlock*> func_BBs;
+        for(auto& cloned_func_ptr: cloned_functions[func_name_str]){
+
+          errs()<< "Transforming function \'"<<cloned_func_ptr->getName()<<"\'\n";
+          BasicBlock* BB = BasicBlock::Create(Ctx, "func_"+cloned_func_ptr->getName().str(), original_func_ptr);
+
+          // Create Callee
+          FunctionCallee FCL = original_func_ptr->getParent()->getOrInsertFunction(cloned_func_ptr->getName(), cloned_func_ptr->getFunctionType());
+
+          // Set insertion point: append to the end of the BB
+          IRBuilder<> builder(BB);
+          builder.SetInsertPoint(BB);
+
+          // Set up the arguments to pass in
+          std::vector<llvm::Value *> putsArgs;
+          for(auto& arg: original_func_ptr->args()){
+            putsArgs.push_back(&arg);
+          }
+          llvm::ArrayRef<llvm::Value *> argsRef(putsArgs);
+          
+          // Create the call and get the return value
+          CallInst* ret = builder.CreateCall(FCL, argsRef);
+
+          // Create the return inst at the end of the BB
+          ReturnInst::Create(Ctx,ret,BB);
+
+          func_BBs.emplace_back(BB);
+          errs() << "Tranformed cloned function \'"<<cloned_func_ptr->getName()<<"\' into BB\n";
+        }
+
+        // sub-step4: reconstruct the control flow
+        errs() << "Insert rand_num_bb to the begining of the function\n";
+
+        // And we will need num_of_clones-2 more BBs as the host of conditional branch
+        std::vector<BasicBlock*> control_block_ptrs;
+        std::vector<Value*> conds;
+        control_block_ptrs.emplace_back(rand_num_BB);
+        for(int i = 0; i < num_of_clones[func_name_str] -2 ; ++i){
+          control_block_ptrs.emplace_back(BasicBlock::Create(Ctx,"ctrl"+std::to_string(i), original_func_ptr));
+        }
+        errs()<<"Insert control blocks into the functoin\n";
+        // Put icmp inst into the end of each control block first
+        for(int i = 0; i < control_block_ptrs.size(); i++){
+          IRBuilder<> builder(control_block_ptrs[i]);
+          builder.SetInsertPoint(control_block_ptrs[i]);
+          Value* condition = builder.CreateICmpEQ(rand_num_ret,ConstantInt::get(Type::getInt64Ty(Ctx),i));
+          conds.emplace_back(condition);
+        }
+        errs()<<"Insert icmp into the control blocks\n";
+
+        for(int i = 0; i < control_block_ptrs.size()-1; i++){
+          IRBuilder<> builder(control_block_ptrs[i]);
+          builder.SetInsertPoint(control_block_ptrs[i]);
+          Value* val = conds[i];
+          BasicBlock* iftrue = func_BBs[i];
+          BasicBlock* iffalse = control_block_ptrs[i+1];
+          builder.CreateCondBr(val, iftrue, iffalse);
+        }
+        errs()<<"Created branch inst\n";
+
+        BranchInst::Create(*(func_BBs.begin()+(func_BBs.size()-2)), func_BBs.back(), conds.back(),control_block_ptrs.back());
+      }
+      errs() << "------------------ Step4 Complete --------------------\n";
+
+  
+
+      /*
+        Last step: clean up
+      */
+      errs() << "\n------------------ Cleanup Start --------------------\n";
+
+      // Clean up vmaps on the heap
+      for(auto& vmap_ptr: vmap_ptrs){
+        delete vmap_ptr;
+      }
+      errs()<<" Cleaned VMap!\n";
+
+      errs() << "------------------ Cleanup Complete --------------------\n";
+
       return false;
     }
 
     void getAnalysisUsage(AnalysisUsage &AU) const override{
-        // AU.addRequired<BlockFrequencyInfoWrapperPass>();
-        // AU.addRequired<BranchProbabilityInfoWrapperPass>();
+
         AU.setPreservesAll();
     }
   };
@@ -109,13 +327,9 @@ char fast_smoke::ID = 0;
 
 // Automatically enable the pass.
 // http://adriansampson.net/blog/clangpass.html
-static void registerFastSmokePass(const PassManagerBuilder &,
-                         legacy::PassManagerBase &PM) {
-  PM.add(new fast_smoke());
-}
-static RegisterStandardPasses
-  RegisterMyPass(PassManagerBuilder::EP_EarlyAsPossible,
-                 registerFastSmokePass);
+static RegisterPass<fast_smoke> X("fast_smoke", "583 fast smoke Pass");
 
-
-// static RegisterPass<fast_smoke> X("fast_smoke", "583 fast smoke Pass");
+static RegisterStandardPasses Y(
+    PassManagerBuilder::EP_EnabledOnOptLevel0,
+    [](const PassManagerBuilder &Builder,
+       legacy::PassManagerBase &PM) { PM.add(new fast_smoke()); });
