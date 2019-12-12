@@ -197,7 +197,7 @@ namespace {
           //Insert canary
           unsigned int insert_loc = rand()%alloca_insts.size();
           int rand_val = rand();
-          Type* I = IntegerType::getInt64Ty(M.getContext());
+          Type* I = IntegerType::getInt32Ty(M.getContext());
           Constant* constant_val = ConstantInt::get(I, rand_val);
           IRBuilder<> forAllocaBuilder(alloca_insts[insert_loc]);
           AllocaInst* canary = forAllocaBuilder.CreateAlloca(I,0,0,"canary");
@@ -218,7 +218,7 @@ namespace {
             for(auto& I: *BB){
               if (ReturnInst *RI = dyn_cast<ReturnInst>(&I)){// Before every return address
                 IRBuilder<> forLoadBuilder(alloca_insts[insert_loc]);
-                LoadInst* ld = forLoadBuilder.CreateLoad(IntegerType::getInt64Ty(M.getContext()), canary);
+                LoadInst* ld = forLoadBuilder.CreateLoad(IntegerType::getInt32Ty(M.getContext()), canary);
 
                 // Split the block
                 BasicBlock* ret_blk = BB->splitBasicBlock(RI);
@@ -276,7 +276,7 @@ namespace {
         CallInst* rand_num_ret; // Used later as the return value
 
         // Construct randFunc Callee
-        Type *retType = Type::getInt64Ty(Ctx);
+        Type *retType = Type::getInt32Ty(Ctx);
         FunctionType *randType = FunctionType::get(retType, false);
         FunctionCallee randFunc = original_func_ptr->getParent()->getOrInsertFunction("get_rand", randType);
         
@@ -332,7 +332,7 @@ namespace {
         for(int i = 0; i < control_block_ptrs.size(); i++){
           IRBuilder<> builder(control_block_ptrs[i]);
           builder.SetInsertPoint(control_block_ptrs[i]);
-          Value* condition = builder.CreateICmpEQ(rand_num_ret,ConstantInt::get(Type::getInt64Ty(Ctx),i));
+          Value* condition = builder.CreateICmpEQ(rand_num_ret,ConstantInt::get(Type::getInt32Ty(Ctx),i));
           conds.emplace_back(condition);
         }
         errs()<<"Insert icmp into the control blocks\n";
