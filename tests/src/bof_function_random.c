@@ -20,6 +20,7 @@ void func0(){
 
 void func1(){
     int var2 = 483;
+    uint32_t canary = 1092384;
     double var1 = 483.0;
     char buff[4];
     char var3 = 'e';
@@ -31,6 +32,9 @@ void func1(){
     printf("var3: %c\n", var3);
     printf("buff: %s\n", buff);
     printf("This is function func1.\n");
+    if (canary != 1092384){
+        exit(1);
+    }
 }
 
 void func2(){
@@ -48,15 +52,15 @@ void func2(){
     printf("This is function func2.\n");
 }
 
-static int NUM_FUNC = 3;
-static void (*FP_ARRAY[3])() = {func0, func1, func2};
-
 void func_wrapper(){
     int fp_index = rand() % NUM_FUNC;
-    assert(fp_index < NUM_FUNC);
-    assert(fp_index >= 0);
-    (*FP_ARRAY[fp_index])();
-    printf("This is function func_wrapper.\n");
+    if (fp_index == 0){
+        func0();
+    } else if (fp_index == 1){
+        func1();
+    } else {
+        func2();
+    }
 }
 
 void init_rand(){
