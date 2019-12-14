@@ -322,7 +322,12 @@ namespace {
           CallInst* ret = builder.CreateCall(FCL, argsRef);
 
           // Create the return inst at the end of the BB
-          ReturnInst::Create(Ctx,ret,BB);
+          Type* rt =cloned_func_ptr->getReturnType();
+
+          if(rt->isVoidTy())
+            ReturnInst::Create(Ctx,BB);
+          else
+            ReturnInst::Create(Ctx,ret,BB);
 
           func_BBs.emplace_back(BB);
           errs() << "Tranformed cloned function \'"<<cloned_func_ptr->getName()<<"\' into BB\n";
