@@ -25,6 +25,6 @@ popd
 # clang -c ${PATH_TO_BENCHMARK}/${BENCH}.fs.bc ${LIB} -o ${EXECUTABLES}/${BENCH}.fs.o
 
 cc -c fast_smoke/randGen.c -o ${LIB}
-clang -Xclang -load -Xclang ${PATH_MYPASS} -c ${PATH_TO_BENCHMARK}/${BENCH}.c -o ${PATH_TO_BENCHMARK}/${BENCH}.o
+clang -Xclang -load -Xclang ${PATH_MYPASS} -c -fPIC ${PATH_TO_BENCHMARK}/${BENCH}.c -o ${PATH_TO_BENCHMARK}/${BENCH}.o
 cc ${LIB} ${PATH_TO_BENCHMARK}/${BENCH}.o
 ./a.out

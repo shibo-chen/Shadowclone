@@ -6,16 +6,6 @@
  * 9/4/13 ajamshid: Fixed compiler warnings
  */
 
-#ifndef lint
-char copyright[] =
-"@(#) Copyright (c) 1980 Regents of the University of California.\n\
- All rights reserved.\n";
-#endif
-
-#ifndef lint
-static char sccsid[] = "@(#)wc.c	5.1 (Berkeley) 5/31/85";
-#endif
-
 /* wc line and word count */
 
 #include <stdio.h>
