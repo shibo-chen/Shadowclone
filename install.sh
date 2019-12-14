@@ -12,7 +12,7 @@ pushd llvm-project
 git checkout release/9.x
 mkdir build
 cd build
-cmake  -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld" ../llvm
+cmake  -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld;openmp" ../llvm
 make -j16 # n is the number of thread
 popd
 popd

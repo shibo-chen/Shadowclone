@@ -266,8 +266,19 @@ namespace {
         
         
         // sub-step1: Remove all BBs from the original function
+        for(auto& BB: *original_func_ptr){
+          BB.dropAllReferences();
+        }
+
+        for(auto& BB: *original_func_ptr){           
+          while(!BB.empty()){
+            BB.back().eraseFromParent();
+          }    
+
+        }
+
         while(!original_func_ptr->empty()){
-          original_func_ptr->front().eraseFromParent();
+          original_func_ptr->back().eraseFromParent();
         }
         errs() << "Deleted all BBs from function \'"<<original_func_ptr->getName()<<"\'\n";
 
