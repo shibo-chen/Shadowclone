@@ -217,8 +217,6 @@ namespace {
           for(auto& BB: ret_blocks){
             for(auto& I: *BB){
               if (ReturnInst *RI = dyn_cast<ReturnInst>(&I)){// Before every return address
-                IRBuilder<> forLoadBuilder(alloca_insts[insert_loc]);
-                LoadInst* ld = forLoadBuilder.CreateLoad(IntegerType::getInt32Ty(M.getContext()), canary);
 
                 // Split the block
                 BasicBlock* ret_blk = BB->splitBasicBlock(RI);
@@ -237,6 +235,8 @@ namespace {
                 // Loop back to ret as terminator
                 BranchInst::Create(ret_blk, BB_exit);
 
+                IRBuilder<> forLoadBuilder(BB);
+                LoadInst* ld = forLoadBuilder.CreateLoad(IntegerType::getInt32Ty(M.getContext()), canary);
                 // Add check and the branch
                 IRBuilder<> forcmpBuilder(BB);
                 Value* compare = forcmpBuilder.CreateICmpEQ(ld,constant_val);
