@@ -9,15 +9,8 @@ void func(){
     char* buff_ptr = &buff[0];
     size_t size = 1024;
     getline(&buff_ptr, &size, stdin);
-    printf("var1: %f\n", var1);
-    printf("var2: %i\n", var2);
-    printf("var3: %c\n", var3);
-    printf("buff: %s\n", buff);
-    printf("This is function func.\n");
 }
 
 int main(){
-    printf("Calling func:\n");
     func();
-    printf("func returned.\n");
 }
