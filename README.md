@@ -1,12 +1,16 @@
 # 583-project
 
+Shadowclone: Blocking DOP Attacks with Compiletime Stack Layout Randomization
+
+Authors: Yunjie Pan, [Shibo Chen](https://shibo.tech), Cheng Chi, Yifan Guan
+
+University of Michigan - Ann Arbor
+
 ## Table of Contents
 
 * [Install LLVM10](#install-llvm10)
 * [Build Pass](#build-pass)
 * [Apply Pass](#apply-pass)
-* [Run Program](#run-program)
-* [Generate CFG](#generate-cfg)
 
 ---
 
@@ -60,6 +64,4 @@ make -j4
 
 ## Apply Pass
 
-## Run Program
-
-## Generate CFG
+Refer to 'build.sh' script in the src directory of each benchmarks.

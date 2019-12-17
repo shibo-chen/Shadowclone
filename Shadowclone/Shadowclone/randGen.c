@@ -1,3 +1,11 @@
+/*
+Shadowclone: Blocking DOP Attacks with Compiletime Stack Layout Randomization
+
+Authors: Yunjie Pan, [Shibo Chen](https://shibo.tech), Cheng Chi, Yifan Guan
+
+University of Michigan - Ann Arbor
+*/
+
 #include <stdint.h>
 #include <fcntl.h>
 #include <unistd.h>
