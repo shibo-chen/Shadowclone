@@ -1,6 +1,6 @@
 PATH_TO_BENCHMARK=../tests/src
 NAME_MYPASS=-shadowClone                                       ### Action Required: Specify the name for your pass ###
-PATH_MYPASS=$(pwd)/build/fast_smoke/SHADOWCLONE.so ### Action Required: Specify the path to your pass ###
+PATH_MYPASS=$(pwd)/build/Shadowclone/SHADOWCLONE.so ### Action Required: Specify the path to your pass ###
 # BENCH=$1
 LIB=$(pwd)/build/Shadowclone/librandGen.o
 EXECUTABLES=$(pwd)/executables

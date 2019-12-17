@@ -1,0 +1,62 @@
+#!/bin/bash
+PASS_DIR=/home/chshibo/coursework/583/project/Shadowclone
+SOURCE_DIR=$PASS_DIR/Shadowclone
+SOURCE_NAME=shadowClone.cpp
+LIB_SOURCE_NAME=randGen.c
+LIB=$PASS_DIR/build/Shadowclone/librandGen.o
+DEMO_DIR=/home/chshibo/coursework/583/project/demo/demo_prog_src
+DEMO_NAME=demo
+DEMO_BIN_DIR=/home/chshibo/coursework/583/project/demo/demo_prog_bin
+PATH_MYPASS=$PASS_DIR/build/Shadowclone/SHADOWCLONE.so
+DEMO_INPUT_DIR=/home/chshibo/coursework/583/project/demo/demo_input
+if [ "$1" = "show-pass-src" ]; then
+	vim -R $SOURCE_DIR/$SOURCE_NAME
+elif [ "$1" = "show-lib-src" ]; then
+    vim -R $SOURCE_DIR/$LIB_SOURCE_NAME
+elif [ "$1" = "build" ]; then
+    pushd $PASS_DIR/build
+    cmake ..
+    make
+    popd
+    echo "Pass has been built!"
+elif [ "$1" = "build-lib" ]; then
+    pushd $PASS_DIR/build
+    cc -c $SOURCE_DIR/$LIB_SOURCE_NAME -o ${LIB}
+    popd
+    echo "Runtime lib has been built!"
+elif [ "$1" = "show-demo-src" ]; then
+    vim -R $DEMO_DIR/$DEMO_NAME.c
+elif [ "$1" = "compile-normal" ]; then
+    clang $DEMO_DIR/$DEMO_NAME.c -o $DEMO_BIN_DIR/$DEMO_NAME.normal.o
+    echo "Compiled with normal compiler! Filename: demo.normal.o"
+    echo "List directory ${DEMO_BIN_DIR}:"
+    ls $DEMO_BIN_DIR
+elif [ "$1" = "compile-clone" ]; then
+    clang -Xclang -load -Xclang ${PATH_MYPASS} -c -fPIC $DEMO_DIR/$DEMO_NAME.c -o $DEMO_BIN_DIR/$DEMO_NAME.intermidiate.o
+    cc ${LIB}  $DEMO_BIN_DIR/$DEMO_NAME.intermidiate.o -o  $DEMO_BIN_DIR/$DEMO_NAME.clone.o 
+    rm $DEMO_BIN_DIR/$DEMO_NAME.intermidiate.o
+    echo "Compiled with Shadowclone! Filename: demo.clone.o"
+    echo "List directory ${DEMO_BIN_DIR}:"
+    ls $DEMO_BIN_DIR
+elif [ "$1" = "run-normal" ]; then
+    echo "Output for normal program:"
+    ./demo_prog_bin/$DEMO_NAME.normal.o < $DEMO_INPUT_DIR/normal_inputs.txt
+    echo
+    echo "Output for program protected by Shadowclone:"
+    ./demo_prog_bin/$DEMO_NAME.clone.o < $DEMO_INPUT_DIR/normal_inputs.txt
+elif [ "$1" = "run-malicious" ]; then
+    echo "Output for normal program:"
+    ./demo_prog_bin/$DEMO_NAME.normal.o < $DEMO_INPUT_DIR/malicious_inputs.txt
+    echo
+    echo "Output for program protected by Shadowclone:"
+    ./demo_prog_bin/$DEMO_NAME.clone.o < $DEMO_INPUT_DIR/malicious_inputs.txt
+elif [ "$1" = "clean" ]; then
+    pushd $PASS_DIR/build
+    rm -rf *
+    popd
+    pushd $DEMO_BIN_DIR
+    rm -rf *
+    popd
+else    
+    echo "nothing"
+fi
