@@ -1,0 +1,436 @@
+; ModuleID = 'specrand.c.rand.16P1.bc'
+source_filename = "specrand.c"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+@seedi = internal global i32 0, align 4
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local void @spec_srand(i32 %seed) #0 {
+entry:
+  %seed.addr = alloca i32, align 4
+  store i32 %seed, i32* %seed.addr, align 4
+  %0 = load i32, i32* %seed.addr, align 4
+  store i32 %0, i32* @seedi, align 4
+  ret void
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand() #0 {
+rand_bb:
+  %0 = call i32 @get_rand()
+  %1 = icmp eq i32 %0, 0
+  br i1 %1, label %func_spec_rand.1, label %ctrl0
+
+func_spec_rand.1:                                 ; preds = %rand_bb
+  %2 = call double @spec_rand.1()
+  ret double %2
+
+func_spec_rand.2:                                 ; preds = %ctrl0
+  %3 = call double @spec_rand.2()
+  ret double %3
+
+func_spec_rand.3:                                 ; preds = %ctrl1
+  %4 = call double @spec_rand.3()
+  ret double %4
+
+func_spec_rand.4:                                 ; preds = %ctrl2
+  %5 = call double @spec_rand.4()
+  ret double %5
+
+func_spec_rand.5:                                 ; preds = %ctrl3
+  %6 = call double @spec_rand.5()
+  ret double %6
+
+func_spec_rand.6:                                 ; preds = %ctrl3
+  %7 = call double @spec_rand.6()
+  ret double %7
+
+ctrl0:                                            ; preds = %rand_bb
+  %8 = icmp eq i32 %0, 1
+  br i1 %8, label %func_spec_rand.2, label %ctrl1
+
+ctrl1:                                            ; preds = %ctrl0
+  %9 = icmp eq i32 %0, 2
+  br i1 %9, label %func_spec_rand.3, label %ctrl2
+
+ctrl2:                                            ; preds = %ctrl1
+  %10 = icmp eq i32 %0, 3
+  br i1 %10, label %func_spec_rand.4, label %ctrl3
+
+ctrl3:                                            ; preds = %ctrl2
+  %11 = icmp eq i32 %0, 4
+  br i1 %11, label %func_spec_rand.5, label %func_spec_rand.6
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.1() #0 {
+entry:
+  %lo = alloca i32, align 4
+  %canary = alloca i32
+  store i32 1395495366, i32* %canary
+  %test = alloca i32, align 4
+  %hi = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 1395495366
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.2() #0 {
+entry:
+  %canary = alloca i32
+  store i32 1805660728, i32* %canary
+  %hi = alloca i32, align 4
+  %lo = alloca i32, align 4
+  %test = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 1805660728
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.3() #0 {
+entry:
+  %test = alloca i32, align 4
+  %lo = alloca i32, align 4
+  %canary = alloca i32
+  store i32 525191821, i32* %canary
+  %hi = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 525191821
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.4() #0 {
+entry:
+  %hi = alloca i32, align 4
+  %canary = alloca i32
+  store i32 2069744396, i32* %canary
+  %test = alloca i32, align 4
+  %lo = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 2069744396
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.5() #0 {
+entry:
+  %lo = alloca i32, align 4
+  %canary = alloca i32
+  store i32 1852301148, i32* %canary
+  %hi = alloca i32, align 4
+  %test = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 1852301148
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local double @spec_rand.6() #0 {
+entry:
+  %test = alloca i32, align 4
+  %canary = alloca i32
+  store i32 1634252640, i32* %canary
+  %hi = alloca i32, align 4
+  %lo = alloca i32, align 4
+  %0 = load i32, i32* @seedi, align 4
+  %conv = sext i32 %0 to i64
+  %div = sdiv i64 %conv, 127773
+  %conv1 = trunc i64 %div to i32
+  store i32 %conv1, i32* %hi, align 4
+  %1 = load i32, i32* @seedi, align 4
+  %conv2 = sext i32 %1 to i64
+  %rem = srem i64 %conv2, 127773
+  %conv3 = trunc i64 %rem to i32
+  store i32 %conv3, i32* %lo, align 4
+  %2 = load i32, i32* %lo, align 4
+  %conv4 = sext i32 %2 to i64
+  %mul = mul nsw i64 16807, %conv4
+  %3 = load i32, i32* %hi, align 4
+  %conv5 = sext i32 %3 to i64
+  %mul6 = mul nsw i64 2836, %conv5
+  %sub = sub nsw i64 %mul, %mul6
+  %conv7 = trunc i64 %sub to i32
+  store i32 %conv7, i32* %test, align 4
+  %4 = load i32, i32* %test, align 4
+  %cmp = icmp sgt i32 %4, 0
+  br i1 %cmp, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  %5 = load i32, i32* %test, align 4
+  store i32 %5, i32* @seedi, align 4
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  %6 = load i32, i32* %test, align 4
+  %conv9 = sext i32 %6 to i64
+  %add = add nsw i64 %conv9, 2147483647
+  %conv10 = trunc i64 %add to i32
+  store i32 %conv10, i32* @seedi, align 4
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %7 = load i32, i32* @seedi, align 4
+  %conv11 = sitofp i32 %7 to double
+  %div12 = fdiv double %conv11, 0x41DFFFFFFFC00000
+  %8 = load i32, i32* %canary
+  %9 = icmp eq i32 %8, 1634252640
+  br i1 %9, label %10, label %func_exit
+
+10:                                               ; preds = %if.end, %func_exit
+  ret double %div12
+
+func_exit:                                        ; preds = %if.end
+  call void @detect_breach()
+  br label %10
+}
+
+declare void @detect_breach()
+
+declare i32 @get_rand()
+
+attributes #0 = { noinline nounwind optnone uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+avx,+cx8,+fxsr,+mmx,+popcnt,+sse,+sse2,+sse3,+sse4.1,+sse4.2,+ssse3,+x87,+xsave" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 9.0.1 (git@github.com:llvm/llvm-project.git 9b2d207cf4b43cfc1a2b6940b3c06e50a1bd127f)"}

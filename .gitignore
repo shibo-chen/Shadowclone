@@ -1,8 +1,6 @@
 .vscode
 **/.DS_Store
 *.out
-*.so
-*.o
 *.a
 **/build
 tests/bin/*

@@ -1,0 +1,354 @@
+./wc_s.16R1.rand 0
+././wc_s.16R1.rand: Interrupt
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            34,027      L1-icache-load-misses                                       
+             9,515      branch-misses                                               
+
+     105.518869543 seconds time elapsed
+
+
+./wc_s.16R1.rand 1
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            39,873      L1-icache-load-misses                                       
+            10,287      branch-misses                                               
+
+       0.289535666 seconds time elapsed
+
+
+./wc_s.16R1.rand 2
+././wc_s.16R1.rand: Interrupt
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            35,915      L1-icache-load-misses                                       
+             9,300      branch-misses                                               
+
+       2.195868520 seconds time elapsed
+
+
+./wc_s.16R2.rand 0
+
+ Performance counter stats for '././wc_s.16R2.rand':
+
+            37,025      L1-icache-load-misses                                       
+             9,822      branch-misses                                               
+
+       0.052768081 seconds time elapsed
+
+
+./wc_s.16R2.rand 1
+././wc_s.16R2.rand: Interrupt
+
+ Performance counter stats for '././wc_s.16R2.rand':
+
+            36,915      L1-icache-load-misses                                       
+             9,610      branch-misses                                               
+
+       2.770853197 seconds time elapsed
+
+
+./wc_s.16R2.rand 2
+./wc_s.16R1.rand 0
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            36,650      L1-icache-load-misses                                       
+            38,045      branch-misses                                               
+
+       0.003921521 seconds time elapsed
+
+
+./wc_s.16R1.rand 1
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            36,118      L1-icache-load-misses                                       
+            37,970      branch-misses                                               
+
+       0.004073931 seconds time elapsed
+
+
+./wc_s.16R1.rand 2
+
+ Performance counter stats for '././wc_s.16R1.rand':
+
+            35,638      L1-icache-load-misses                                       
+            37,736      branch-misses                                               
+
+       0.003855495 seconds time elapsed
+
+
+./wc_s.16R2.rand 0
+
+ Performance counter stats for '././wc_s.16R2.rand':
+
+            34,942      L1-icache-load-misses                                       
+            37,792      branch-misses                                               
+
+       0.003913547 seconds time elapsed
+
+
+./wc_s.16R2.rand 1
+
+ Performance counter stats for '././wc_s.16R2.rand':
+
+            35,814      L1-icache-load-misses                                       
+            37,867      branch-misses                                               
+
+       0.003980315 seconds time elapsed
+
+
+./wc_s.16R2.rand 2
+
+ Performance counter stats for '././wc_s.16R2.rand':
+
+            36,360      L1-icache-load-misses                                       
+            37,645      branch-misses                                               
+
+       0.003927311 seconds time elapsed
+
+
+./wc_s.16R3.rand 0
+
+ Performance counter stats for '././wc_s.16R3.rand':
+
+            33,325      L1-icache-load-misses                                       
+            37,229      branch-misses                                               
+
+       0.003927565 seconds time elapsed
+
+
+./wc_s.16R3.rand 1
+
+ Performance counter stats for '././wc_s.16R3.rand':
+
+            36,610      L1-icache-load-misses                                       
+            37,688      branch-misses                                               
+
+       0.003886440 seconds time elapsed
+
+
+./wc_s.16R3.rand 2
+
+ Performance counter stats for '././wc_s.16R3.rand':
+
+            37,509      L1-icache-load-misses                                       
+            37,822      branch-misses                                               
+
+       0.003950234 seconds time elapsed
+
+
+./wc_s.4R1.rand 0
+
+ Performance counter stats for '././wc_s.4R1.rand':
+
+            36,578      L1-icache-load-misses                                       
+            37,720      branch-misses                                               
+
+       0.003915548 seconds time elapsed
+
+
+./wc_s.4R1.rand 1
+
+ Performance counter stats for '././wc_s.4R1.rand':
+
+            33,645      L1-icache-load-misses                                       
+            37,627      branch-misses                                               
+
+       0.003952609 seconds time elapsed
+
+
+./wc_s.4R1.rand 2
+
+ Performance counter stats for '././wc_s.4R1.rand':
+
+            34,545      L1-icache-load-misses                                       
+            37,453      branch-misses                                               
+
+       0.003848472 seconds time elapsed
+
+
+./wc_s.4R2.rand 0
+
+ Performance counter stats for '././wc_s.4R2.rand':
+
+            35,694      L1-icache-load-misses                                       
+            37,755      branch-misses                                               
+
+       0.003897345 seconds time elapsed
+
+
+./wc_s.4R2.rand 1
+
+ Performance counter stats for '././wc_s.4R2.rand':
+
+            35,852      L1-icache-load-misses                                       
+            37,608      branch-misses                                               
+
+       0.003921231 seconds time elapsed
+
+
+./wc_s.4R2.rand 2
+
+ Performance counter stats for '././wc_s.4R2.rand':
+
+            33,725      L1-icache-load-misses                                       
+            37,595      branch-misses                                               
+
+       0.003971341 seconds time elapsed
+
+
+./wc_s.4R3.rand 0
+
+ Performance counter stats for '././wc_s.4R3.rand':
+
+            34,417      L1-icache-load-misses                                       
+            37,140      branch-misses                                               
+
+       0.003855386 seconds time elapsed
+
+
+./wc_s.4R3.rand 1
+
+ Performance counter stats for '././wc_s.4R3.rand':
+
+            36,006      L1-icache-load-misses                                       
+            37,741      branch-misses                                               
+
+       0.003699710 seconds time elapsed
+
+
+./wc_s.4R3.rand 2
+
+ Performance counter stats for '././wc_s.4R3.rand':
+
+            35,167      L1-icache-load-misses                                       
+            37,794      branch-misses                                               
+
+       0.003912557 seconds time elapsed
+
+
+./wc_s.8R1.rand 0
+
+ Performance counter stats for '././wc_s.8R1.rand':
+
+            36,783      L1-icache-load-misses                                       
+            37,816      branch-misses                                               
+
+       0.003950612 seconds time elapsed
+
+
+./wc_s.8R1.rand 1
+
+ Performance counter stats for '././wc_s.8R1.rand':
+
+            34,540      L1-icache-load-misses                                       
+            37,276      branch-misses                                               
+
+       0.003849765 seconds time elapsed
+
+
+./wc_s.8R1.rand 2
+
+ Performance counter stats for '././wc_s.8R1.rand':
+
+            35,773      L1-icache-load-misses                                       
+            37,181      branch-misses                                               
+
+       0.003869692 seconds time elapsed
+
+
+./wc_s.8R2.rand 0
+
+ Performance counter stats for '././wc_s.8R2.rand':
+
+            35,177      L1-icache-load-misses                                       
+            37,984      branch-misses                                               
+
+       0.002426826 seconds time elapsed
+
+
+./wc_s.8R2.rand 1
+
+ Performance counter stats for '././wc_s.8R2.rand':
+
+            36,435      L1-icache-load-misses                                       
+            37,465      branch-misses                                               
+
+       0.003923559 seconds time elapsed
+
+
+./wc_s.8R2.rand 2
+
+ Performance counter stats for '././wc_s.8R2.rand':
+
+            35,178      L1-icache-load-misses                                       
+            37,787      branch-misses                                               
+
+       0.003869787 seconds time elapsed
+
+
+./wc_s.8R3.rand 0
+
+ Performance counter stats for '././wc_s.8R3.rand':
+
+            34,376      L1-icache-load-misses                                       
+            37,005      branch-misses                                               
+
+       0.003829318 seconds time elapsed
+
+
+./wc_s.8R3.rand 1
+
+ Performance counter stats for '././wc_s.8R3.rand':
+
+            34,062      L1-icache-load-misses                                       
+            37,503      branch-misses                                               
+
+       0.003878141 seconds time elapsed
+
+
+./wc_s.8R3.rand 2
+
+ Performance counter stats for '././wc_s.8R3.rand':
+
+            33,268      L1-icache-load-misses                                       
+            37,313      branch-misses                                               
+
+       0.003895908 seconds time elapsed
+
+
+./wc_s.bl 0
+
+ Performance counter stats for '././wc_s.bl':
+
+            36,934      L1-icache-load-misses                                       
+            37,914      branch-misses                                               
+
+       0.003962680 seconds time elapsed
+
+
+./wc_s.bl 1
+
+ Performance counter stats for '././wc_s.bl':
+
+            32,391      L1-icache-load-misses                                       
+            37,041      branch-misses                                               
+
+       0.003875995 seconds time elapsed
+
+
+./wc_s.bl 2
+
+ Performance counter stats for '././wc_s.bl':
+
+            36,105      L1-icache-load-misses                                       
+            38,107      branch-misses                                               
+
+       0.003929609 seconds time elapsed
+
+

@@ -1,0 +1,607 @@
+	.text
+	.file	"rtp.c"
+	.globl	ComposeRTPPacket        # -- Begin function ComposeRTPPacket
+	.p2align	4, 0x90
+	.type	ComposeRTPPacket,@function
+ComposeRTPPacket:                       # @ComposeRTPPacket
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$16, %rsp
+	movq	%rdi, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	(%rax), %eax
+	movq	-8(%rbp), %rcx
+	movl	4(%rcx), %ecx
+	shll	$2, %ecx
+	orl	%ecx, %eax
+	movq	-8(%rbp), %rcx
+	movl	8(%rcx), %ecx
+	shll	$3, %ecx
+	orl	%ecx, %eax
+	movq	-8(%rbp), %rcx
+	movl	12(%rcx), %ecx
+	shll	$4, %ecx
+	orl	%ecx, %eax
+	movq	-8(%rbp), %rcx
+	movq	56(%rcx), %rcx
+	movb	%al, (%rcx)
+	movq	-8(%rbp), %rax
+	movl	16(%rax), %eax
+	movq	-8(%rbp), %rcx
+	movl	20(%rcx), %ecx
+	shll	$1, %ecx
+	orl	%ecx, %eax
+	movq	-8(%rbp), %rcx
+	movq	56(%rcx), %rcx
+	movb	%al, 1(%rcx)
+	movq	-8(%rbp), %rax
+	movl	24(%rax), %eax
+	andl	$255, %eax
+	movq	-8(%rbp), %rcx
+	movq	56(%rcx), %rcx
+	movb	%al, 2(%rcx)
+	movq	-8(%rbp), %rax
+	movl	24(%rax), %eax
+	shrl	$8, %eax
+	andl	$255, %eax
+	movq	-8(%rbp), %rcx
+	movq	56(%rcx), %rcx
+	movb	%al, 3(%rcx)
+	movq	-8(%rbp), %rax
+	movq	56(%rax), %rax
+	movq	-8(%rbp), %rcx
+	movl	28(%rcx), %ecx
+	movl	%ecx, 4(%rax)
+	movq	-8(%rbp), %rax
+	movq	56(%rax), %rax
+	movq	-8(%rbp), %rcx
+	movl	32(%rcx), %ecx
+	movl	%ecx, 8(%rax)
+	movq	-8(%rbp), %rax
+	movq	56(%rax), %rdi
+	addq	$12, %rdi
+	movq	-8(%rbp), %rax
+	movq	40(%rax), %rsi
+	movq	-8(%rbp), %rax
+	movl	48(%rax), %edx
+	callq	memcpy
+	movq	-8(%rbp), %rax
+	movl	48(%rax), %eax
+	addl	$12, %eax
+	movq	-8(%rbp), %rcx
+	movl	%eax, 64(%rcx)
+	xorl	%eax, %eax
+	addq	$16, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end0:
+	.size	ComposeRTPPacket, .Lfunc_end0-ComposeRTPPacket
+	.cfi_endproc
+                                        # -- End function
+	.globl	WriteRTPPacket          # -- Begin function WriteRTPPacket
+	.p2align	4, 0x90
+	.type	WriteRTPPacket,@function
+WriteRTPPacket:                         # @WriteRTPPacket
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -16(%rbp)
+	movl	$-1, -28(%rbp)
+	movq	-24(%rbp), %rdi
+	addq	$64, %rdi
+	movq	-16(%rbp), %rcx
+	movl	$4, %esi
+	movl	$1, %edx
+	callq	fwrite
+	movl	$1, %ecx
+	cmpq	%rax, %rcx
+	je	.LBB1_2
+# %bb.1:                                # %if.then
+	movl	$-1, -4(%rbp)
+	jmp	.LBB1_7
+.LBB1_2:                                # %if.end
+	leaq	-28(%rbp), %rdi
+	movq	-16(%rbp), %rcx
+	movl	$4, %esi
+	movl	$1, %edx
+	callq	fwrite
+	movl	$1, %ecx
+	cmpq	%rax, %rcx
+	je	.LBB1_4
+# %bb.3:                                # %if.then3
+	movl	$-1, -4(%rbp)
+	jmp	.LBB1_7
+.LBB1_4:                                # %if.end4
+	movq	-24(%rbp), %rax
+	movq	56(%rax), %rdi
+	movq	-24(%rbp), %rax
+	movl	64(%rax), %esi
+	movq	-16(%rbp), %rcx
+	movl	$1, %edx
+	callq	fwrite
+	movl	$1, %ecx
+	cmpq	%rax, %rcx
+	je	.LBB1_6
+# %bb.5:                                # %if.then9
+	movl	$-1, -4(%rbp)
+	jmp	.LBB1_7
+.LBB1_6:                                # %if.end10
+	movl	$0, -4(%rbp)
+.LBB1_7:                                # %return
+	movl	-4(%rbp), %eax
+	addq	$32, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end1:
+	.size	WriteRTPPacket, .Lfunc_end1-WriteRTPPacket
+	.cfi_endproc
+                                        # -- End function
+	.globl	WriteRTPNALU            # -- Begin function WriteRTPNALU
+	.p2align	4, 0x90
+	.type	WriteRTPNALU,@function
+WriteRTPNALU:                           # @WriteRTPNALU
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$16, %rsp
+	movq	%rdi, -16(%rbp)
+	movq	-16(%rbp), %rax
+	movl	20(%rax), %eax
+	shll	$7, %eax
+	movq	-16(%rbp), %rcx
+	movl	16(%rcx), %ecx
+	shll	$5, %ecx
+	orl	%ecx, %eax
+	movq	-16(%rbp), %rcx
+	orl	12(%rcx), %eax
+	movq	-16(%rbp), %rcx
+	movq	24(%rcx), %rcx
+	movb	%al, (%rcx)
+	movl	$72, %edi
+	callq	malloc
+	movq	%rax, -8(%rbp)
+	cmpq	$0, %rax
+	jne	.LBB2_2
+# %bb.1:                                # %if.then
+	movabsq	$.L.str, %rdi
+	callq	no_mem_exit
+.LBB2_2:                                # %if.end
+	movl	$65508, %edi            # imm = 0xFFE4
+	callq	malloc
+	movq	-8(%rbp), %rcx
+	movq	%rax, 56(%rcx)
+	cmpq	$0, %rax
+	jne	.LBB2_4
+# %bb.3:                                # %if.then7
+	movabsq	$.L.str.1, %rdi
+	callq	no_mem_exit
+.LBB2_4:                                # %if.end8
+	movl	$65508, %edi            # imm = 0xFFE4
+	callq	malloc
+	movq	-8(%rbp), %rcx
+	movq	%rax, 40(%rcx)
+	cmpq	$0, %rax
+	jne	.LBB2_6
+# %bb.5:                                # %if.then12
+	movabsq	$.L.str.2, %rdi
+	callq	no_mem_exit
+.LBB2_6:                                # %if.end13
+	movq	-8(%rbp), %rax
+	movl	$2, (%rax)
+	movq	-8(%rbp), %rax
+	movl	$0, 4(%rax)
+	movq	-8(%rbp), %rax
+	movl	$0, 8(%rax)
+	movq	-8(%rbp), %rax
+	movl	$0, 12(%rax)
+	movq	-16(%rbp), %rax
+	cmpl	$4, (%rax)
+	sete	%al
+	andb	$1, %al
+	movzbl	%al, %eax
+	andl	$1, %eax
+	movq	-8(%rbp), %rcx
+	movl	%eax, 16(%rcx)
+	movq	-8(%rbp), %rax
+	movl	$105, 20(%rax)
+	movl	CurrentRTPSequenceNumber, %eax
+	movl	%eax, %ecx
+	addl	$1, %ecx
+	movl	%ecx, CurrentRTPSequenceNumber
+	movq	-8(%rbp), %rcx
+	movl	%eax, 24(%rcx)
+	movl	CurrentRTPTimestamp, %eax
+	movq	-8(%rbp), %rcx
+	movl	%eax, 28(%rcx)
+	movq	-8(%rbp), %rax
+	movl	$305419896, 32(%rax)    # imm = 0x12345678
+	movq	-16(%rbp), %rax
+	movl	4(%rax), %eax
+	movq	-8(%rbp), %rcx
+	movl	%eax, 48(%rcx)
+	movq	-8(%rbp), %rax
+	movq	40(%rax), %rdi
+	movq	-16(%rbp), %rax
+	movq	24(%rax), %rsi
+	movq	-16(%rbp), %rax
+	movl	4(%rax), %edx
+	callq	memcpy
+	movq	-8(%rbp), %rdi
+	callq	ComposeRTPPacket
+	cmpl	$0, %eax
+	jge	.LBB2_8
+# %bb.7:                                # %if.then24
+	movabsq	$.L.str.3, %rdi
+	movb	$0, %al
+	callq	printf
+	movl	$4294967295, %edi       # imm = 0xFFFFFFFF
+	callq	exit
+.LBB2_8:                                # %if.end26
+	movq	-8(%rbp), %rdi
+	movq	f, %rsi
+	callq	WriteRTPPacket
+	cmpl	$0, %eax
+	jge	.LBB2_10
+# %bb.9:                                # %if.then30
+	movq	-8(%rbp), %rax
+	movl	64(%rax), %esi
+	movabsq	$.L.str.4, %rdi
+	movb	$0, %al
+	callq	printf
+	movl	$4294967295, %edi       # imm = 0xFFFFFFFF
+	callq	exit
+.LBB2_10:                               # %if.end32
+	movq	-8(%rbp), %rax
+	movq	56(%rax), %rdi
+	callq	free
+	movq	-8(%rbp), %rax
+	movq	40(%rax), %rdi
+	callq	free
+	movq	-8(%rbp), %rdi
+	callq	free
+	movq	-16(%rbp), %rax
+	movl	4(%rax), %eax
+	shll	$3, %eax
+	addq	$16, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end2:
+	.size	WriteRTPNALU, .Lfunc_end2-WriteRTPNALU
+	.cfi_endproc
+                                        # -- End function
+	.globl	RTPUpdateTimestamp      # -- Begin function RTPUpdateTimestamp
+	.p2align	4, 0x90
+	.type	RTPUpdateTimestamp,@function
+RTPUpdateTimestamp:                     # @RTPUpdateTimestamp
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	%edi, -8(%rbp)
+	cmpl	$-1, RTPUpdateTimestamp.oldtr
+	jne	.LBB3_2
+# %bb.1:                                # %if.then
+	movl	$0, CurrentRTPTimestamp
+	movl	$0, RTPUpdateTimestamp.oldtr
+	jmp	.LBB3_5
+.LBB3_2:                                # %if.end
+	movl	-8(%rbp), %eax
+	subl	RTPUpdateTimestamp.oldtr, %eax
+	movl	%eax, -4(%rbp)
+	cmpl	$-10, -4(%rbp)
+	jge	.LBB3_4
+# %bb.3:                                # %if.then2
+	movl	-4(%rbp), %eax
+	addl	$256, %eax              # imm = 0x100
+	movl	%eax, -4(%rbp)
+.LBB3_4:                                # %if.end3
+	imull	$1000, -4(%rbp), %eax   # imm = 0x3E8
+	addl	CurrentRTPTimestamp, %eax
+	movl	%eax, CurrentRTPTimestamp
+	movl	-8(%rbp), %eax
+	movl	%eax, RTPUpdateTimestamp.oldtr
+.LBB3_5:                                # %return
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end3:
+	.size	RTPUpdateTimestamp, .Lfunc_end3-RTPUpdateTimestamp
+	.cfi_endproc
+                                        # -- End function
+	.globl	OpenRTPFile             # -- Begin function OpenRTPFile
+	.p2align	4, 0x90
+	.type	OpenRTPFile,@function
+OpenRTPFile:                            # @OpenRTPFile
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$16, %rsp
+	movq	%rdi, -8(%rbp)
+	movq	-8(%rbp), %rdi
+	movabsq	$.L.str.5, %rsi
+	callq	fopen
+	movq	%rax, f
+	cmpq	$0, %rax
+	jne	.LBB4_2
+# %bb.1:                                # %if.then
+	movq	-8(%rbp), %rsi
+	movabsq	$.L.str.6, %rdi
+	movb	$0, %al
+	callq	printf
+	movl	$4294967295, %edi       # imm = 0xFFFFFFFF
+	callq	exit
+.LBB4_2:                                # %if.end
+	addq	$16, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end4:
+	.size	OpenRTPFile, .Lfunc_end4-OpenRTPFile
+	.cfi_endproc
+                                        # -- End function
+	.globl	CloseRTPFile            # -- Begin function CloseRTPFile
+	.p2align	4, 0x90
+	.type	CloseRTPFile,@function
+CloseRTPFile:                           # @CloseRTPFile
+	.cfi_startproc
+# %bb.0:                                # %entry
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movq	f, %rdi
+	callq	fclose
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end5:
+	.size	CloseRTPFile, .Lfunc_end5-CloseRTPFile
+	.cfi_endproc
+                                        # -- End function
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"RTPWriteNALU-1"
+	.size	.L.str, 15
+
+	.type	.L.str.1,@object        # @.str.1
+.L.str.1:
+	.asciz	"RTPWriteNALU-2"
+	.size	.L.str.1, 15
+
+	.type	.L.str.2,@object        # @.str.2
+.L.str.2:
+	.asciz	"RTPWriteNALU-3"
+	.size	.L.str.2, 15
+
+	.type	CurrentRTPSequenceNumber,@object # @CurrentRTPSequenceNumber
+	.bss
+	.globl	CurrentRTPSequenceNumber
+	.p2align	2
+CurrentRTPSequenceNumber:
+	.long	0                       # 0x0
+	.size	CurrentRTPSequenceNumber, 4
+
+	.type	CurrentRTPTimestamp,@object # @CurrentRTPTimestamp
+	.globl	CurrentRTPTimestamp
+	.p2align	2
+CurrentRTPTimestamp:
+	.long	0                       # 0x0
+	.size	CurrentRTPTimestamp, 4
+
+	.type	.L.str.3,@object        # @.str.3
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str.3:
+	.asciz	"Cannot compose RTP packet, exit\n"
+	.size	.L.str.3, 33
+
+	.type	f,@object               # @f
+	.comm	f,8,8
+	.type	.L.str.4,@object        # @.str.4
+.L.str.4:
+	.asciz	"Cannot write %d bytes of RTP packet to outfile, exit\n"
+	.size	.L.str.4, 54
+
+	.type	RTPUpdateTimestamp.oldtr,@object # @RTPUpdateTimestamp.oldtr
+	.data
+	.p2align	2
+RTPUpdateTimestamp.oldtr:
+	.long	4294967295              # 0xffffffff
+	.size	RTPUpdateTimestamp.oldtr, 4
+
+	.type	.L.str.5,@object        # @.str.5
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str.5:
+	.asciz	"wb"
+	.size	.L.str.5, 3
+
+	.type	.L.str.6,@object        # @.str.6
+.L.str.6:
+	.asciz	"Fatal: cannot open bitstream file '%s', exit (-1)\n"
+	.size	.L.str.6, 51
+
+	.type	top_pic,@object         # @top_pic
+	.comm	top_pic,8,8
+	.type	bottom_pic,@object      # @bottom_pic
+	.comm	bottom_pic,8,8
+	.type	frame_pic,@object       # @frame_pic
+	.comm	frame_pic,8,8
+	.type	frame_pic2,@object      # @frame_pic2
+	.comm	frame_pic2,8,8
+	.type	frame_pic3,@object      # @frame_pic3
+	.comm	frame_pic3,8,8
+	.type	imgY_org,@object        # @imgY_org
+	.comm	imgY_org,8,8
+	.type	imgUV_org,@object       # @imgUV_org
+	.comm	imgUV_org,8,8
+	.type	img4Y_tmp,@object       # @img4Y_tmp
+	.comm	img4Y_tmp,8,8
+	.type	log2_max_frame_num_minus4,@object # @log2_max_frame_num_minus4
+	.comm	log2_max_frame_num_minus4,4,4
+	.type	log2_max_pic_order_cnt_lsb_minus4,@object # @log2_max_pic_order_cnt_lsb_minus4
+	.comm	log2_max_pic_order_cnt_lsb_minus4,4,4
+	.type	me_tot_time,@object     # @me_tot_time
+	.comm	me_tot_time,4,4
+	.type	me_time,@object         # @me_time
+	.comm	me_time,4,4
+	.type	active_pps,@object      # @active_pps
+	.comm	active_pps,8,8
+	.type	active_sps,@object      # @active_sps
+	.comm	active_sps,8,8
+	.type	mb_adaptive,@object     # @mb_adaptive
+	.comm	mb_adaptive,4,4
+	.type	MBPairIsField,@object   # @MBPairIsField
+	.comm	MBPairIsField,4,4
+	.type	wp_weight,@object       # @wp_weight
+	.comm	wp_weight,8,8
+	.type	wp_offset,@object       # @wp_offset
+	.comm	wp_offset,8,8
+	.type	wbp_weight,@object      # @wbp_weight
+	.comm	wbp_weight,8,8
+	.type	luma_log_weight_denom,@object # @luma_log_weight_denom
+	.comm	luma_log_weight_denom,4,4
+	.type	chroma_log_weight_denom,@object # @chroma_log_weight_denom
+	.comm	chroma_log_weight_denom,4,4
+	.type	wp_luma_round,@object   # @wp_luma_round
+	.comm	wp_luma_round,4,4
+	.type	wp_chroma_round,@object # @wp_chroma_round
+	.comm	wp_chroma_round,4,4
+	.type	imgY_org_top,@object    # @imgY_org_top
+	.comm	imgY_org_top,8,8
+	.type	imgY_org_bot,@object    # @imgY_org_bot
+	.comm	imgY_org_bot,8,8
+	.type	imgUV_org_top,@object   # @imgUV_org_top
+	.comm	imgUV_org_top,8,8
+	.type	imgUV_org_bot,@object   # @imgUV_org_bot
+	.comm	imgUV_org_bot,8,8
+	.type	imgY_org_frm,@object    # @imgY_org_frm
+	.comm	imgY_org_frm,8,8
+	.type	imgUV_org_frm,@object   # @imgUV_org_frm
+	.comm	imgUV_org_frm,8,8
+	.type	imgY_com,@object        # @imgY_com
+	.comm	imgY_com,8,8
+	.type	imgUV_com,@object       # @imgUV_com
+	.comm	imgUV_com,8,8
+	.type	direct_ref_idx,@object  # @direct_ref_idx
+	.comm	direct_ref_idx,8,8
+	.type	direct_pdir,@object     # @direct_pdir
+	.comm	direct_pdir,8,8
+	.type	pixel_map,@object       # @pixel_map
+	.comm	pixel_map,8,8
+	.type	refresh_map,@object     # @refresh_map
+	.comm	refresh_map,8,8
+	.type	intras,@object          # @intras
+	.comm	intras,4,4
+	.type	Iframe_ctr,@object      # @Iframe_ctr
+	.comm	Iframe_ctr,4,4
+	.type	Pframe_ctr,@object      # @Pframe_ctr
+	.comm	Pframe_ctr,4,4
+	.type	Bframe_ctr,@object      # @Bframe_ctr
+	.comm	Bframe_ctr,4,4
+	.type	frame_no,@object        # @frame_no
+	.comm	frame_no,4,4
+	.type	nextP_tr_fld,@object    # @nextP_tr_fld
+	.comm	nextP_tr_fld,4,4
+	.type	nextP_tr_frm,@object    # @nextP_tr_frm
+	.comm	nextP_tr_frm,4,4
+	.type	tot_time,@object        # @tot_time
+	.comm	tot_time,4,4
+	.type	errortext,@object       # @errortext
+	.comm	errortext,300,16
+	.type	resTrans_R,@object      # @resTrans_R
+	.comm	resTrans_R,1024,16
+	.type	resTrans_G,@object      # @resTrans_G
+	.comm	resTrans_G,1024,16
+	.type	resTrans_B,@object      # @resTrans_B
+	.comm	resTrans_B,1024,16
+	.type	rec_resR,@object        # @rec_resR
+	.comm	rec_resR,1024,16
+	.type	rec_resG,@object        # @rec_resG
+	.comm	rec_resG,1024,16
+	.type	rec_resB,@object        # @rec_resB
+	.comm	rec_resB,1024,16
+	.type	mprRGB,@object          # @mprRGB
+	.comm	mprRGB,3072,16
+	.type	dc_level,@object        # @dc_level
+	.comm	dc_level,128,16
+	.type	dc_level_temp,@object   # @dc_level_temp
+	.comm	dc_level_temp,128,16
+	.type	cbp_chroma_block,@object # @cbp_chroma_block
+	.comm	cbp_chroma_block,128,16
+	.type	cbp_chroma_block_temp,@object # @cbp_chroma_block_temp
+	.comm	cbp_chroma_block_temp,128,16
+	.type	b8_ipredmode8x8,@object # @b8_ipredmode8x8
+	.comm	b8_ipredmode8x8,64,16
+	.type	b8_intra_pred_modes8x8,@object # @b8_intra_pred_modes8x8
+	.comm	b8_intra_pred_modes8x8,64,16
+	.type	gop_structure,@object   # @gop_structure
+	.comm	gop_structure,8,8
+	.type	rdopt,@object           # @rdopt
+	.comm	rdopt,8,8
+	.type	rddata_top_frame_mb,@object # @rddata_top_frame_mb
+	.comm	rddata_top_frame_mb,3360,8
+	.type	rddata_bot_frame_mb,@object # @rddata_bot_frame_mb
+	.comm	rddata_bot_frame_mb,3360,8
+	.type	rddata_top_field_mb,@object # @rddata_top_field_mb
+	.comm	rddata_top_field_mb,3360,8
+	.type	rddata_bot_field_mb,@object # @rddata_bot_field_mb
+	.comm	rddata_bot_field_mb,3360,8
+	.type	p_stat,@object          # @p_stat
+	.comm	p_stat,8,8
+	.type	p_log,@object           # @p_log
+	.comm	p_log,8,8
+	.type	p_trace,@object         # @p_trace
+	.comm	p_trace,8,8
+	.type	p_in,@object            # @p_in
+	.comm	p_in,4,4
+	.type	p_dec,@object           # @p_dec
+	.comm	p_dec,4,4
+	.type	glob_remapping_of_pic_nums_idc_l0,@object # @glob_remapping_of_pic_nums_idc_l0
+	.comm	glob_remapping_of_pic_nums_idc_l0,80,16
+	.type	glob_abs_diff_pic_num_minus1_l0,@object # @glob_abs_diff_pic_num_minus1_l0
+	.comm	glob_abs_diff_pic_num_minus1_l0,80,16
+	.type	glob_long_term_pic_idx_l0,@object # @glob_long_term_pic_idx_l0
+	.comm	glob_long_term_pic_idx_l0,80,16
+	.type	glob_remapping_of_pic_nums_idc_l1,@object # @glob_remapping_of_pic_nums_idc_l1
+	.comm	glob_remapping_of_pic_nums_idc_l1,80,16
+	.type	glob_abs_diff_pic_num_minus1_l1,@object # @glob_abs_diff_pic_num_minus1_l1
+	.comm	glob_abs_diff_pic_num_minus1_l1,80,16
+	.type	glob_long_term_pic_idx_l1,@object # @glob_long_term_pic_idx_l1
+	.comm	glob_long_term_pic_idx_l1,80,16
+	.type	Bytes_After_Header,@object # @Bytes_After_Header
+	.comm	Bytes_After_Header,4,4
+	.type	rpc_bytes_to_go,@object # @rpc_bytes_to_go
+	.comm	rpc_bytes_to_go,4,4
+	.type	rpc_bits_to_go,@object  # @rpc_bits_to_go
+	.comm	rpc_bits_to_go,4,4
+	.type	WriteNALU,@object       # @WriteNALU
+	.comm	WriteNALU,8,8
+
+	.ident	"clang version 9.0.1 (git@github.com:llvm/llvm-project.git 9b2d207cf4b43cfc1a2b6940b3c06e50a1bd127f)"
+	.section	".note.GNU-stack","",@progbits

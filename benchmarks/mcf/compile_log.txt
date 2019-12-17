@@ -1,0 +1,78 @@
+/usr/share/modules/init/bash: line 58: export: _moduleraw: not a function
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o implicit.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 implicit.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone implicit.c.unopt-r.16D16.bc -o implicit.c.rand.16D16.bc
+Average allocas per func = 11 func num: 5
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis implicit.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc implicit.c.rand.16D16.bc -o implicit.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o implicit.c.rand.16D16.o implicit.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o mcf.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 mcf.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone mcf.c.unopt-r.16D16.bc -o mcf.c.rand.16D16.bc
+Average allocas per func = 3 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis mcf.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc mcf.c.rand.16D16.bc -o mcf.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o mcf.c.rand.16D16.o mcf.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o mcfutil.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 mcfutil.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone mcfutil.c.unopt-r.16D16.bc -o mcfutil.c.rand.16D16.bc
+Average allocas per func = 6 func num: 6
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis mcfutil.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc mcfutil.c.rand.16D16.bc -o mcfutil.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o mcfutil.c.rand.16D16.o mcfutil.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o output.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 output.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone output.c.unopt-r.16D16.bc -o output.c.rand.16D16.bc
+Average allocas per func = 9 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis output.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc output.c.rand.16D16.bc -o output.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o output.c.rand.16D16.o output.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o pbeampp.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 pbeampp.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone pbeampp.c.unopt-r.16D16.bc -o pbeampp.c.rand.16D16.bc
+Average allocas per func = 7 func num: 3
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis pbeampp.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc pbeampp.c.rand.16D16.bc -o pbeampp.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o pbeampp.c.rand.16D16.o pbeampp.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o pbla.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 pbla.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone pbla.c.unopt-r.16D16.bc -o pbla.c.rand.16D16.bc
+Average allocas per func = 7 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis pbla.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc pbla.c.rand.16D16.bc -o pbla.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o pbla.c.rand.16D16.o pbla.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o pflowup.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 pflowup.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone pflowup.c.unopt-r.16D16.bc -o pflowup.c.rand.16D16.bc
+Average allocas per func = 4 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis pflowup.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc pflowup.c.rand.16D16.bc -o pflowup.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o pflowup.c.rand.16D16.o pflowup.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o psimplex.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 psimplex.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone psimplex.c.unopt-r.16D16.bc -o psimplex.c.rand.16D16.bc
+Average allocas per func = 23 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis psimplex.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc psimplex.c.rand.16D16.bc -o psimplex.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o psimplex.c.rand.16D16.o psimplex.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o pstart.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 pstart.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone pstart.c.unopt-r.16D16.bc -o pstart.c.rand.16D16.bc
+Average allocas per func = 6 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis pstart.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc pstart.c.rand.16D16.bc -o pstart.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o pstart.c.rand.16D16.o pstart.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o readmin.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 readmin.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone readmin.c.unopt-r.16D16.bc -o readmin.c.rand.16D16.bc
+Average allocas per func = 11 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis readmin.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc readmin.c.rand.16D16.bc -o readmin.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o readmin.c.rand.16D16.o readmin.c.rand.16D16.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o treeup.c.unopt-r.16D16.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 treeup.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone treeup.c.unopt-r.16D16.bc -o treeup.c.rand.16D16.bc
+Average allocas per func = 23 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis treeup.c.rand.16D16.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc treeup.c.rand.16D16.bc -o treeup.c.rand.16D16.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o treeup.c.rand.16D16.o treeup.c.rand.16D16.s
++ set +x

@@ -1,0 +1,570 @@
+./big_array_s.16P1.rand 0
+
+ Performance counter stats for '././big_array_s.16P1.rand':
+
+           907,890      L1-icache-load-misses                                       
+           300,029      branch-misses                                               
+
+       9.086013789 seconds time elapsed
+
+
+./big_array_s.16P1.rand 1
+
+ Performance counter stats for '././big_array_s.16P1.rand':
+
+           926,492      L1-icache-load-misses                                       
+           308,236      branch-misses                                               
+
+       9.109461041 seconds time elapsed
+
+
+./big_array_s.16P1.rand 2
+
+ Performance counter stats for '././big_array_s.16P1.rand':
+
+           916,826      L1-icache-load-misses                                       
+           313,771      branch-misses                                               
+
+       9.107826446 seconds time elapsed
+
+
+./big_array_s.16P2.rand 0
+
+ Performance counter stats for '././big_array_s.16P2.rand':
+
+           939,370      L1-icache-load-misses                                       
+           303,113      branch-misses                                               
+
+       9.034596626 seconds time elapsed
+
+
+./big_array_s.16P2.rand 1
+
+ Performance counter stats for '././big_array_s.16P2.rand':
+
+           853,653      L1-icache-load-misses                                       
+           303,227      branch-misses                                               
+
+       8.989378342 seconds time elapsed
+
+
+./big_array_s.16P2.rand 2
+
+ Performance counter stats for '././big_array_s.16P2.rand':
+
+           966,189      L1-icache-load-misses                                       
+           309,054      branch-misses                                               
+
+       8.961788189 seconds time elapsed
+
+
+./big_array_s.16P3.rand 0
+
+ Performance counter stats for '././big_array_s.16P3.rand':
+
+           915,598      L1-icache-load-misses                                       
+           307,808      branch-misses                                               
+
+       9.058751448 seconds time elapsed
+
+
+./big_array_s.16P3.rand 1
+
+ Performance counter stats for '././big_array_s.16P3.rand':
+
+           906,005      L1-icache-load-misses                                       
+           300,530      branch-misses                                               
+
+       9.080143517 seconds time elapsed
+
+
+./big_array_s.16P3.rand 2
+
+ Performance counter stats for '././big_array_s.16P3.rand':
+
+           962,451      L1-icache-load-misses                                       
+           298,889      branch-misses                                               
+
+       9.246301541 seconds time elapsed
+
+
+./big_array_s.16R1.rand 0
+
+ Performance counter stats for '././big_array_s.16R1.rand':
+
+         1,192,551      L1-icache-load-misses                                       
+           238,885      branch-misses                                               
+
+       9.017891824 seconds time elapsed
+
+
+./big_array_s.16R1.rand 1
+
+ Performance counter stats for '././big_array_s.16R1.rand':
+
+         1,139,894      L1-icache-load-misses                                       
+           243,688      branch-misses                                               
+
+       9.011056479 seconds time elapsed
+
+
+./big_array_s.16R1.rand 2
+
+ Performance counter stats for '././big_array_s.16R1.rand':
+
+         1,134,221      L1-icache-load-misses                                       
+           246,301      branch-misses                                               
+
+       9.037059805 seconds time elapsed
+
+
+./big_array_s.16R2.rand 0
+
+ Performance counter stats for '././big_array_s.16R2.rand':
+
+         1,146,858      L1-icache-load-misses                                       
+           244,995      branch-misses                                               
+
+       8.954665855 seconds time elapsed
+
+
+./big_array_s.16R2.rand 1
+
+ Performance counter stats for '././big_array_s.16R2.rand':
+
+         1,071,212      L1-icache-load-misses                                       
+           245,242      branch-misses                                               
+
+       8.930750273 seconds time elapsed
+
+
+./big_array_s.16R2.rand 2
+
+ Performance counter stats for '././big_array_s.16R2.rand':
+
+         1,116,521      L1-icache-load-misses                                       
+           240,293      branch-misses                                               
+
+       9.043929914 seconds time elapsed
+
+
+./big_array_s.16R3.rand 0
+
+ Performance counter stats for '././big_array_s.16R3.rand':
+
+         1,145,100      L1-icache-load-misses                                       
+           240,020      branch-misses                                               
+
+       8.957316882 seconds time elapsed
+
+
+./big_array_s.16R3.rand 1
+
+ Performance counter stats for '././big_array_s.16R3.rand':
+
+         1,112,629      L1-icache-load-misses                                       
+           234,958      branch-misses                                               
+
+       8.941803459 seconds time elapsed
+
+
+./big_array_s.16R3.rand 2
+
+ Performance counter stats for '././big_array_s.16R3.rand':
+
+         1,112,100      L1-icache-load-misses                                       
+           235,014      branch-misses                                               
+
+       8.980652894 seconds time elapsed
+
+
+./big_array_s.4P1.rand 0
+
+ Performance counter stats for '././big_array_s.4P1.rand':
+
+           901,128      L1-icache-load-misses                                       
+           299,934      branch-misses                                               
+
+       9.199836795 seconds time elapsed
+
+
+./big_array_s.4P1.rand 1
+
+ Performance counter stats for '././big_array_s.4P1.rand':
+
+           904,642      L1-icache-load-misses                                       
+           300,160      branch-misses                                               
+
+       8.990804161 seconds time elapsed
+
+
+./big_array_s.4P1.rand 2
+
+ Performance counter stats for '././big_array_s.4P1.rand':
+
+           919,490      L1-icache-load-misses                                       
+           299,174      branch-misses                                               
+
+       9.009274140 seconds time elapsed
+
+
+./big_array_s.4P2.rand 0
+
+ Performance counter stats for '././big_array_s.4P2.rand':
+
+           899,918      L1-icache-load-misses                                       
+           291,783      branch-misses                                               
+
+       9.114724414 seconds time elapsed
+
+
+./big_array_s.4P2.rand 1
+
+ Performance counter stats for '././big_array_s.4P2.rand':
+
+           864,231      L1-icache-load-misses                                       
+           306,769      branch-misses                                               
+
+       8.978867022 seconds time elapsed
+
+
+./big_array_s.4P2.rand 2
+
+ Performance counter stats for '././big_array_s.4P2.rand':
+
+           884,619      L1-icache-load-misses                                       
+           306,056      branch-misses                                               
+
+       9.215296686 seconds time elapsed
+
+
+./big_array_s.4P3.rand 0
+
+ Performance counter stats for '././big_array_s.4P3.rand':
+
+           935,567      L1-icache-load-misses                                       
+           299,644      branch-misses                                               
+
+       9.006294457 seconds time elapsed
+
+
+./big_array_s.4P3.rand 1
+
+ Performance counter stats for '././big_array_s.4P3.rand':
+
+           895,890      L1-icache-load-misses                                       
+           283,410      branch-misses                                               
+
+       9.058537186 seconds time elapsed
+
+
+./big_array_s.4P3.rand 2
+
+ Performance counter stats for '././big_array_s.4P3.rand':
+
+           877,208      L1-icache-load-misses                                       
+           291,660      branch-misses                                               
+
+       9.023062622 seconds time elapsed
+
+
+./big_array_s.4R1.rand 0
+
+ Performance counter stats for '././big_array_s.4R1.rand':
+
+         1,056,329      L1-icache-load-misses                                       
+           243,972      branch-misses                                               
+
+       9.397653456 seconds time elapsed
+
+
+./big_array_s.4R1.rand 1
+
+ Performance counter stats for '././big_array_s.4R1.rand':
+
+         1,013,858      L1-icache-load-misses                                       
+           229,330      branch-misses                                               
+
+       8.959844275 seconds time elapsed
+
+
+./big_array_s.4R1.rand 2
+
+ Performance counter stats for '././big_array_s.4R1.rand':
+
+         1,000,266      L1-icache-load-misses                                       
+           234,289      branch-misses                                               
+
+       9.162617153 seconds time elapsed
+
+
+./big_array_s.4R2.rand 0
+
+ Performance counter stats for '././big_array_s.4R2.rand':
+
+         1,003,245      L1-icache-load-misses                                       
+           240,670      branch-misses                                               
+
+       8.980030853 seconds time elapsed
+
+
+./big_array_s.4R2.rand 1
+
+ Performance counter stats for '././big_array_s.4R2.rand':
+
+           984,392      L1-icache-load-misses                                       
+           235,893      branch-misses                                               
+
+       8.970965209 seconds time elapsed
+
+
+./big_array_s.4R2.rand 2
+
+ Performance counter stats for '././big_array_s.4R2.rand':
+
+         1,057,187      L1-icache-load-misses                                       
+           237,544      branch-misses                                               
+
+       8.986463392 seconds time elapsed
+
+
+./big_array_s.4R3.rand 0
+
+ Performance counter stats for '././big_array_s.4R3.rand':
+
+         1,017,999      L1-icache-load-misses                                       
+           236,831      branch-misses                                               
+
+       9.128338098 seconds time elapsed
+
+
+./big_array_s.4R3.rand 1
+
+ Performance counter stats for '././big_array_s.4R3.rand':
+
+         1,004,968      L1-icache-load-misses                                       
+           234,818      branch-misses                                               
+
+       9.119598543 seconds time elapsed
+
+
+./big_array_s.4R3.rand 2
+
+ Performance counter stats for '././big_array_s.4R3.rand':
+
+           978,727      L1-icache-load-misses                                       
+           237,917      branch-misses                                               
+
+       9.024243002 seconds time elapsed
+
+
+./big_array_s.8P1.rand 0
+
+ Performance counter stats for '././big_array_s.8P1.rand':
+
+           902,558      L1-icache-load-misses                                       
+           333,669      branch-misses                                               
+
+       9.162256140 seconds time elapsed
+
+
+./big_array_s.8P1.rand 1
+
+ Performance counter stats for '././big_array_s.8P1.rand':
+
+           874,623      L1-icache-load-misses                                       
+           319,278      branch-misses                                               
+
+       8.995700775 seconds time elapsed
+
+
+./big_array_s.8P1.rand 2
+
+ Performance counter stats for '././big_array_s.8P1.rand':
+
+           870,678      L1-icache-load-misses                                       
+           345,443      branch-misses                                               
+
+       9.198046704 seconds time elapsed
+
+
+./big_array_s.8P2.rand 0
+
+ Performance counter stats for '././big_array_s.8P2.rand':
+
+           909,435      L1-icache-load-misses                                       
+           330,590      branch-misses                                               
+
+       9.029491392 seconds time elapsed
+
+
+./big_array_s.8P2.rand 1
+
+ Performance counter stats for '././big_array_s.8P2.rand':
+
+           902,240      L1-icache-load-misses                                       
+           323,458      branch-misses                                               
+
+       9.000467268 seconds time elapsed
+
+
+./big_array_s.8P2.rand 2
+
+ Performance counter stats for '././big_array_s.8P2.rand':
+
+           906,747      L1-icache-load-misses                                       
+           322,290      branch-misses                                               
+
+       9.133922749 seconds time elapsed
+
+
+./big_array_s.8P3.rand 0
+
+ Performance counter stats for '././big_array_s.8P3.rand':
+
+           934,986      L1-icache-load-misses                                       
+           328,386      branch-misses                                               
+
+       9.011970520 seconds time elapsed
+
+
+./big_array_s.8P3.rand 1
+
+ Performance counter stats for '././big_array_s.8P3.rand':
+
+           883,112      L1-icache-load-misses                                       
+           324,818      branch-misses                                               
+
+       8.955781631 seconds time elapsed
+
+
+./big_array_s.8P3.rand 2
+
+ Performance counter stats for '././big_array_s.8P3.rand':
+
+           938,255      L1-icache-load-misses                                       
+           330,033      branch-misses                                               
+
+       8.978625105 seconds time elapsed
+
+
+./big_array_s.8R1.rand 0
+
+ Performance counter stats for '././big_array_s.8R1.rand':
+
+         1,078,321      L1-icache-load-misses                                       
+           237,539      branch-misses                                               
+
+       9.108948273 seconds time elapsed
+
+
+./big_array_s.8R1.rand 1
+
+ Performance counter stats for '././big_array_s.8R1.rand':
+
+         1,097,772      L1-icache-load-misses                                       
+           234,287      branch-misses                                               
+
+       8.974382710 seconds time elapsed
+
+
+./big_array_s.8R1.rand 2
+
+ Performance counter stats for '././big_array_s.8R1.rand':
+
+         1,008,539      L1-icache-load-misses                                       
+           230,860      branch-misses                                               
+
+       8.961496122 seconds time elapsed
+
+
+./big_array_s.8R2.rand 0
+
+ Performance counter stats for '././big_array_s.8R2.rand':
+
+         1,009,901      L1-icache-load-misses                                       
+           231,761      branch-misses                                               
+
+       9.004144318 seconds time elapsed
+
+
+./big_array_s.8R2.rand 1
+
+ Performance counter stats for '././big_array_s.8R2.rand':
+
+         1,021,612      L1-icache-load-misses                                       
+           230,778      branch-misses                                               
+
+       8.971422983 seconds time elapsed
+
+
+./big_array_s.8R2.rand 2
+
+ Performance counter stats for '././big_array_s.8R2.rand':
+
+         1,058,873      L1-icache-load-misses                                       
+           236,270      branch-misses                                               
+
+       8.978593732 seconds time elapsed
+
+
+./big_array_s.8R3.rand 0
+
+ Performance counter stats for '././big_array_s.8R3.rand':
+
+         1,090,250      L1-icache-load-misses                                       
+           242,169      branch-misses                                               
+
+       8.937983508 seconds time elapsed
+
+
+./big_array_s.8R3.rand 1
+
+ Performance counter stats for '././big_array_s.8R3.rand':
+
+         1,029,111      L1-icache-load-misses                                       
+           238,201      branch-misses                                               
+
+       9.020899807 seconds time elapsed
+
+
+./big_array_s.8R3.rand 2
+
+ Performance counter stats for '././big_array_s.8R3.rand':
+
+         1,069,654      L1-icache-load-misses                                       
+           230,695      branch-misses                                               
+
+       9.006850479 seconds time elapsed
+
+
+./big_array_s.bl 0
+
+ Performance counter stats for '././big_array_s.bl':
+
+           905,033      L1-icache-load-misses                                       
+           230,785      branch-misses                                               
+
+       8.936428439 seconds time elapsed
+
+
+./big_array_s.bl 1
+
+ Performance counter stats for '././big_array_s.bl':
+
+           904,846      L1-icache-load-misses                                       
+           220,416      branch-misses                                               
+
+       8.933848707 seconds time elapsed
+
+
+./big_array_s.bl 2
+
+ Performance counter stats for '././big_array_s.bl':
+
+           915,421      L1-icache-load-misses                                       
+           222,871      branch-misses                                               
+
+       9.065852946 seconds time elapsed
+
+

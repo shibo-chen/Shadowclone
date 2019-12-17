@@ -1,0 +1,312 @@
+./data.txt 0
+Workload failed: Permission denied
+./data.txt 1
+Workload failed: Permission denied
+./data.txt 2
+Workload failed: Permission denied
+./encoder.cfg 0
+Workload failed: Permission denied
+./encoder.cfg 1
+Workload failed: Permission denied
+./encoder.cfg 2
+Workload failed: Permission denied
+./foreman_qcif.264 0
+Workload failed: Permission denied
+./foreman_qcif.264 1
+Workload failed: Permission denied
+./foreman_qcif.264 2
+Workload failed: Permission denied
+./foreman_qcif.yuv 0
+Workload failed: Permission denied
+./foreman_qcif.yuv 1
+Workload failed: Permission denied
+./foreman_qcif.yuv 2
+Workload failed: Permission denied
+./foreman_test_baseline_leakybucketparam.cfg 0
+Workload failed: Permission denied
+./foreman_test_baseline_leakybucketparam.cfg 1
+Workload failed: Permission denied
+./foreman_test_baseline_leakybucketparam.cfg 2
+Workload failed: Permission denied
+./h264ref_s.16R1.rand 0
+
+ Performance counter stats for '././h264ref_s.16R1.rand':
+
+     1,546,905,180      L1-icache-load-misses                                       
+     1,878,211,656      branch-misses                                               
+
+     189.867676084 seconds time elapsed
+
+./h264ref_s.16R1.rand 1
+
+ Performance counter stats for '././h264ref_s.16R1.rand':
+
+     1,541,405,311      L1-icache-load-misses                                       
+     1,877,513,244      branch-misses                                               
+
+     189.903230557 seconds time elapsed
+
+./h264ref_s.16R1.rand 2
+
+ Performance counter stats for '././h264ref_s.16R1.rand':
+
+     1,542,622,223      L1-icache-load-misses                                       
+     1,877,616,336      branch-misses                                               
+
+     196.030363002 seconds time elapsed
+
+./h264ref_s.16R2.rand 0
+
+ Performance counter stats for '././h264ref_s.16R2.rand':
+
+     1,513,361,739      L1-icache-load-misses                                       
+     1,880,708,859      branch-misses                                               
+
+     188.946952442 seconds time elapsed
+
+./h264ref_s.16R2.rand 1
+
+ Performance counter stats for '././h264ref_s.16R2.rand':
+
+     1,522,631,159      L1-icache-load-misses                                       
+     1,880,556,299      branch-misses                                               
+
+     189.830022889 seconds time elapsed
+
+./h264ref_s.16R2.rand 2
+
+ Performance counter stats for '././h264ref_s.16R2.rand':
+
+     1,522,394,408      L1-icache-load-misses                                       
+     1,880,254,375      branch-misses                                               
+
+     189.887375289 seconds time elapsed
+
+./h264ref_s.16R3.rand 0
+
+ Performance counter stats for '././h264ref_s.16R3.rand':
+
+     1,514,439,517      L1-icache-load-misses                                       
+     1,883,622,612      branch-misses                                               
+
+     190.677087417 seconds time elapsed
+
+./h264ref_s.16R3.rand 1
+
+ Performance counter stats for '././h264ref_s.16R3.rand':
+
+     1,510,123,686      L1-icache-load-misses                                       
+     1,884,184,841      branch-misses                                               
+
+     197.437296584 seconds time elapsed
+
+./h264ref_s.16R3.rand 2
+
+ Performance counter stats for '././h264ref_s.16R3.rand':
+
+     1,504,275,936      L1-icache-load-misses                                       
+     1,883,292,030      branch-misses                                               
+
+     190.289264066 seconds time elapsed
+
+./h264ref_s.4R1.rand 0
+
+ Performance counter stats for '././h264ref_s.4R1.rand':
+
+       601,573,512      L1-icache-load-misses                                       
+     1,425,763,454      branch-misses                                               
+
+     185.165065567 seconds time elapsed
+
+./h264ref_s.4R1.rand 1
+
+ Performance counter stats for '././h264ref_s.4R1.rand':
+
+       593,699,235      L1-icache-load-misses                                       
+     1,426,616,055      branch-misses                                               
+
+     188.997573887 seconds time elapsed
+
+./h264ref_s.4R1.rand 2
+
+ Performance counter stats for '././h264ref_s.4R1.rand':
+
+       595,105,279      L1-icache-load-misses                                       
+     1,426,697,454      branch-misses                                               
+
+     183.691144950 seconds time elapsed
+
+./h264ref_s.4R2.rand 0
+
+ Performance counter stats for '././h264ref_s.4R2.rand':
+
+       636,317,374      L1-icache-load-misses                                       
+     1,433,529,404      branch-misses                                               
+
+     190.919832272 seconds time elapsed
+
+./h264ref_s.4R2.rand 1
+
+ Performance counter stats for '././h264ref_s.4R2.rand':
+
+       639,722,629      L1-icache-load-misses                                       
+     1,433,376,668      branch-misses                                               
+
+     186.883636918 seconds time elapsed
+
+./h264ref_s.4R2.rand 2
+
+ Performance counter stats for '././h264ref_s.4R2.rand':
+
+       646,120,032      L1-icache-load-misses                                       
+     1,433,315,313      branch-misses                                               
+
+     183.624909116 seconds time elapsed
+
+./h264ref_s.4R3.rand 0
+
+ Performance counter stats for '././h264ref_s.4R3.rand':
+
+       683,311,574      L1-icache-load-misses                                       
+     1,429,996,264      branch-misses                                               
+
+     263.996655385 seconds time elapsed
+
+./h264ref_s.4R3.rand 1
+
+ Performance counter stats for '././h264ref_s.4R3.rand':
+
+       605,510,858      L1-icache-load-misses                                       
+     1,434,639,457      branch-misses                                               
+
+     191.015319864 seconds time elapsed
+
+./h264ref_s.4R3.rand 2
+
+ Performance counter stats for '././h264ref_s.4R3.rand':
+
+       628,125,815      L1-icache-load-misses                                       
+     1,434,105,761      branch-misses                                               
+
+     198.233798954 seconds time elapsed
+
+./h264ref_s.8R1.rand 0
+
+ Performance counter stats for '././h264ref_s.8R1.rand':
+
+     1,034,521,943      L1-icache-load-misses                                       
+     1,705,105,202      branch-misses                                               
+
+     203.691273014 seconds time elapsed
+
+./h264ref_s.8R1.rand 1
+
+ Performance counter stats for '././h264ref_s.8R1.rand':
+
+     1,029,369,311      L1-icache-load-misses                                       
+     1,706,195,818      branch-misses                                               
+
+     203.464610044 seconds time elapsed
+
+./h264ref_s.8R1.rand 2
+
+ Performance counter stats for '././h264ref_s.8R1.rand':
+
+     1,029,174,900      L1-icache-load-misses                                       
+     1,707,880,267      branch-misses                                               
+
+     197.155539434 seconds time elapsed
+
+./h264ref_s.8R2.rand 0
+
+ Performance counter stats for '././h264ref_s.8R2.rand':
+
+     1,053,523,998      L1-icache-load-misses                                       
+     1,714,625,644      branch-misses                                               
+
+     193.838675754 seconds time elapsed
+
+./h264ref_s.8R2.rand 1
+
+ Performance counter stats for '././h264ref_s.8R2.rand':
+
+     1,057,856,417      L1-icache-load-misses                                       
+     1,714,527,336      branch-misses                                               
+
+     186.556348409 seconds time elapsed
+
+./h264ref_s.8R2.rand 2
+
+ Performance counter stats for '././h264ref_s.8R2.rand':
+
+     1,065,023,411      L1-icache-load-misses                                       
+     1,714,500,616      branch-misses                                               
+
+     192.285165386 seconds time elapsed
+
+./h264ref_s.8R3.rand 0
+
+ Performance counter stats for '././h264ref_s.8R3.rand':
+
+     1,019,960,154      L1-icache-load-misses                                       
+     1,717,724,628      branch-misses                                               
+
+     188.286491997 seconds time elapsed
+
+./h264ref_s.8R3.rand 1
+
+ Performance counter stats for '././h264ref_s.8R3.rand':
+
+     1,017,666,373      L1-icache-load-misses                                       
+     1,718,073,529      branch-misses                                               
+
+     186.779712151 seconds time elapsed
+
+./h264ref_s.8R3.rand 2
+
+ Performance counter stats for '././h264ref_s.8R3.rand':
+
+     1,015,657,529      L1-icache-load-misses                                       
+     1,717,633,941      branch-misses                                               
+
+     192.080226220 seconds time elapsed
+
+./h264ref_s.bl 0
+
+ Performance counter stats for '././h264ref_s.bl':
+
+        37,073,082      L1-icache-load-misses                                       
+       271,614,175      branch-misses                                               
+
+      24.831718515 seconds time elapsed
+
+./h264ref_s.bl 1
+
+ Performance counter stats for '././h264ref_s.bl':
+
+        39,174,217      L1-icache-load-misses                                       
+       271,749,387      branch-misses                                               
+
+      24.872477595 seconds time elapsed
+
+./h264ref_s.bl 2
+
+ Performance counter stats for '././h264ref_s.bl':
+
+        38,857,477      L1-icache-load-misses                                       
+       271,741,020      branch-misses                                               
+
+      25.035205754 seconds time elapsed
+
+./log.dat 0
+Workload failed: Permission denied
+./log.dat 1
+Workload failed: Permission denied
+./log.dat 2
+Workload failed: Permission denied
+./stats.dat 0
+Workload failed: Permission denied
+./stats.dat 1
+Workload failed: Permission denied
+./stats.dat 2
+Workload failed: Permission denied

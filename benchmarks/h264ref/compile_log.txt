@@ -1,0 +1,421 @@
+/usr/share/modules/init/bash: line 58: export: _moduleraw: not a function
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o annexb.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 annexb.c
+annexb.c:49:17: warning: use of unary operator that may be intended as compound assignment (+=)
+    BitsWritten =+ 8;
+                ^~
+1 warning generated.
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone annexb.c.unopt-r.16D0.bc -o annexb.c.rand.16D0.bc
+Average allocas per func = 4 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis annexb.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc annexb.c.rand.16D0.bc -o annexb.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o annexb.c.rand.16D0.o annexb.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o biariencode.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 biariencode.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone biariencode.c.unopt-r.16D0.bc -o biariencode.c.rand.16D0.bc
+Average allocas per func = 5 func num: 5
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis biariencode.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc biariencode.c.rand.16D0.bc -o biariencode.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o biariencode.c.rand.16D0.o biariencode.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o block.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 block.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone block.c.unopt-r.16D0.bc -o block.c.rand.16D0.bc
+Average allocas per func = 28 func num: 10
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis block.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc block.c.rand.16D0.bc -o block.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o block.c.rand.16D0.o block.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o cabac.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 cabac.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone cabac.c.unopt-r.16D0.bc -o cabac.c.rand.16D0.bc
+Average allocas per func = 10 func num: 23
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis cabac.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc cabac.c.rand.16D0.bc -o cabac.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o cabac.c.rand.16D0.o cabac.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o configfile.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 configfile.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone configfile.c.unopt-r.16D0.bc -o configfile.c.rand.16D0.bc
+Average allocas per func = 7 func num: 7
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis configfile.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc configfile.c.rand.16D0.bc -o configfile.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o configfile.c.rand.16D0.o configfile.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o context_ini.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 context_ini.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone context_ini.c.unopt-r.16D0.bc -o context_ini.c.rand.16D0.bc
+Average allocas per func = 5 func num: 8
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis context_ini.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc context_ini.c.rand.16D0.bc -o context_ini.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o context_ini.c.rand.16D0.o context_ini.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o decoder.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 decoder.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone decoder.c.unopt-r.16D0.bc -o decoder.c.rand.16D0.bc
+Average allocas per func = 11 func num: 9
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis decoder.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc decoder.c.rand.16D0.bc -o decoder.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o decoder.c.rand.16D0.o decoder.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o explicit_gop.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 explicit_gop.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone explicit_gop.c.unopt-r.16D0.bc -o explicit_gop.c.rand.16D0.bc
+Average allocas per func = 9 func num: 4
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis explicit_gop.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc explicit_gop.c.rand.16D0.bc -o explicit_gop.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o explicit_gop.c.rand.16D0.o explicit_gop.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o fast_me.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 fast_me.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone fast_me.c.unopt-r.16D0.bc -o fast_me.c.rand.16D0.bc
+Average allocas per func = 17 func num: 10
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis fast_me.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc fast_me.c.rand.16D0.bc -o fast_me.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o fast_me.c.rand.16D0.o fast_me.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o filehandle.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 filehandle.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone filehandle.c.unopt-r.16D0.bc -o filehandle.c.rand.16D0.bc
+Average allocas per func = 4 func num: 3
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis filehandle.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc filehandle.c.rand.16D0.bc -o filehandle.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o filehandle.c.rand.16D0.o filehandle.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o fmo.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 fmo.c
+fmo.c:114:77: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+    printf ("cannot allocated %d bytes for MapUnitToSliceGroupMap, exit\n", PicSizeInMapUnits * sizeof (byte));
+                              ~~                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                              %lu
+fmo.c:178:61: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+    printf ("cannot allocated %d bytes for MBAmap, exit\n", (img->PicSizeInMbs) * sizeof (byte));
+                              ~~                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                              %lu
+2 warnings generated.
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone fmo.c.unopt-r.16D0.bc -o fmo.c.rand.16D0.bc
+Average allocas per func = 5 func num: 16
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis fmo.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc fmo.c.rand.16D0.bc -o fmo.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o fmo.c.rand.16D0.o fmo.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o header.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 header.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone header.c.unopt-r.16D0.bc -o header.c.rand.16D0.bc
+Average allocas per func = 6 func num: 6
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis header.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc header.c.rand.16D0.bc -o header.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o header.c.rand.16D0.o header.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o image.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 image.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone image.c.unopt-r.16D0.bc -o image.c.rand.16D0.bc
+Average allocas per func = 7 func num: 30
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis image.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc image.c.rand.16D0.bc -o image.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o image.c.rand.16D0.o image.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o intrarefresh.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 intrarefresh.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone intrarefresh.c.unopt-r.16D0.bc -o intrarefresh.c.rand.16D0.bc
+Average allocas per func = 4 func num: 3
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis intrarefresh.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc intrarefresh.c.rand.16D0.bc -o intrarefresh.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o intrarefresh.c.rand.16D0.o intrarefresh.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o leaky_bucket.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 leaky_bucket.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone leaky_bucket.c.unopt-r.16D0.bc -o leaky_bucket.c.rand.16D0.bc
+Average allocas per func = 7 func num: 5
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis leaky_bucket.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc leaky_bucket.c.rand.16D0.bc -o leaky_bucket.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o leaky_bucket.c.rand.16D0.o leaky_bucket.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o lencod.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 lencod.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone lencod.c.unopt-r.16D0.bc -o lencod.c.rand.16D0.bc
+Average allocas per func = 6 func num: 13
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis lencod.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc lencod.c.rand.16D0.bc -o lencod.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o lencod.c.rand.16D0.o lencod.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o loopFilter.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 loopFilter.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone loopFilter.c.unopt-r.16D0.bc -o loopFilter.c.rand.16D0.bc
+Average allocas per func = 27 func num: 4
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis loopFilter.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc loopFilter.c.rand.16D0.bc -o loopFilter.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o loopFilter.c.rand.16D0.o loopFilter.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o macroblock.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 macroblock.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone macroblock.c.unopt-r.16D0.bc -o macroblock.c.rand.16D0.bc
+Average allocas per func = 15 func num: 38
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis macroblock.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc macroblock.c.rand.16D0.bc -o macroblock.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o macroblock.c.rand.16D0.o macroblock.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o mb_access.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 mb_access.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone mb_access.c.unopt-r.16D0.bc -o mb_access.c.rand.16D0.bc
+Average allocas per func = 6 func num: 9
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis mb_access.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc mb_access.c.rand.16D0.bc -o mb_access.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o mb_access.c.rand.16D0.o mb_access.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o mbuffer.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 mbuffer.c
+mbuffer.c:1779:44: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+mbuffer.c:1779:44: note: remove extraneous parentheses around the comparison to silence this warning
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+            ~                              ^   ~
+mbuffer.c:1779:44: note: use '=' to turn this equality comparison into an assignment
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+                                           ^~
+                                           =
+mbuffer.c:1785:46: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+          if ((dpb.fs_ltref[i]->is_long_term == 1))
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+mbuffer.c:1785:46: note: remove extraneous parentheses around the comparison to silence this warning
+          if ((dpb.fs_ltref[i]->is_long_term == 1))
+              ~                              ^   ~
+mbuffer.c:1785:46: note: use '=' to turn this equality comparison into an assignment
+          if ((dpb.fs_ltref[i]->is_long_term == 1))
+                                             ^~
+                                             =
+mbuffer.c:1815:44: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+mbuffer.c:1815:44: note: remove extraneous parentheses around the comparison to silence this warning
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+            ~                              ^   ~
+mbuffer.c:1815:44: note: use '=' to turn this equality comparison into an assignment
+        if ((dpb.fs_ltref[i]->is_long_term == 3))
+                                           ^~
+                                           =
+mbuffer.c:1821:46: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+          if ((dpb.fs_ltref[i]->is_long_term == 2))
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+mbuffer.c:1821:46: note: remove extraneous parentheses around the comparison to silence this warning
+          if ((dpb.fs_ltref[i]->is_long_term == 2))
+              ~                              ^   ~
+mbuffer.c:1821:46: note: use '=' to turn this equality comparison into an assignment
+          if ((dpb.fs_ltref[i]->is_long_term == 2))
+                                             ^~
+                                             =
+4 warnings generated.
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone mbuffer.c.unopt-r.16D0.bc -o mbuffer.c.rand.16D0.bc
+Average allocas per func = 5 func num: 50
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis mbuffer.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc mbuffer.c.rand.16D0.bc -o mbuffer.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o mbuffer.c.rand.16D0.o mbuffer.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o memalloc.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 memalloc.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone memalloc.c.unopt-r.16D0.bc -o memalloc.c.rand.16D0.bc
+Average allocas per func = 5 func num: 21
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis memalloc.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc memalloc.c.rand.16D0.bc -o memalloc.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o memalloc.c.rand.16D0.o memalloc.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o mv-search.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 mv-search.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone mv-search.c.unopt-r.16D0.bc -o mv-search.c.rand.16D0.bc
+Average allocas per func = 23 func num: 25
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis mv-search.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc mv-search.c.rand.16D0.bc -o mv-search.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o mv-search.c.rand.16D0.o mv-search.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o nal.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 nal.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone nal.c.unopt-r.16D0.bc -o nal.c.rand.16D0.bc
+Average allocas per func = 10 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis nal.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc nal.c.rand.16D0.bc -o nal.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o nal.c.rand.16D0.o nal.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o nalu.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 nalu.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone nalu.c.unopt-r.16D0.bc -o nalu.c.rand.16D0.bc
+Average allocas per func = 9 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis nalu.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc nalu.c.rand.16D0.bc -o nalu.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o nalu.c.rand.16D0.o nalu.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o nalucommon.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 nalucommon.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone nalucommon.c.unopt-r.16D0.bc -o nalucommon.c.rand.16D0.bc
+Average allocas per func = 4 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis nalucommon.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc nalucommon.c.rand.16D0.bc -o nalucommon.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o nalucommon.c.rand.16D0.o nalucommon.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o output.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 output.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone output.c.unopt-r.16D0.bc -o output.c.rand.16D0.bc
+Average allocas per func = 6 func num: 8
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis output.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc output.c.rand.16D0.bc -o output.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o output.c.rand.16D0.o output.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o parset.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 parset.c
+parset.c:148:57: warning: passing 'byte [64000]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  RBSPlen = GenerateSeq_parameter_set_rbsp (active_sps, rbsp);
+                                                        ^~~~
+./parset.h:36:74: note: passing argument to parameter 'buf' here
+int GenerateSeq_parameter_set_rbsp (seq_parameter_set_rbsp_t *sps, char *buf);
+                                                                         ^
+parset.c:149:25: warning: passing 'byte [64000]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  NALUlen = RBSPtoNALU (rbsp, n, RBSPlen, NALU_TYPE_SPS, NALU_PRIORITY_HIGHEST, 0, 1);
+                        ^~~~
+./nalu.h:22:23: note: passing argument to parameter 'rbsp' here
+int RBSPtoNALU (char *rbsp, NALU_t *nalu, int rbsp_size, int nal_unit_type, int nal_reference_idc, 
+                      ^
+parset.c:178:65: warning: passing 'byte [64000]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  RBSPlen = GeneratePic_parameter_set_rbsp (&PicParSet[PPS_id], rbsp);
+                                                                ^~~~
+./parset.h:37:74: note: passing argument to parameter 'buf' here
+int GeneratePic_parameter_set_rbsp (pic_parameter_set_rbsp_t *pps, char *buf);
+                                                                         ^
+parset.c:179:25: warning: passing 'byte [64000]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  NALUlen = RBSPtoNALU (rbsp, n, RBSPlen, NALU_TYPE_PPS, NALU_PRIORITY_HIGHEST, 0, 1);
+                        ^~~~
+./nalu.h:22:23: note: passing argument to parameter 'rbsp' here
+int RBSPtoNALU (char *rbsp, NALU_t *nalu, int rbsp_size, int nal_unit_type, int nal_reference_idc, 
+                      ^
+parset.c:574:38: warning: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  partition->bitstream->streamBuffer = rbsp;
+                                     ^ ~~~~
+parset.c:705:38: warning: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+  partition->bitstream->streamBuffer = rbsp;
+                                     ^ ~~~~
+6 warnings generated.
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone parset.c.unopt-r.16D0.bc -o parset.c.rand.16D0.bc
+Average allocas per func = 7 func num: 9
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis parset.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc parset.c.rand.16D0.bc -o parset.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o parset.c.rand.16D0.o parset.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o parsetcommon.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 parsetcommon.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone parsetcommon.c.unopt-r.16D0.bc -o parsetcommon.c.rand.16D0.bc
+Average allocas per func = Stack dump:
+0.	Program arguments: /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone parsetcommon.c.unopt-r.16D0.bc -o parsetcommon.c.rand.16D0.bc 
+1.	Running pass '583 shadowClone Pass' on module 'parsetcommon.c.unopt-r.16D0.bc'.
+#0 0x000055e67b216353 llvm::sys::PrintStackTrace(llvm::raw_ostream&) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:533:0
+#1 0x000055e67b2163e6 PrintStackTraceSignalHandler(void*) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:594:0
+#2 0x000055e67b2142b4 llvm::sys::RunSignalHandlers() /home/chshibo/tools/llvm-project/llvm/lib/Support/Signals.cpp:68:0
+#3 0x000055e67b215d0a SignalHandler(int) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:385:0
+#4 0x00007fa10d96a890 __restore_rt (/lib/x86_64-linux-gnu/libpthread.so.0+0x12890)
+#5 0x00007fa10c3bd04a (anonymous namespace)::shadowClone::runOnModule(llvm::Module&) (/home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so+0x4704a)
+./make.sh: line 36: 34544 Floating point exception(core dumped) $LLVM_Install_Dir/bin/opt -load $LLVM_Pass_Dir/SHADOWCLONE_$2$3.so -shadowClone $filename_c.unopt-r.$2$3$4.bc -o $filename_c.rand.$2$3$4.bc
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis parsetcommon.c.rand.16D0.bc
+/home/chshibo/tools/llvm-project/build/bin/llvm-dis: error: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/llc parsetcommon.c.rand.16D0.bc -o parsetcommon.c.rand.16D0.s
+/home/chshibo/tools/llvm-project/build/bin/llc: error: /home/chshibo/tools/llvm-project/build/bin/llc: parsetcommon.c.rand.16D0.bc: error: Could not open input file: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o parsetcommon.c.rand.16D0.o parsetcommon.c.rand.16D0.s
+clang-10: error: no such file or directory: 'parsetcommon.c.rand.16D0.s'
+clang-10: error: no input files
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o q_matrix.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 q_matrix.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone q_matrix.c.unopt-r.16D0.bc -o q_matrix.c.rand.16D0.bc
+Average allocas per func = 8 func num: 5
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis q_matrix.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc q_matrix.c.rand.16D0.bc -o q_matrix.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o q_matrix.c.rand.16D0.o q_matrix.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o q_offsets.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 q_offsets.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone q_offsets.c.unopt-r.16D0.bc -o q_offsets.c.rand.16D0.bc
+Average allocas per func = 8 func num: 4
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis q_offsets.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc q_offsets.c.rand.16D0.bc -o q_offsets.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o q_offsets.c.rand.16D0.o q_offsets.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o ratectl.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 ratectl.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone ratectl.c.unopt-r.16D0.bc -o ratectl.c.rand.16D0.bc
+Average allocas per func = 7 func num: 13
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis ratectl.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc ratectl.c.rand.16D0.bc -o ratectl.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o ratectl.c.rand.16D0.o ratectl.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o rdopt.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 rdopt.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone rdopt.c.unopt-r.16D0.bc -o rdopt.c.rand.16D0.bc
+Average allocas per func = 17 func num: 26
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis rdopt.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc rdopt.c.rand.16D0.bc -o rdopt.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o rdopt.c.rand.16D0.o rdopt.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o rdopt_coding_state.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 rdopt_coding_state.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone rdopt_coding_state.c.unopt-r.16D0.bc -o rdopt_coding_state.c.rand.16D0.bc
+Average allocas per func = 13 func num: 2
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis rdopt_coding_state.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc rdopt_coding_state.c.rand.16D0.bc -o rdopt_coding_state.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o rdopt_coding_state.c.rand.16D0.o rdopt_coding_state.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o rdpicdecision.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 rdpicdecision.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone rdpicdecision.c.unopt-r.16D0.bc -o rdpicdecision.c.rand.16D0.bc
+Average allocas per func = 10 func num: 2
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis rdpicdecision.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc rdpicdecision.c.rand.16D0.bc -o rdpicdecision.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o rdpicdecision.c.rand.16D0.o rdpicdecision.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o refbuf.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 refbuf.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone refbuf.c.unopt-r.16D0.bc -o refbuf.c.rand.16D0.bc
+Average allocas per func = 7 func num: 8
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis refbuf.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc refbuf.c.rand.16D0.bc -o refbuf.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o refbuf.c.rand.16D0.o refbuf.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o rtp.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 rtp.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone rtp.c.unopt-r.16D0.bc -o rtp.c.rand.16D0.bc
+Average allocas per func = 4 func num: 3
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis rtp.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc rtp.c.rand.16D0.bc -o rtp.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o rtp.c.rand.16D0.o rtp.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o sei.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 sei.c
+sei.c:1364:63: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+    seiUser_data_unregistered.byte[i] = max(0, min(temp_data, 255));
+                                      ~                       ^~~
+./minmax.h:15:41: note: expanded from macro 'min'
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+                                        ^
+./minmax.h:14:41: note: expanded from macro 'max'
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+                                        ^
+sei.c:1483:71: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+    seiUser_data_registered_itu_t_t35.byte[i] = max(0, min(temp_data, 255));
+                                              ~                       ^~~
+./minmax.h:15:41: note: expanded from macro 'min'
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+                                        ^
+./minmax.h:14:41: note: expanded from macro 'max'
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+                                        ^
+2 warnings generated.
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone sei.c.unopt-r.16D0.bc -o sei.c.rand.16D0.bc
+Average allocas per func = 6 func num: 17
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis sei.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc sei.c.rand.16D0.bc -o sei.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o sei.c.rand.16D0.o sei.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o slice.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 slice.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone slice.c.unopt-r.16D0.bc -o slice.c.rand.16D0.bc
+Average allocas per func = 7 func num: 10
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis slice.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc slice.c.rand.16D0.bc -o slice.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o slice.c.rand.16D0.o slice.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o specrand.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 specrand.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone specrand.c.unopt-r.16D0.bc -o specrand.c.rand.16D0.bc
+Average allocas per func = 5 func num: 1
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis specrand.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc specrand.c.rand.16D0.bc -o specrand.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o specrand.c.rand.16D0.o specrand.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o transform8x8.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 transform8x8.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone transform8x8.c.unopt-r.16D0.bc -o transform8x8.c.rand.16D0.bc
+Average allocas per func = 24 func num: 6
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis transform8x8.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc transform8x8.c.rand.16D0.bc -o transform8x8.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o transform8x8.c.rand.16D0.o transform8x8.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o vlc.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 vlc.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone vlc.c.unopt-r.16D0.bc -o vlc.c.rand.16D0.bc
+Average allocas per func = 5 func num: 27
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis vlc.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc vlc.c.rand.16D0.bc -o vlc.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o vlc.c.rand.16D0.o vlc.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o weighted_prediction.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 weighted_prediction.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone weighted_prediction.c.unopt-r.16D0.bc -o weighted_prediction.c.rand.16D0.bc
+Average allocas per func = 21 func num: 4
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis weighted_prediction.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc weighted_prediction.c.rand.16D0.bc -o weighted_prediction.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o weighted_prediction.c.rand.16D0.o weighted_prediction.c.rand.16D0.s
++ set +x
+parset.c.rand.16D0.o: In function `FreeParameterSets':
+parset.c:(.text+0x54d): undefined reference to `FreeSPS'
+parset.c.rand.16D0.o: In function `GenerateParameterSets.17':
+parset.c:(.text+0x4c32): undefined reference to `AllocSPS'
+parset.c:(.text+0x4c3d): undefined reference to `AllocPPS'
+parset.c.rand.16D0.o: In function `GenerateParameterSets.23':
+parset.c:(.text+0x6402): undefined reference to `AllocSPS'
+parset.c:(.text+0x640d): undefined reference to `AllocPPS'
+clang-10: error: linker command failed with exit code 1 (use -v to see invocation)

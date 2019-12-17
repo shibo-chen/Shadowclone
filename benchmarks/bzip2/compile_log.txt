@@ -1,0 +1,335 @@
+/usr/share/modules/init/bash: line 58: export: _moduleraw: not a function
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o blocksort.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 blocksort.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone blocksort.c.unopt-r.16D0.bc -o blocksort.c.rand.16D0.bc
+Average allocas per func = 19 func num: 9
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis blocksort.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc blocksort.c.rand.16D0.bc -o blocksort.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o blocksort.c.rand.16D0.o blocksort.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o bzip2.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 bzip2.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone bzip2.c.unopt-r.16D0.bc -o bzip2.c.rand.16D0.bc
+Average allocas per func = 6 func num: 26
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis bzip2.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc bzip2.c.rand.16D0.bc -o bzip2.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o bzip2.c.rand.16D0.o bzip2.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o bzlib.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 bzlib.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone bzlib.c.unopt-r.16D0.bc -o bzlib.c.rand.16D0.bc
+Average allocas per func = 6 func num: 35
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis bzlib.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc bzlib.c.rand.16D0.bc -o bzlib.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o bzlib.c.rand.16D0.o bzlib.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o compress.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 compress.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone compress.c.unopt-r.16D0.bc -o compress.c.rand.16D0.bc
+Average allocas per func = 10 func num: 7
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis compress.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc compress.c.rand.16D0.bc -o compress.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o compress.c.rand.16D0.o compress.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o crctable.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 crctable.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone crctable.c.unopt-r.16D0.bc -o crctable.c.rand.16D0.bc
+Average allocas per func = Stack dump:
+0.	Program arguments: /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone crctable.c.unopt-r.16D0.bc -o crctable.c.rand.16D0.bc 
+1.	Running pass '583 shadowClone Pass' on module 'crctable.c.unopt-r.16D0.bc'.
+#0 0x0000561c2d605353 llvm::sys::PrintStackTrace(llvm::raw_ostream&) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:533:0
+#1 0x0000561c2d6053e6 PrintStackTraceSignalHandler(void*) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:594:0
+#2 0x0000561c2d6032b4 llvm::sys::RunSignalHandlers() /home/chshibo/tools/llvm-project/llvm/lib/Support/Signals.cpp:68:0
+#3 0x0000561c2d604d0a SignalHandler(int) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:385:0
+#4 0x00007f25c2351890 __restore_rt (/lib/x86_64-linux-gnu/libpthread.so.0+0x12890)
+#5 0x00007f25c0da404a (anonymous namespace)::shadowClone::runOnModule(llvm::Module&) (/home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so+0x4704a)
+./make.sh: line 36: 34231 Floating point exception(core dumped) $LLVM_Install_Dir/bin/opt -load $LLVM_Pass_Dir/SHADOWCLONE_$2$3.so -shadowClone $filename_c.unopt-r.$2$3$4.bc -o $filename_c.rand.$2$3$4.bc
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis crctable.c.rand.16D0.bc
+/home/chshibo/tools/llvm-project/build/bin/llvm-dis: error: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/llc crctable.c.rand.16D0.bc -o crctable.c.rand.16D0.s
+/home/chshibo/tools/llvm-project/build/bin/llc: error: /home/chshibo/tools/llvm-project/build/bin/llc: crctable.c.rand.16D0.bc: error: Could not open input file: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o crctable.c.rand.16D0.o crctable.c.rand.16D0.s
+clang-10: error: no such file or directory: 'crctable.c.rand.16D0.s'
+clang-10: error: no input files
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o decompress.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 decompress.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone decompress.c.unopt-r.16D0.bc -o decompress.c.rand.16D0.bc
+Average allocas per func = 45 func num: 2
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis decompress.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc decompress.c.rand.16D0.bc -o decompress.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o decompress.c.rand.16D0.o decompress.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o huffman.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 huffman.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone huffman.c.unopt-r.16D0.bc -o huffman.c.rand.16D0.bc
+Average allocas per func = 15 func num: 3
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis huffman.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc huffman.c.rand.16D0.bc -o huffman.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o huffman.c.rand.16D0.o huffman.c.rand.16D0.s
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o randtable.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 randtable.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone randtable.c.unopt-r.16D0.bc -o randtable.c.rand.16D0.bc
+Average allocas per func = Stack dump:
+0.	Program arguments: /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone randtable.c.unopt-r.16D0.bc -o randtable.c.rand.16D0.bc 
+1.	Running pass '583 shadowClone Pass' on module 'randtable.c.unopt-r.16D0.bc'.
+#0 0x000055c59337f353 llvm::sys::PrintStackTrace(llvm::raw_ostream&) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:533:0
+#1 0x000055c59337f3e6 PrintStackTraceSignalHandler(void*) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:594:0
+#2 0x000055c59337d2b4 llvm::sys::RunSignalHandlers() /home/chshibo/tools/llvm-project/llvm/lib/Support/Signals.cpp:68:0
+#3 0x000055c59337ed0a SignalHandler(int) /home/chshibo/tools/llvm-project/llvm/lib/Support/Unix/Signals.inc:385:0
+#4 0x00007fb6fce6c890 __restore_rt (/lib/x86_64-linux-gnu/libpthread.so.0+0x12890)
+#5 0x00007fb6fb8bf04a (anonymous namespace)::shadowClone::runOnModule(llvm::Module&) (/home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so+0x4704a)
+./make.sh: line 36: 34253 Floating point exception(core dumped) $LLVM_Install_Dir/bin/opt -load $LLVM_Pass_Dir/SHADOWCLONE_$2$3.so -shadowClone $filename_c.unopt-r.$2$3$4.bc -o $filename_c.rand.$2$3$4.bc
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis randtable.c.rand.16D0.bc
+/home/chshibo/tools/llvm-project/build/bin/llvm-dis: error: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/llc randtable.c.rand.16D0.bc -o randtable.c.rand.16D0.s
+/home/chshibo/tools/llvm-project/build/bin/llc: error: /home/chshibo/tools/llvm-project/build/bin/llc: randtable.c.rand.16D0.bc: error: Could not open input file: No such file or directory
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o randtable.c.rand.16D0.o randtable.c.rand.16D0.s
+clang-10: error: no such file or directory: 'randtable.c.rand.16D0.s'
+clang-10: error: no input files
++ set +x
++ /home/chshibo/tools/llvm-project/build/bin/clang -emit-llvm -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 -Ispec_qsort -m64 -c -o spec.c.unopt-r.16D0.bc -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP -mavx -DSPEC_OPENMP -fopenmp -Wno-return-type -DUSE_OPENMP -I /home/me/work/lib/libomp_oss/exports/common/include -DSPEC_LP64 spec.c
++ /home/chshibo/tools/llvm-project/build/bin/opt -load /home/chshibo/coursework/583/project/passes/pass/SHADOWCLONE_16D.so -shadowClone spec.c.unopt-r.16D0.bc -o spec.c.rand.16D0.bc
+Average allocas per func = 5 func num: 11
++ /home/chshibo/tools/llvm-project/build/bin/llvm-dis spec.c.rand.16D0.bc
++ /home/chshibo/tools/llvm-project/build/bin/llc spec.c.rand.16D0.bc -o spec.c.rand.16D0.s
++ /home/chshibo/tools/llvm-project/build/bin/clang -m64 -c -o spec.c.rand.16D0.o spec.c.rand.16D0.s
++ set +x
+bzlib.c.rand.16D0.o: In function `add_pair_to_block.8':
+bzlib.c:(.text+0x3fe5): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.10':
+bzlib.c:(.text+0x42d8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x4426): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x4559): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x468d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x47b6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x48b4): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x498f): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `add_pair_to_block.13':
+bzlib.c:(.text+0x5155): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.22':
+bzlib.c:(.text+0x615c): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x62ee): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `add_pair_to_block.33':
+bzlib.c:(.text+0x75c5): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o:bzlib.c:(.text+0x7a05): more undefined references to `BZ2_crc32Table' follow
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.47':
+bzlib.c:(.text+0x88c6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x89c9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x8acd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x8bc6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x8c97): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x8dce): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x8e29): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.53':
+bzlib.c:(.text+0x9668): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x97b6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x98e9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x9a1d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x9b46): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x9c44): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x9d1f): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `add_pair_to_block.63':
+bzlib.c:(.text+0xacf5): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `add_pair_to_block.71':
+bzlib.c:(.text+0xbac5): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.75':
+bzlib.c:(.text+0xc0f8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0xc216): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xc319): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xc41d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xc516): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xc5e7): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xc71e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0xc779): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.89':
+bzlib.c:(.text+0xd8ec): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0xda7e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.104':
+bzlib.c:(.text+0xee38): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0xef86): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xf0b9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xf1ed): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xf316): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xf414): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xf4ef): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.105':
+bzlib.c:(.text+0xf9b8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0xfad6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xfbd9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xfcdd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xfdd6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xfea7): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0xffde): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x10039): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.106':
+bzlib.c:(.text+0x10328): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x10446): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x10549): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1064d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x10746): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x10817): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1094e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x109a9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.122':
+bzlib.c:(.text+0x12568): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x12686): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x12789): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1288d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x12986): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x12a57): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x12b8e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x12be9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.156':
+bzlib.c:(.text+0x161bc): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1634e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.172':
+bzlib.c:(.text+0x1816c): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o:bzlib.c:(.text+0x182fe): more undefined references to `BZ2_crc32Table' follow
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.183':
+bzlib.c:(.text+0x19506): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x19639): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1976d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x19896): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x19994): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x19a6f): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.191':
+bzlib.c:(.text+0x1aa9c): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1ac2e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.194':
+bzlib.c:(.text+0x1b1e8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1b306): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1b409): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1b50d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1b606): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1b6d7): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1b80e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1b869): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.204':
+bzlib.c:(.text+0x1cb58): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1cca6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1cdd9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1cf0d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1d036): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1d134): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1d20f): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_SMALL.206':
+bzlib.c:(.text+0x1d968): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1dab6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1dbe9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1dd1d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1de46): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1df44): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x1e01f): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.207':
+bzlib.c:(.text+0x1e50c): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x1e69e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.243':
+bzlib.c:(.text+0x22458): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x22576): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x22679): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2277d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x22876): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x22947): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x22a7e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x22ad9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.259':
+bzlib.c:(.text+0x24fec): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x2517e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.262':
+bzlib.c:(.text+0x2564c): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o:bzlib.c:(.text+0x257de): more undefined references to `BZ2_crc32Table' follow
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.275':
+bzlib.c:(.text+0x26e86): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x26f89): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2708d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x27186): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x27257): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2738e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x273e9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.294':
+bzlib.c:(.text+0x29418): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x29536): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x29639): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2973d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x29836): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x29907): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x29a3e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x29a99): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.299':
+bzlib.c:(.text+0x2a6ec): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x2a87e): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.327':
+bzlib.c:(.text+0x2d8b8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x2d9d6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2dad9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2dbdd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2dcd6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2dda7): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x2dede): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x2df39): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.354':
+bzlib.c:(.text+0x3166c): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x317fe): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.359':
+bzlib.c:(.text+0x3233c): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o:bzlib.c:(.text+0x324ce): more undefined references to `BZ2_crc32Table' follow
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.377':
+bzlib.c:(.text+0x35556): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x35659): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3575d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x35856): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x35927): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x35a5e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x35ab9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.384':
+bzlib.c:(.text+0x36ca8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x36dc6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x36ec9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x36fcd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x370c6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x37197): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x372ce): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x37329): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `copy_input_until_stop.385':
+bzlib.c:(.text+0x3763c): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x377ce): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.388':
+bzlib.c:(.text+0x37d68): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x37e86): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x37f89): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3808d): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38186): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38257): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3838e): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x383e9): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.391':
+bzlib.c:(.text+0x38ad8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x38bf6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38cf9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38dfd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38ef6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x38fc7): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x390fe): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x39159): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.393':
+bzlib.c:(.text+0x397a8): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x398c6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x399c9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x39acd): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x39bc6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x39c97): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x39dce): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x39e29): undefined reference to `BZ2_crc32Table'
+bzlib.c.rand.16D0.o: In function `unRLE_obuf_to_output_FAST.395':
+bzlib.c:(.text+0x3a288): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x3a3a6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3a4a9): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3a5ad): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3a6a6): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3a777): undefined reference to `BZ2_rNums'
+bzlib.c:(.text+0x3a8ae): undefined reference to `BZ2_crc32Table'
+bzlib.c:(.text+0x3a909): undefined reference to `BZ2_crc32Table'
+decompress.c.rand.16D0.o: In function `BZ2_decompress.2':
+decompress.c:(.text+0x395b): undefined reference to `BZ2_rNums'
+decompress.c:(.text+0x3b6b): undefined reference to `BZ2_rNums'
+decompress.c.rand.16D0.o: In function `BZ2_decompress.3':
+decompress.c:(.text+0x7dce): undefined reference to `BZ2_rNums'
+decompress.c:(.text+0x7fde): undefined reference to `BZ2_rNums'
+decompress.c.rand.16D0.o: In function `BZ2_decompress.4':
+decompress.c:(.text+0xc23e): undefined reference to `BZ2_rNums'
+decompress.c.rand.16D0.o:decompress.c:(.text+0xc44e): more undefined references to `BZ2_rNums' follow
+clang-10: error: linker command failed with exit code 1 (use -v to see invocation)

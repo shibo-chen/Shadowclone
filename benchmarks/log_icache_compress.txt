@@ -1,0 +1,300 @@
+./compress_s.16R1.rand 0
+
+ Performance counter stats for '././compress_s.16R1.rand':
+
+           119,268      L1-icache-load-misses                                       
+         1,656,353      branch-misses                                               
+
+       0.124274167 seconds time elapsed
+
+
+./compress_s.16R1.rand 1
+
+ Performance counter stats for '././compress_s.16R1.rand':
+
+           124,356      L1-icache-load-misses                                       
+         1,659,545      branch-misses                                               
+
+       0.126862912 seconds time elapsed
+
+
+./compress_s.16R1.rand 2
+
+ Performance counter stats for '././compress_s.16R1.rand':
+
+           115,385      L1-icache-load-misses                                       
+         1,655,423      branch-misses                                               
+
+       0.120888228 seconds time elapsed
+
+
+./compress_s.16R2.rand 0
+
+ Performance counter stats for '././compress_s.16R2.rand':
+
+            96,567      L1-icache-load-misses                                       
+         1,661,046      branch-misses                                               
+
+       0.116005500 seconds time elapsed
+
+
+./compress_s.16R2.rand 1
+
+ Performance counter stats for '././compress_s.16R2.rand':
+
+           107,667      L1-icache-load-misses                                       
+         1,664,800      branch-misses                                               
+
+       0.113840715 seconds time elapsed
+
+
+./compress_s.16R2.rand 2
+
+ Performance counter stats for '././compress_s.16R2.rand':
+
+            91,832      L1-icache-load-misses                                       
+         1,658,816      branch-misses                                               
+
+       0.098947650 seconds time elapsed
+
+
+./compress_s.16R3.rand 0
+
+ Performance counter stats for '././compress_s.16R3.rand':
+
+           112,725      L1-icache-load-misses                                       
+         1,655,838      branch-misses                                               
+
+       0.113469148 seconds time elapsed
+
+
+./compress_s.16R3.rand 1
+
+ Performance counter stats for '././compress_s.16R3.rand':
+
+           116,557      L1-icache-load-misses                                       
+         1,657,979      branch-misses                                               
+
+       0.117469450 seconds time elapsed
+
+
+./compress_s.16R3.rand 2
+
+ Performance counter stats for '././compress_s.16R3.rand':
+
+           104,692      L1-icache-load-misses                                       
+         1,660,662      branch-misses                                               
+
+       0.120794168 seconds time elapsed
+
+
+./compress_s.4R1.rand 0
+
+ Performance counter stats for '././compress_s.4R1.rand':
+
+            61,781      L1-icache-load-misses                                       
+         1,456,226      branch-misses                                               
+
+       0.119312245 seconds time elapsed
+
+
+./compress_s.4R1.rand 1
+
+ Performance counter stats for '././compress_s.4R1.rand':
+
+            61,965      L1-icache-load-misses                                       
+         1,455,984      branch-misses                                               
+
+       0.115274962 seconds time elapsed
+
+
+./compress_s.4R1.rand 2
+
+ Performance counter stats for '././compress_s.4R1.rand':
+
+            65,346      L1-icache-load-misses                                       
+         1,454,322      branch-misses                                               
+
+       0.123275161 seconds time elapsed
+
+
+./compress_s.4R2.rand 0
+
+ Performance counter stats for '././compress_s.4R2.rand':
+
+            61,623      L1-icache-load-misses                                       
+         1,453,401      branch-misses                                               
+
+       0.120453075 seconds time elapsed
+
+
+./compress_s.4R2.rand 1
+
+ Performance counter stats for '././compress_s.4R2.rand':
+
+            64,688      L1-icache-load-misses                                       
+         1,448,988      branch-misses                                               
+
+       0.120946846 seconds time elapsed
+
+
+./compress_s.4R2.rand 2
+
+ Performance counter stats for '././compress_s.4R2.rand':
+
+            61,235      L1-icache-load-misses                                       
+         1,458,651      branch-misses                                               
+
+       0.098246746 seconds time elapsed
+
+
+./compress_s.4R3.rand 0
+
+ Performance counter stats for '././compress_s.4R3.rand':
+
+            65,733      L1-icache-load-misses                                       
+         1,447,201      branch-misses                                               
+
+       0.120367046 seconds time elapsed
+
+
+./compress_s.4R3.rand 1
+
+ Performance counter stats for '././compress_s.4R3.rand':
+
+            62,830      L1-icache-load-misses                                       
+         1,449,052      branch-misses                                               
+
+       0.110513730 seconds time elapsed
+
+
+./compress_s.4R3.rand 2
+
+ Performance counter stats for '././compress_s.4R3.rand':
+
+            62,943      L1-icache-load-misses                                       
+         1,445,248      branch-misses                                               
+
+       0.096156363 seconds time elapsed
+
+
+./compress_s.8R1.rand 0
+
+ Performance counter stats for '././compress_s.8R1.rand':
+
+            69,910      L1-icache-load-misses                                       
+         1,582,039      branch-misses                                               
+
+       0.111800786 seconds time elapsed
+
+
+./compress_s.8R1.rand 1
+
+ Performance counter stats for '././compress_s.8R1.rand':
+
+            69,434      L1-icache-load-misses                                       
+         1,577,292      branch-misses                                               
+
+       0.096959123 seconds time elapsed
+
+
+./compress_s.8R1.rand 2
+
+ Performance counter stats for '././compress_s.8R1.rand':
+
+            68,765      L1-icache-load-misses                                       
+         1,575,896      branch-misses                                               
+
+       0.121633424 seconds time elapsed
+
+
+./compress_s.8R2.rand 0
+
+ Performance counter stats for '././compress_s.8R2.rand':
+
+            72,365      L1-icache-load-misses                                       
+         1,593,344      branch-misses                                               
+
+       0.112679095 seconds time elapsed
+
+
+./compress_s.8R2.rand 1
+
+ Performance counter stats for '././compress_s.8R2.rand':
+
+            75,502      L1-icache-load-misses                                       
+         1,593,548      branch-misses                                               
+
+       0.112812701 seconds time elapsed
+
+
+./compress_s.8R2.rand 2
+
+ Performance counter stats for '././compress_s.8R2.rand':
+
+            74,068      L1-icache-load-misses                                       
+         1,590,929      branch-misses                                               
+
+       0.099275279 seconds time elapsed
+
+
+./compress_s.8R3.rand 0
+
+ Performance counter stats for '././compress_s.8R3.rand':
+
+            71,842      L1-icache-load-misses                                       
+         1,599,350      branch-misses                                               
+
+       0.111114313 seconds time elapsed
+
+
+./compress_s.8R3.rand 1
+
+ Performance counter stats for '././compress_s.8R3.rand':
+
+            67,620      L1-icache-load-misses                                       
+         1,593,170      branch-misses                                               
+
+       0.096987936 seconds time elapsed
+
+
+./compress_s.8R3.rand 2
+
+ Performance counter stats for '././compress_s.8R3.rand':
+
+            71,021      L1-icache-load-misses                                       
+         1,594,640      branch-misses                                               
+
+       0.110352286 seconds time elapsed
+
+
+./compress_s.bl 0
+
+ Performance counter stats for '././compress_s.bl':
+
+            49,115      L1-icache-load-misses                                       
+         1,069,358      branch-misses                                               
+
+       0.045532887 seconds time elapsed
+
+
+./compress_s.bl 1
+
+ Performance counter stats for '././compress_s.bl':
+
+            52,222      L1-icache-load-misses                                       
+         1,064,904      branch-misses                                               
+
+       0.053418716 seconds time elapsed
+
+
+./compress_s.bl 2
+
+ Performance counter stats for '././compress_s.bl':
+
+            48,769      L1-icache-load-misses                                       
+         1,069,093      branch-misses                                               
+
+       0.054460495 seconds time elapsed
+
+

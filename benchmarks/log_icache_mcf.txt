@@ -1,0 +1,300 @@
+./mcf_s.16R1.rand 0
+
+ Performance counter stats for '././mcf_s.16R1.rand':
+
+            29,080      L1-icache-load-misses                                       
+             7,092      branch-misses                                               
+
+       0.001725244 seconds time elapsed
+
+
+./mcf_s.16R1.rand 1
+
+ Performance counter stats for '././mcf_s.16R1.rand':
+
+            28,192      L1-icache-load-misses                                       
+             7,033      branch-misses                                               
+
+       0.001701520 seconds time elapsed
+
+
+./mcf_s.16R1.rand 2
+
+ Performance counter stats for '././mcf_s.16R1.rand':
+
+            29,006      L1-icache-load-misses                                       
+             7,156      branch-misses                                               
+
+       0.001730555 seconds time elapsed
+
+
+./mcf_s.16R2.rand 0
+
+ Performance counter stats for '././mcf_s.16R2.rand':
+
+            28,285      L1-icache-load-misses                                       
+             7,098      branch-misses                                               
+
+       0.001723941 seconds time elapsed
+
+
+./mcf_s.16R2.rand 1
+
+ Performance counter stats for '././mcf_s.16R2.rand':
+
+            29,057      L1-icache-load-misses                                       
+             7,124      branch-misses                                               
+
+       0.001680451 seconds time elapsed
+
+
+./mcf_s.16R2.rand 2
+
+ Performance counter stats for '././mcf_s.16R2.rand':
+
+            30,639      L1-icache-load-misses                                       
+             7,481      branch-misses                                               
+
+       0.001684602 seconds time elapsed
+
+
+./mcf_s.16R3.rand 0
+
+ Performance counter stats for '././mcf_s.16R3.rand':
+
+            28,062      L1-icache-load-misses                                       
+             7,045      branch-misses                                               
+
+       0.001675378 seconds time elapsed
+
+
+./mcf_s.16R3.rand 1
+
+ Performance counter stats for '././mcf_s.16R3.rand':
+
+            29,019      L1-icache-load-misses                                       
+             7,398      branch-misses                                               
+
+       0.001664268 seconds time elapsed
+
+
+./mcf_s.16R3.rand 2
+
+ Performance counter stats for '././mcf_s.16R3.rand':
+
+            31,050      L1-icache-load-misses                                       
+             7,362      branch-misses                                               
+
+       0.001707859 seconds time elapsed
+
+
+./mcf_s.4R1.rand 0
+
+ Performance counter stats for '././mcf_s.4R1.rand':
+
+            30,255      L1-icache-load-misses                                       
+             7,397      branch-misses                                               
+
+       0.001686659 seconds time elapsed
+
+
+./mcf_s.4R1.rand 1
+
+ Performance counter stats for '././mcf_s.4R1.rand':
+
+            31,385      L1-icache-load-misses                                       
+             7,425      branch-misses                                               
+
+       0.001645606 seconds time elapsed
+
+
+./mcf_s.4R1.rand 2
+
+ Performance counter stats for '././mcf_s.4R1.rand':
+
+            28,568      L1-icache-load-misses                                       
+             7,077      branch-misses                                               
+
+       0.001612912 seconds time elapsed
+
+
+./mcf_s.4R2.rand 0
+
+ Performance counter stats for '././mcf_s.4R2.rand':
+
+            28,296      L1-icache-load-misses                                       
+             6,838      branch-misses                                               
+
+       0.001577140 seconds time elapsed
+
+
+./mcf_s.4R2.rand 1
+
+ Performance counter stats for '././mcf_s.4R2.rand':
+
+            28,386      L1-icache-load-misses                                       
+             7,191      branch-misses                                               
+
+       0.001662056 seconds time elapsed
+
+
+./mcf_s.4R2.rand 2
+
+ Performance counter stats for '././mcf_s.4R2.rand':
+
+            29,827      L1-icache-load-misses                                       
+             7,247      branch-misses                                               
+
+       0.001721728 seconds time elapsed
+
+
+./mcf_s.4R3.rand 0
+
+ Performance counter stats for '././mcf_s.4R3.rand':
+
+            29,623      L1-icache-load-misses                                       
+             7,176      branch-misses                                               
+
+       0.001734878 seconds time elapsed
+
+
+./mcf_s.4R3.rand 1
+
+ Performance counter stats for '././mcf_s.4R3.rand':
+
+            31,672      L1-icache-load-misses                                       
+             7,537      branch-misses                                               
+
+       0.001725269 seconds time elapsed
+
+
+./mcf_s.4R3.rand 2
+
+ Performance counter stats for '././mcf_s.4R3.rand':
+
+            28,335      L1-icache-load-misses                                       
+             7,133      branch-misses                                               
+
+       0.001387644 seconds time elapsed
+
+
+./mcf_s.8R1.rand 0
+
+ Performance counter stats for '././mcf_s.8R1.rand':
+
+            28,044      L1-icache-load-misses                                       
+             7,160      branch-misses                                               
+
+       0.001709848 seconds time elapsed
+
+
+./mcf_s.8R1.rand 1
+
+ Performance counter stats for '././mcf_s.8R1.rand':
+
+            29,217      L1-icache-load-misses                                       
+             7,126      branch-misses                                               
+
+       0.001679524 seconds time elapsed
+
+
+./mcf_s.8R1.rand 2
+
+ Performance counter stats for '././mcf_s.8R1.rand':
+
+            32,437      L1-icache-load-misses                                       
+             7,459      branch-misses                                               
+
+       0.001647142 seconds time elapsed
+
+
+./mcf_s.8R2.rand 0
+
+ Performance counter stats for '././mcf_s.8R2.rand':
+
+            28,459      L1-icache-load-misses                                       
+             7,153      branch-misses                                               
+
+       0.001726882 seconds time elapsed
+
+
+./mcf_s.8R2.rand 1
+
+ Performance counter stats for '././mcf_s.8R2.rand':
+
+            28,689      L1-icache-load-misses                                       
+             7,137      branch-misses                                               
+
+       0.001747986 seconds time elapsed
+
+
+./mcf_s.8R2.rand 2
+
+ Performance counter stats for '././mcf_s.8R2.rand':
+
+            27,974      L1-icache-load-misses                                       
+             6,872      branch-misses                                               
+
+       0.001630109 seconds time elapsed
+
+
+./mcf_s.8R3.rand 0
+
+ Performance counter stats for '././mcf_s.8R3.rand':
+
+            28,900      L1-icache-load-misses                                       
+             7,060      branch-misses                                               
+
+       0.001666931 seconds time elapsed
+
+
+./mcf_s.8R3.rand 1
+
+ Performance counter stats for '././mcf_s.8R3.rand':
+
+            27,317      L1-icache-load-misses                                       
+             6,767      branch-misses                                               
+
+       0.001550940 seconds time elapsed
+
+
+./mcf_s.8R3.rand 2
+
+ Performance counter stats for '././mcf_s.8R3.rand':
+
+            28,326      L1-icache-load-misses                                       
+             7,224      branch-misses                                               
+
+       0.001655149 seconds time elapsed
+
+
+./mcf_s.bl 0
+
+ Performance counter stats for '././mcf_s.bl':
+
+            29,524      L1-icache-load-misses                                       
+             7,066      branch-misses                                               
+
+       0.001626949 seconds time elapsed
+
+
+./mcf_s.bl 1
+
+ Performance counter stats for '././mcf_s.bl':
+
+            31,049      L1-icache-load-misses                                       
+             7,017      branch-misses                                               
+
+       0.001685532 seconds time elapsed
+
+
+./mcf_s.bl 2
+
+ Performance counter stats for '././mcf_s.bl':
+
+            28,862      L1-icache-load-misses                                       
+             7,253      branch-misses                                               
+
+       0.001696296 seconds time elapsed
+
+

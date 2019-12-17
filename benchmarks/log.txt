@@ -1,0 +1,2110 @@
+./big_array_s.16P1.rand 0
+
+real	0m9.021s
+user	0m9.019s
+sys	0m0.000s
+
+./big_array_s.16P1.rand 1
+
+real	0m9.017s
+user	0m9.015s
+sys	0m0.000s
+
+./big_array_s.16P1.rand 2
+
+real	0m9.135s
+user	0m9.129s
+sys	0m0.004s
+
+./big_array_s.16P2.rand 0
+
+real	0m9.454s
+user	0m9.452s
+sys	0m0.000s
+
+./big_array_s.16P2.rand 1
+
+real	0m8.976s
+user	0m8.975s
+sys	0m0.000s
+
+./big_array_s.16P2.rand 2
+
+real	0m8.978s
+user	0m8.973s
+sys	0m0.004s
+
+./big_array_s.16P3.rand 0
+
+real	0m9.003s
+user	0m8.998s
+sys	0m0.004s
+
+./big_array_s.16P3.rand 1
+
+real	0m9.042s
+user	0m9.041s
+sys	0m0.000s
+
+./big_array_s.16P3.rand 2
+
+real	0m9.019s
+user	0m9.017s
+sys	0m0.000s
+
+./big_array_s.16R1.rand 0
+
+real	0m8.965s
+user	0m8.964s
+sys	0m0.000s
+
+./big_array_s.16R1.rand 1
+
+real	0m8.994s
+user	0m8.989s
+sys	0m0.004s
+
+./big_array_s.16R1.rand 2
+
+real	0m9.317s
+user	0m9.312s
+sys	0m0.004s
+
+./big_array_s.16R2.rand 0
+
+real	0m8.975s
+user	0m8.973s
+sys	0m0.000s
+
+./big_array_s.16R2.rand 1
+
+real	0m9.321s
+user	0m9.320s
+sys	0m0.000s
+
+./big_array_s.16R2.rand 2
+
+real	0m9.696s
+user	0m9.695s
+sys	0m0.000s
+
+./big_array_s.16R3.rand 0
+
+real	0m8.974s
+user	0m8.973s
+sys	0m0.000s
+
+./big_array_s.16R3.rand 1
+
+real	0m8.983s
+user	0m8.982s
+sys	0m0.000s
+
+./big_array_s.16R3.rand 2
+
+real	0m8.974s
+user	0m8.973s
+sys	0m0.000s
+
+./big_array_s.4P1.rand 0
+
+real	0m9.251s
+user	0m9.250s
+sys	0m0.000s
+
+./big_array_s.4P1.rand 1
+
+real	0m9.094s
+user	0m9.088s
+sys	0m0.004s
+
+./big_array_s.4P1.rand 2
+
+real	0m9.020s
+user	0m9.014s
+sys	0m0.004s
+
+./big_array_s.4P2.rand 0
+
+real	0m8.972s
+user	0m8.971s
+sys	0m0.000s
+
+./big_array_s.4P2.rand 1
+
+real	0m9.000s
+user	0m8.994s
+sys	0m0.004s
+
+./big_array_s.4P2.rand 2
+
+real	0m9.000s
+user	0m8.998s
+sys	0m0.000s
+
+./big_array_s.4P3.rand 0
+
+real	0m8.947s
+user	0m8.946s
+sys	0m0.000s
+
+./big_array_s.4P3.rand 1
+
+real	0m9.010s
+user	0m9.009s
+sys	0m0.000s
+
+./big_array_s.4P3.rand 2
+
+real	0m8.954s
+user	0m8.949s
+sys	0m0.004s
+
+./big_array_s.4R1.rand 0
+
+real	0m8.949s
+user	0m8.948s
+sys	0m0.000s
+
+./big_array_s.4R1.rand 1
+
+real	0m8.958s
+user	0m8.957s
+sys	0m0.000s
+
+./big_array_s.4R1.rand 2
+
+real	0m8.956s
+user	0m8.956s
+sys	0m0.000s
+
+./big_array_s.4R2.rand 0
+
+real	0m8.964s
+user	0m8.959s
+sys	0m0.004s
+
+./big_array_s.4R2.rand 1
+
+real	0m8.938s
+user	0m8.937s
+sys	0m0.000s
+
+./big_array_s.4R2.rand 2
+
+real	0m8.949s
+user	0m8.948s
+sys	0m0.000s
+
+./big_array_s.4R3.rand 0
+
+real	0m8.971s
+user	0m8.970s
+sys	0m0.000s
+
+./big_array_s.4R3.rand 1
+
+real	0m8.931s
+user	0m8.926s
+sys	0m0.004s
+
+./big_array_s.4R3.rand 2
+
+real	0m8.934s
+user	0m8.929s
+sys	0m0.004s
+
+./big_array_s.8P1.rand 0
+
+real	0m8.940s
+user	0m8.939s
+sys	0m0.000s
+
+./big_array_s.8P1.rand 1
+
+real	0m9.185s
+user	0m9.184s
+sys	0m0.000s
+
+./big_array_s.8P1.rand 2
+
+real	0m9.080s
+user	0m9.080s
+sys	0m0.000s
+
+./big_array_s.8P2.rand 0
+
+real	0m9.178s
+user	0m9.176s
+sys	0m0.000s
+
+./big_array_s.8P2.rand 1
+
+real	0m9.042s
+user	0m9.041s
+sys	0m0.000s
+
+./big_array_s.8P2.rand 2
+
+real	0m9.023s
+user	0m9.022s
+sys	0m0.000s
+
+./big_array_s.8P3.rand 0
+
+real	0m8.975s
+user	0m8.974s
+sys	0m0.000s
+
+./big_array_s.8P3.rand 1
+
+real	0m9.076s
+user	0m9.075s
+sys	0m0.000s
+
+./big_array_s.8P3.rand 2
+
+real	0m8.976s
+user	0m8.971s
+sys	0m0.004s
+
+./big_array_s.8R1.rand 0
+
+real	0m8.963s
+user	0m8.962s
+sys	0m0.000s
+
+./big_array_s.8R1.rand 1
+
+real	0m9.483s
+user	0m9.482s
+sys	0m0.000s
+
+./big_array_s.8R1.rand 2
+
+real	0m8.985s
+user	0m8.980s
+sys	0m0.004s
+
+./big_array_s.8R2.rand 0
+
+real	0m8.947s
+user	0m8.946s
+sys	0m0.000s
+
+./big_array_s.8R2.rand 1
+
+real	0m8.936s
+user	0m8.935s
+sys	0m0.000s
+
+./big_array_s.8R2.rand 2
+
+real	0m8.899s
+user	0m8.898s
+sys	0m0.000s
+
+./big_array_s.8R3.rand 0
+
+real	0m8.960s
+user	0m8.955s
+sys	0m0.004s
+
+./big_array_s.8R3.rand 1
+
+real	0m9.030s
+user	0m9.030s
+sys	0m0.000s
+
+./big_array_s.8R3.rand 2
+
+real	0m9.145s
+user	0m9.144s
+sys	0m0.000s
+
+./big_array_s.bl 0
+
+real	0m8.922s
+user	0m8.921s
+sys	0m0.000s
+
+./big_array_s.bl 1
+
+real	0m8.969s
+user	0m8.968s
+sys	0m0.000s
+
+./big_array_s.bl 2
+
+real	0m8.961s
+user	0m8.960s
+sys	0m0.000s
+
+./bzip2_s.16P1.rand 0
+
+real	0m0.587s
+user	0m0.587s
+sys	0m0.000s
+
+./bzip2_s.16P1.rand 1
+
+real	0m0.575s
+user	0m0.575s
+sys	0m0.000s
+
+./bzip2_s.16P1.rand 2
+
+real	0m0.544s
+user	0m0.544s
+sys	0m0.000s
+
+./bzip2_s.16P2.rand 0
+
+real	0m0.584s
+user	0m0.580s
+sys	0m0.004s
+
+./bzip2_s.16P2.rand 1
+
+real	0m0.576s
+user	0m0.572s
+sys	0m0.004s
+
+./bzip2_s.16P2.rand 2
+
+real	0m0.582s
+user	0m0.582s
+sys	0m0.000s
+
+./bzip2_s.16P3.rand 0
+
+real	0m0.579s
+user	0m0.579s
+sys	0m0.000s
+
+./bzip2_s.16P3.rand 1
+
+real	0m0.585s
+user	0m0.585s
+sys	0m0.000s
+
+./bzip2_s.16P3.rand 2
+
+real	0m0.600s
+user	0m0.596s
+sys	0m0.004s
+
+./bzip2_s.16R1.rand 0
+
+real	0m0.227s
+user	0m0.227s
+sys	0m0.000s
+
+./bzip2_s.16R1.rand 1
+
+real	0m0.192s
+user	0m0.192s
+sys	0m0.000s
+
+./bzip2_s.16R1.rand 2
+
+real	0m0.193s
+user	0m0.189s
+sys	0m0.004s
+
+./bzip2_s.16R2.rand 0
+
+real	0m0.241s
+user	0m0.233s
+sys	0m0.008s
+
+./bzip2_s.16R2.rand 1
+
+real	0m0.193s
+user	0m0.188s
+sys	0m0.004s
+
+./bzip2_s.16R2.rand 2
+
+real	0m0.241s
+user	0m0.233s
+sys	0m0.008s
+
+./bzip2_s.16R3.rand 0
+
+real	0m0.237s
+user	0m0.233s
+sys	0m0.004s
+
+./bzip2_s.16R3.rand 1
+
+real	0m0.193s
+user	0m0.189s
+sys	0m0.004s
+
+./bzip2_s.16R3.rand 2
+
+real	0m0.190s
+user	0m0.186s
+sys	0m0.004s
+
+./bzip2_s.4P1.rand 0
+
+real	0m0.580s
+user	0m0.580s
+sys	0m0.000s
+
+./bzip2_s.4P1.rand 1
+
+real	0m0.584s
+user	0m0.584s
+sys	0m0.000s
+
+./bzip2_s.4P1.rand 2
+
+real	0m0.581s
+user	0m0.576s
+sys	0m0.004s
+
+./bzip2_s.4P2.rand 0
+
+real	0m0.569s
+user	0m0.561s
+sys	0m0.008s
+
+./bzip2_s.4P2.rand 1
+
+real	0m0.584s
+user	0m0.580s
+sys	0m0.004s
+
+./bzip2_s.4P2.rand 2
+
+real	0m0.580s
+user	0m0.575s
+sys	0m0.004s
+
+./bzip2_s.4P3.rand 0
+
+real	0m0.591s
+user	0m0.591s
+sys	0m0.000s
+
+./bzip2_s.4P3.rand 1
+
+real	0m0.542s
+user	0m0.542s
+sys	0m0.000s
+
+./bzip2_s.4P3.rand 2
+
+real	0m0.579s
+user	0m0.579s
+sys	0m0.000s
+
+./bzip2_s.4R1.rand 0
+
+real	0m0.231s
+user	0m0.227s
+sys	0m0.004s
+
+./bzip2_s.4R1.rand 1
+
+real	0m0.227s
+user	0m0.226s
+sys	0m0.000s
+
+./bzip2_s.4R1.rand 2
+
+real	0m0.226s
+user	0m0.218s
+sys	0m0.008s
+
+./bzip2_s.4R2.rand 0
+
+real	0m0.193s
+user	0m0.193s
+sys	0m0.000s
+
+./bzip2_s.4R2.rand 1
+
+real	0m0.234s
+user	0m0.234s
+sys	0m0.000s
+
+./bzip2_s.4R2.rand 2
+
+real	0m0.191s
+user	0m0.191s
+sys	0m0.000s
+
+./bzip2_s.4R3.rand 0
+
+real	0m0.233s
+user	0m0.232s
+sys	0m0.000s
+
+./bzip2_s.4R3.rand 1
+
+real	0m0.231s
+user	0m0.227s
+sys	0m0.004s
+
+./bzip2_s.4R3.rand 2
+
+real	0m0.227s
+user	0m0.227s
+sys	0m0.000s
+
+./bzip2_s.8P1.rand 0
+
+real	0m0.545s
+user	0m0.545s
+sys	0m0.000s
+
+./bzip2_s.8P1.rand 1
+
+real	0m0.581s
+user	0m0.581s
+sys	0m0.000s
+
+./bzip2_s.8P1.rand 2
+
+real	0m0.547s
+user	0m0.547s
+sys	0m0.000s
+
+./bzip2_s.8P2.rand 0
+
+real	0m0.577s
+user	0m0.573s
+sys	0m0.004s
+
+./bzip2_s.8P2.rand 1
+
+real	0m0.567s
+user	0m0.563s
+sys	0m0.004s
+
+./bzip2_s.8P2.rand 2
+
+real	0m0.583s
+user	0m0.583s
+sys	0m0.000s
+
+./bzip2_s.8P3.rand 0
+
+real	0m0.574s
+user	0m0.574s
+sys	0m0.000s
+
+./bzip2_s.8P3.rand 1
+
+real	0m0.584s
+user	0m0.584s
+sys	0m0.000s
+
+./bzip2_s.8P3.rand 2
+
+real	0m0.541s
+user	0m0.541s
+sys	0m0.000s
+
+./bzip2_s.8R1.rand 0
+
+real	0m0.226s
+user	0m0.226s
+sys	0m0.000s
+
+./bzip2_s.8R1.rand 1
+
+real	0m0.233s
+user	0m0.233s
+sys	0m0.000s
+
+./bzip2_s.8R1.rand 2
+
+real	0m0.220s
+user	0m0.220s
+sys	0m0.000s
+
+./bzip2_s.8R2.rand 0
+
+real	0m0.221s
+user	0m0.221s
+sys	0m0.000s
+
+./bzip2_s.8R2.rand 1
+
+real	0m0.233s
+user	0m0.224s
+sys	0m0.008s
+
+./bzip2_s.8R2.rand 2
+
+real	0m0.234s
+user	0m0.230s
+sys	0m0.004s
+
+./bzip2_s.8R3.rand 0
+
+real	0m0.226s
+user	0m0.226s
+sys	0m0.000s
+
+./bzip2_s.8R3.rand 1
+
+real	0m0.226s
+user	0m0.226s
+sys	0m0.000s
+
+./bzip2_s.8R3.rand 2
+
+real	0m0.245s
+user	0m0.241s
+sys	0m0.004s
+
+./bzip2_s.bl 0
+
+real	0m0.139s
+user	0m0.134s
+sys	0m0.004s
+
+./bzip2_s.bl 1
+
+real	0m0.101s
+user	0m0.101s
+sys	0m0.000s
+
+./bzip2_s.bl 2
+
+real	0m0.101s
+user	0m0.101s
+sys	0m0.000s
+
+./compress_s.16P1.rand 0
+
+real	0m0.341s
+user	0m0.337s
+sys	0m0.004s
+
+./compress_s.16P1.rand 1
+
+real	0m0.349s
+user	0m0.348s
+sys	0m0.000s
+
+./compress_s.16P1.rand 2
+
+real	0m0.345s
+user	0m0.345s
+sys	0m0.000s
+
+./compress_s.16P2.rand 0
+
+real	0m0.348s
+user	0m0.344s
+sys	0m0.004s
+
+./compress_s.16P2.rand 1
+
+real	0m0.350s
+user	0m0.350s
+sys	0m0.000s
+
+./compress_s.16P2.rand 2
+
+real	0m0.309s
+user	0m0.306s
+sys	0m0.004s
+
+./compress_s.16P3.rand 0
+
+real	0m0.308s
+user	0m0.308s
+sys	0m0.000s
+
+./compress_s.16P3.rand 1
+
+real	0m0.349s
+user	0m0.349s
+sys	0m0.000s
+
+./compress_s.16P3.rand 2
+
+real	0m0.305s
+user	0m0.301s
+sys	0m0.004s
+
+./compress_s.16R1.rand 0
+
+real	0m0.128s
+user	0m0.124s
+sys	0m0.004s
+
+./compress_s.16R1.rand 1
+
+real	0m0.136s
+user	0m0.136s
+sys	0m0.000s
+
+./compress_s.16R1.rand 2
+
+real	0m0.138s
+user	0m0.134s
+sys	0m0.004s
+
+./compress_s.16R2.rand 0
+
+real	0m0.137s
+user	0m0.137s
+sys	0m0.000s
+
+./compress_s.16R2.rand 1
+
+real	0m0.131s
+user	0m0.130s
+sys	0m0.001s
+
+./compress_s.16R2.rand 2
+
+real	0m0.134s
+user	0m0.134s
+sys	0m0.000s
+
+./compress_s.16R3.rand 0
+
+real	0m0.131s
+user	0m0.127s
+sys	0m0.004s
+
+./compress_s.16R3.rand 1
+
+real	0m0.108s
+user	0m0.108s
+sys	0m0.000s
+
+./compress_s.16R3.rand 2
+
+real	0m0.120s
+user	0m0.120s
+sys	0m0.000s
+
+./compress_s.4P1.rand 0
+
+real	0m0.353s
+user	0m0.352s
+sys	0m0.000s
+
+./compress_s.4P1.rand 1
+
+real	0m0.345s
+user	0m0.345s
+sys	0m0.000s
+
+./compress_s.4P1.rand 2
+
+real	0m0.354s
+user	0m0.350s
+sys	0m0.004s
+
+./compress_s.4P2.rand 0
+
+real	0m0.345s
+user	0m0.345s
+sys	0m0.000s
+
+./compress_s.4P2.rand 1
+
+real	0m0.346s
+user	0m0.346s
+sys	0m0.000s
+
+./compress_s.4P2.rand 2
+
+real	0m0.308s
+user	0m0.308s
+sys	0m0.000s
+
+./compress_s.4P3.rand 0
+
+real	0m0.347s
+user	0m0.347s
+sys	0m0.000s
+
+./compress_s.4P3.rand 1
+
+real	0m0.305s
+user	0m0.305s
+sys	0m0.000s
+
+./compress_s.4P3.rand 2
+
+real	0m0.356s
+user	0m0.352s
+sys	0m0.004s
+
+./compress_s.4R1.rand 0
+
+real	0m0.123s
+user	0m0.118s
+sys	0m0.004s
+
+./compress_s.4R1.rand 1
+
+real	0m0.128s
+user	0m0.128s
+sys	0m0.000s
+
+./compress_s.4R1.rand 2
+
+real	0m0.130s
+user	0m0.126s
+sys	0m0.004s
+
+./compress_s.4R2.rand 0
+
+real	0m0.131s
+user	0m0.131s
+sys	0m0.000s
+
+./compress_s.4R2.rand 1
+
+real	0m0.130s
+user	0m0.130s
+sys	0m0.000s
+
+./compress_s.4R2.rand 2
+
+real	0m0.127s
+user	0m0.123s
+sys	0m0.004s
+
+./compress_s.4R3.rand 0
+
+real	0m0.127s
+user	0m0.127s
+sys	0m0.000s
+
+./compress_s.4R3.rand 1
+
+real	0m0.131s
+user	0m0.131s
+sys	0m0.000s
+
+./compress_s.4R3.rand 2
+
+real	0m0.129s
+user	0m0.129s
+sys	0m0.000s
+
+./compress_s.8P1.rand 0
+
+real	0m0.338s
+user	0m0.334s
+sys	0m0.004s
+
+./compress_s.8P1.rand 1
+
+real	0m0.347s
+user	0m0.339s
+sys	0m0.008s
+
+./compress_s.8P1.rand 2
+
+real	0m0.346s
+user	0m0.342s
+sys	0m0.004s
+
+./compress_s.8P2.rand 0
+
+real	0m0.341s
+user	0m0.337s
+sys	0m0.004s
+
+./compress_s.8P2.rand 1
+
+real	0m0.309s
+user	0m0.305s
+sys	0m0.004s
+
+./compress_s.8P2.rand 2
+
+real	0m0.344s
+user	0m0.343s
+sys	0m0.000s
+
+./compress_s.8P3.rand 0
+
+real	0m0.308s
+user	0m0.304s
+sys	0m0.004s
+
+./compress_s.8P3.rand 1
+
+real	0m0.342s
+user	0m0.342s
+sys	0m0.000s
+
+./compress_s.8P3.rand 2
+
+real	0m0.350s
+user	0m0.346s
+sys	0m0.004s
+
+./compress_s.8R1.rand 0
+
+real	0m0.096s
+user	0m0.092s
+sys	0m0.004s
+
+./compress_s.8R1.rand 1
+
+real	0m0.095s
+user	0m0.092s
+sys	0m0.004s
+
+./compress_s.8R1.rand 2
+
+real	0m0.097s
+user	0m0.097s
+sys	0m0.000s
+
+./compress_s.8R2.rand 0
+
+real	0m0.096s
+user	0m0.092s
+sys	0m0.004s
+
+./compress_s.8R2.rand 1
+
+real	0m0.096s
+user	0m0.092s
+sys	0m0.004s
+
+./compress_s.8R2.rand 2
+
+real	0m0.097s
+user	0m0.093s
+sys	0m0.004s
+
+./compress_s.8R3.rand 0
+
+real	0m0.114s
+user	0m0.114s
+sys	0m0.000s
+
+./compress_s.8R3.rand 1
+
+real	0m0.101s
+user	0m0.097s
+sys	0m0.004s
+
+./compress_s.8R3.rand 2
+
+real	0m0.097s
+user	0m0.096s
+sys	0m0.000s
+
+./compress_s.bl 0
+
+real	0m0.052s
+user	0m0.052s
+sys	0m0.000s
+
+./compress_s.bl 1
+
+real	0m0.054s
+user	0m0.050s
+sys	0m0.004s
+
+./compress_s.bl 2
+
+real	0m0.045s
+user	0m0.045s
+sys	0m0.000s
+
+./encoder.cfg 0
+./run.sh: line 16: ././encoder.cfg: Permission denied
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+
+./encoder.cfg 1
+./run.sh: line 16: ././encoder.cfg: Permission denied
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+
+./encoder.cfg 2
+./run.sh: line 16: ././encoder.cfg: Permission denied
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./foreman_qcif.yuv 0
+./run.sh: line 16: ././foreman_qcif.yuv: Permission denied
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./foreman_qcif.yuv 1
+./run.sh: line 16: ././foreman_qcif.yuv: Permission denied
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+./foreman_qcif.yuv 2
+./run.sh: line 16: ././foreman_qcif.yuv: Permission denied
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
+
+./h264ref_s.16P1.rand 0
+
+real	13m38.238s
+user	13m38.087s
+sys	0m0.024s
+
+./h264ref_s.16P1.rand 1
+
+real	13m41.123s
+user	13m41.011s
+sys	0m0.020s
+
+./h264ref_s.16P1.rand 2
+
+real	13m40.659s
+user	13m40.544s
+sys	0m0.024s
+
+./h264ref_s.16P2.rand 0
+
+real	13m38.642s
+user	13m38.518s
+sys	0m0.032s
+
+./h264ref_s.16P2.rand 1
+
+real	13m40.198s
+user	13m40.092s
+sys	0m0.012s
+
+./h264ref_s.16P2.rand 2
+
+real	13m40.178s
+user	13m40.063s
+sys	0m0.024s
+
+./h264ref_s.16P3.rand 0
+
+real	13m40.603s
+user	13m40.500s
+sys	0m0.012s
+
+./h264ref_s.16P3.rand 1
+
+real	13m38.262s
+user	13m38.131s
+sys	0m0.040s
+
+./h264ref_s.16P3.rand 2
+
+real	13m40.601s
+user	13m40.332s
+sys	0m0.040s
+
+./h264ref_s.16R1.rand 0
+
+real	3m11.308s
+user	3m11.203s
+sys	0m0.024s
+
+./h264ref_s.16R1.rand 1
+
+real	3m18.171s
+user	3m18.101s
+sys	0m0.020s
+
+./h264ref_s.16R1.rand 2
+
+real	3m9.587s
+user	3m9.524s
+sys	0m0.016s
+
+./h264ref_s.16R2.rand 0
+
+real	3m11.554s
+user	3m11.486s
+sys	0m0.020s
+
+./h264ref_s.16R2.rand 1
+
+real	3m17.085s
+user	3m17.015s
+sys	0m0.020s
+
+./h264ref_s.16R2.rand 2
+
+real	3m19.132s
+user	3m19.051s
+sys	0m0.028s
+
+./h264ref_s.16R3.rand 0
+
+real	3m11.722s
+user	3m11.594s
+sys	0m0.044s
+
+./h264ref_s.16R3.rand 1
+
+real	3m10.896s
+user	3m10.775s
+sys	0m0.040s
+
+./h264ref_s.16R3.rand 2
+
+real	3m11.223s
+user	3m11.146s
+sys	0m0.028s
+
+./h264ref_s.4P1.rand 0
+
+real	13m42.716s
+user	13m42.455s
+sys	0m0.032s
+
+./h264ref_s.4P1.rand 1
+
+real	13m41.474s
+user	13m41.200s
+sys	0m0.044s
+
+./h264ref_s.4P1.rand 2
+
+real	13m38.822s
+user	13m38.719s
+sys	0m0.012s
+
+./h264ref_s.4P2.rand 0
+
+real	13m44.648s
+user	13m44.446s
+sys	0m0.040s
+
+./h264ref_s.4P2.rand 1
+
+real	13m39.088s
+user	13m38.969s
+sys	0m0.028s
+
+./h264ref_s.4P2.rand 2
+
+real	13m40.569s
+user	13m40.467s
+sys	0m0.012s
+
+./h264ref_s.4P3.rand 0
+
+real	13m37.079s
+user	13m36.966s
+sys	0m0.020s
+
+./h264ref_s.4P3.rand 1
+
+real	14m3.738s
+user	14m3.104s
+sys	0m0.524s
+
+./h264ref_s.4P3.rand 2
+
+real	14m59.548s
+user	14m58.243s
+sys	0m1.156s
+
+./h264ref_s.4R1.rand 0
+
+real	3m11.052s
+user	3m9.454s
+sys	0m0.200s
+
+./h264ref_s.4R1.rand 1
+
+real	3m13.842s
+user	3m13.650s
+sys	0m0.052s
+
+./h264ref_s.4R1.rand 2
+
+real	3m11.265s
+user	3m10.978s
+sys	0m0.104s
+
+./h264ref_s.4R2.rand 0
+
+real	3m9.701s
+user	3m9.582s
+sys	0m0.056s
+
+./h264ref_s.4R2.rand 1
+
+real	3m9.896s
+user	3m9.844s
+sys	0m0.012s
+
+./h264ref_s.4R2.rand 2
+
+real	3m4.077s
+user	3m4.003s
+sys	0m0.032s
+
+./h264ref_s.4R3.rand 0
+
+real	3m4.859s
+user	3m4.752s
+sys	0m0.040s
+
+./h264ref_s.4R3.rand 1
+
+real	3m12.563s
+user	3m12.503s
+sys	0m0.016s
+
+./h264ref_s.4R3.rand 2
+
+real	3m4.837s
+user	3m4.755s
+sys	0m0.032s
+
+./h264ref_s.8P1.rand 0
+
+real	13m39.365s
+user	13m39.238s
+sys	0m0.036s
+
+./h264ref_s.8P1.rand 1
+
+real	13m38.874s
+user	13m38.751s
+sys	0m0.032s
+
+./h264ref_s.8P1.rand 2
+
+real	13m41.356s
+user	13m41.232s
+sys	0m0.032s
+
+./h264ref_s.8P2.rand 0
+
+real	13m41.276s
+user	13m41.111s
+sys	0m0.040s
+
+./h264ref_s.8P2.rand 1
+
+real	13m39.575s
+user	13m39.472s
+sys	0m0.012s
+
+./h264ref_s.8P2.rand 2
+
+real	13m38.478s
+user	13m38.353s
+sys	0m0.032s
+
+./h264ref_s.8P3.rand 0
+
+real	13m42.997s
+user	13m42.888s
+sys	0m0.016s
+
+./h264ref_s.8P3.rand 1
+
+real	13m43.118s
+user	13m42.913s
+sys	0m0.028s
+
+./h264ref_s.8P3.rand 2
+
+real	13m40.545s
+user	13m40.288s
+sys	0m0.032s
+
+./h264ref_s.8R1.rand 0
+
+real	3m7.230s
+user	3m7.121s
+sys	0m0.032s
+
+./h264ref_s.8R1.rand 1
+
+real	3m8.701s
+user	3m8.637s
+sys	0m0.020s
+
+./h264ref_s.8R1.rand 2
+
+real	3m15.729s
+user	3m15.661s
+sys	0m0.020s
+
+./h264ref_s.8R2.rand 0
+
+real	3m7.741s
+user	3m7.634s
+sys	0m0.036s
+
+./h264ref_s.8R2.rand 1
+
+real	3m7.874s
+user	3m7.751s
+sys	0m0.044s
+
+./h264ref_s.8R2.rand 2
+
+real	3m13.358s
+user	3m13.304s
+sys	0m0.008s
+
+./h264ref_s.8R3.rand 0
+
+real	3m8.326s
+user	3m8.240s
+sys	0m0.040s
+
+./h264ref_s.8R3.rand 1
+
+real	3m7.563s
+user	3m7.439s
+sys	0m0.048s
+
+./h264ref_s.8R3.rand 2
+
+real	3m13.095s
+user	3m13.039s
+sys	0m0.012s
+
+./h264ref_s.bl 0
+
+real	0m25.888s
+user	0m25.861s
+sys	0m0.020s
+
+./h264ref_s.bl 1
+
+real	0m25.790s
+user	0m25.755s
+sys	0m0.024s
+
+./h264ref_s.bl 2
+
+real	0m25.460s
+user	0m25.418s
+sys	0m0.032s
+
+./mcf_s.16P1.rand 0
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.16P1.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P2.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P2.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16P3.rand 1
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.16P3.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16R1.rand 0
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.16R1.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.001s
+
+./mcf_s.16R1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16R2.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16R2.rand 1
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.16R2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16R3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.16R3.rand 1
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.16R3.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P1.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P1.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P2.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P2.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4P3.rand 1
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.4P3.rand 2
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.4R1.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R1.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R2.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R2.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.4R3.rand 1
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.000s
+
+./mcf_s.4R3.rand 2
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.8P1.rand 0
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.8P1.rand 1
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+
+./mcf_s.8P1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8P2.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8P2.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8P2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8P3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8P3.rand 1
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.000s
+
+./mcf_s.8P3.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R1.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R1.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.001s
+
+./mcf_s.8R1.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.001s
+
+./mcf_s.8R2.rand 0
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.8R2.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R2.rand 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R3.rand 0
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R3.rand 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.8R3.rand 2
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.bl 0
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+
+./mcf_s.bl 1
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./mcf_s.bl 2
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+./wc_s.16P1.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.16P1.rand 1
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16P1.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.16P2.rand 0
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16P2.rand 1
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16P2.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.16P3.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.16P3.rand 1
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16P3.rand 2
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16R1.rand 0
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16R1.rand 1
+
+real	0m0.004s
+user	0m0.003s
+sys	0m0.000s
+
+./wc_s.16R1.rand 2
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.16R2.rand 0
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.16R2.rand 1
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.16R2.rand 2
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16R3.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.16R3.rand 1
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.16R3.rand 2
+
+real	0m0.004s
+user	0m0.001s
+sys	0m0.003s
+
+./wc_s.4P1.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4P1.rand 1
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.4P1.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4P2.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4P2.rand 1
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4P2.rand 2
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4P3.rand 0
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+
+./wc_s.4P3.rand 1
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4P3.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4R1.rand 0
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4R1.rand 1
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4R1.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4R2.rand 0
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.4R2.rand 1
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4R2.rand 2
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.4R3.rand 0
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.4R3.rand 1
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.4R3.rand 2
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8P1.rand 0
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8P1.rand 1
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.8P1.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.001s
+
+./wc_s.8P2.rand 0
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.8P2.rand 1
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8P2.rand 2
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8P3.rand 0
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.003s
+
+./wc_s.8P3.rand 1
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.8P3.rand 2
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8R1.rand 0
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.005s
+
+./wc_s.8R1.rand 1
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.003s
+
+./wc_s.8R1.rand 2
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8R2.rand 0
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8R2.rand 1
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.8R2.rand 2
+
+real	0m0.004s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8R3.rand 0
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.8R3.rand 1
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+./wc_s.8R3.rand 2
+
+real	0m0.004s
+user	0m0.004s
+sys	0m0.000s
+
+./wc_s.bl 0
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+
+./wc_s.bl 1
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+./wc_s.bl 2
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+
+
+
+
+./bzip2_s.16R1.rand 1
+
+./bzip2_s.16R1.rand 2
+
+./bzip2_s.16R2.rand 0
+
+./bzip2_s.16R2.rand 1
+
+./bzip2_s.16R2.rand 2
+
+./bzip2_s.16R3.rand 0
+
+./bzip2_s.16R3.rand 1

@@ -1,0 +1,351 @@
+./bzip2_s.16R1.rand 0
+
+ Performance counter stats for '././bzip2_s.16R1.rand':
+
+           188,825      L1-icache-load-misses                                       
+         1,244,184      branch-misses                                               
+
+       0.250499328 seconds time elapsed
+
+
+./bzip2_s.16R1.rand 1
+
+ Performance counter stats for '././bzip2_s.16R1.rand':
+
+           182,208      L1-icache-load-misses                                       
+         1,243,202      branch-misses                                               
+
+       0.211117920 seconds time elapsed
+
+
+./bzip2_s.16R1.rand 2
+
+ Performance counter stats for '././bzip2_s.16R1.rand':
+
+           179,653      L1-icache-load-misses                                       
+         1,243,586      branch-misses                                               
+
+       0.223366658 seconds time elapsed
+
+
+./bzip2_s.16R2.rand 0
+
+ Performance counter stats for '././bzip2_s.16R2.rand':
+
+           192,865      L1-icache-load-misses                                       
+         1,248,670      branch-misses                                               
+
+       0.188982158 seconds time elapsed
+
+
+./bzip2_s.16R2.rand 1
+
+ Performance counter stats for '././bzip2_s.16R2.rand':
+
+           203,654      L1-icache-load-misses                                       
+         1,249,389      branch-misses                                               
+
+       0.228647420 seconds time elapsed
+
+
+./bzip2_s.16R2.rand 2
+
+ Performance counter stats for '././bzip2_s.16R2.rand':
+
+           194,762      L1-icache-load-misses                                       
+         1,248,428      branch-misses                                               
+
+       0.231006858 seconds time elapsed
+
+
+./bzip2_s.16R3.rand 0
+
+ Performance counter stats for '././bzip2_s.16R3.rand':
+
+           190,757      L1-icache-load-misses                                       
+         1,245,826      branch-misses                                               
+
+       0.224203728 seconds time elapsed
+
+
+./bzip2_s.16R3.rand 1
+
+ Performance counter stats for '././bzip2_s.16R3.rand':
+
+           190,468      L1-icache-load-misses                                       
+         1,247,368      branch-misses                                               
+
+       0.243302913 seconds time elapsed
+
+
+./bzip2_s.16R3.rand 2
+
+ Performance counter stats for '././bzip2_s.16R3.rand':
+
+           182,841      L1-icache-load-misses                                       
+         1,246,852      branch-misses                                               
+
+       0.191754492 seconds time elapsed
+
+
+./bzip2_s.4R1.rand 0
+
+ Performance counter stats for '././bzip2_s.4R1.rand':
+
+            96,694      L1-icache-load-misses                                       
+         1,255,280      branch-misses                                               
+
+       0.232885595 seconds time elapsed
+
+
+./bzip2_s.4R1.rand 1
+
+ Performance counter stats for '././bzip2_s.4R1.rand':
+
+            96,513      L1-icache-load-misses                                       
+         1,252,175      branch-misses                                               
+
+       0.224912912 seconds time elapsed
+
+
+./bzip2_s.4R1.rand 2
+
+ Performance counter stats for '././bzip2_s.4R1.rand':
+
+            96,649      L1-icache-load-misses                                       
+         1,253,818      branch-misses                                               
+
+       0.230532010 seconds time elapsed
+
+
+./bzip2_s.4R2.rand 0
+
+ Performance counter stats for '././bzip2_s.4R2.rand':
+
+            93,380      L1-icache-load-misses                                       
+         1,259,189      branch-misses                                               
+
+       0.227931136 seconds time elapsed
+
+
+./bzip2_s.4R2.rand 1
+
+ Performance counter stats for '././bzip2_s.4R2.rand':
+
+            96,845      L1-icache-load-misses                                       
+         1,258,625      branch-misses                                               
+
+       0.224969271 seconds time elapsed
+
+
+./bzip2_s.4R2.rand 2
+
+ Performance counter stats for '././bzip2_s.4R2.rand':
+
+            98,862      L1-icache-load-misses                                       
+         1,259,530      branch-misses                                               
+
+       0.232041214 seconds time elapsed
+
+
+./bzip2_s.4R3.rand 0
+
+ Performance counter stats for '././bzip2_s.4R3.rand':
+
+            91,612      L1-icache-load-misses                                       
+         1,252,294      branch-misses                                               
+
+       0.191356430 seconds time elapsed
+
+
+./bzip2_s.4R3.rand 1
+
+ Performance counter stats for '././bzip2_s.4R3.rand':
+
+            93,919      L1-icache-load-misses                                       
+         1,253,340      branch-misses                                               
+
+       0.232745241 seconds time elapsed
+
+
+./bzip2_s.4R3.rand 2
+
+ Performance counter stats for '././bzip2_s.4R3.rand':
+
+            92,527      L1-icache-load-misses                                       
+         1,254,160      branch-misses                                               
+
+       0.222659534 seconds time elapsed
+
+
+./bzip2_s.8R1.rand 0
+
+ Performance counter stats for '././bzip2_s.8R1.rand':
+
+           122,164      L1-icache-load-misses                                       
+         1,319,070      branch-misses                                               
+
+       0.228061746 seconds time elapsed
+
+
+./bzip2_s.8R1.rand 1
+
+ Performance counter stats for '././bzip2_s.8R1.rand':
+
+           116,246      L1-icache-load-misses                                       
+         1,317,736      branch-misses                                               
+
+       0.203271988 seconds time elapsed
+
+
+./bzip2_s.8R1.rand 2
+
+ Performance counter stats for '././bzip2_s.8R1.rand':
+
+           108,198      L1-icache-load-misses                                       
+         1,314,861      branch-misses                                               
+
+       0.197265215 seconds time elapsed
+
+
+./bzip2_s.8R2.rand 0
+
+ Performance counter stats for '././bzip2_s.8R2.rand':
+
+           110,448      L1-icache-load-misses                                       
+         1,317,989      branch-misses                                               
+
+       0.199612035 seconds time elapsed
+
+
+./bzip2_s.8R2.rand 1
+
+ Performance counter stats for '././bzip2_s.8R2.rand':
+
+           107,544      L1-icache-load-misses                                       
+         1,316,743      branch-misses                                               
+
+       0.196296939 seconds time elapsed
+
+
+./bzip2_s.8R2.rand 2
+
+ Performance counter stats for '././bzip2_s.8R2.rand':
+
+           105,996      L1-icache-load-misses                                       
+         1,316,980      branch-misses                                               
+
+       0.195677903 seconds time elapsed
+
+
+./bzip2_s.8R3.rand 0
+
+ Performance counter stats for '././bzip2_s.8R3.rand':
+
+           114,523      L1-icache-load-misses                                       
+         1,318,758      branch-misses                                               
+
+       0.229592571 seconds time elapsed
+
+
+./bzip2_s.8R3.rand 1
+
+ Performance counter stats for '././bzip2_s.8R3.rand':
+
+           109,233      L1-icache-load-misses                                       
+         1,317,300      branch-misses                                               
+
+       0.188108268 seconds time elapsed
+
+
+./bzip2_s.8R3.rand 2
+
+ Performance counter stats for '././bzip2_s.8R3.rand':
+
+           115,322      L1-icache-load-misses                                       
+         1,317,031      branch-misses                                               
+
+       0.234493498 seconds time elapsed
+
+
+./bzip2_s.bl 0
+
+ Performance counter stats for '././bzip2_s.bl':
+
+            66,833      L1-icache-load-misses                                       
+           693,106      branch-misses                                               
+
+       0.101097096 seconds time elapsed
+
+
+./bzip2_s.bl 1
+
+ Performance counter stats for '././bzip2_s.bl':
+
+            70,776      L1-icache-load-misses                                       
+           693,884      branch-misses                                               
+
+       0.135177237 seconds time elapsed
+
+
+./bzip2_s.bl 2
+
+ Performance counter stats for '././bzip2_s.bl':
+
+            74,494      L1-icache-load-misses                                       
+           692,663      branch-misses                                               
+
+       0.136104727 seconds time elapsed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
