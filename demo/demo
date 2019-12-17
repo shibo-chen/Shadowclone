@@ -9,6 +9,7 @@ DEMO_NAME=demo
 DEMO_BIN_DIR=/home/chshibo/coursework/583/project/demo/demo_prog_bin
 PATH_MYPASS=$PASS_DIR/build/Shadowclone/SHADOWCLONE.so
 DEMO_INPUT_DIR=/home/chshibo/coursework/583/project/demo/demo_input
+
 if [ "$1" = "show-pass-src" ]; then
 	vim -R $SOURCE_DIR/$SOURCE_NAME
 elif [ "$1" = "show-lib-src" ]; then
