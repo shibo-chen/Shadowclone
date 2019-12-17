@@ -53,7 +53,7 @@ If can also choose to automatically install it in $HOME/tools/ using the install
 
 ## Build Pass
 
-First cd into fast_smoke directory, then
+First cd into Shadowclone directory, then
 
 ```script
 mkdir build
